@@ -18,7 +18,7 @@ Retraction is how science removes findings that cannot be trusted, but removal i
 
 More and more people meet scientific evidence through AI assistants (Appendix G, Table G1). An assistant that passes on a retracted finding without a warning repeats this failure at scale, at every level where assistants are used: people forming their picture of the world from everyday questions and making their own health choices; researchers searching the literature, brainstorming and drafting papers, where a retracted result can become a premise or a citation; clinicians deciding on treatment and informing patients; and journalists, teachers and policy staff who pass findings on. Users usually see the answer, not the paper, so they have little chance to notice the retraction themselves.
 
-Earlier studies tested locally run open-weight models or earlier versions of a few products (Table 1). We chose nine API configurations to match the models behind the AI products that the public, researchers, US healthcare professionals and Chinese app users report using most (Appendix G), at several price levels. The API does not reproduce the products' own search, routing or system prompts, so results describe these models in a fixed setup, not the apps.
+Earlier studies tested locally run open-weight models or earlier versions of a few products (Table 1). We chose nine API configurations from the developers of the AI products that the public, researchers, US healthcare professionals and Chinese app users report using most (Appendix G), at several price levels. For four of them a source links the tested model to a product (Google AI Mode, free ChatGPT, the free Gemini app, the DeepSeek app); for Doubao, the Qwen app and Baidu Search the model running in the product is not established, and the tested model is a current low-cost model from the same developer (Table F2). The API does not reproduce the products' own search, routing or system prompts, so results describe these models in a fixed setup, not the apps.
 
 Status signals can also be faked on purpose. Coordinated networks already publish content so that chatbots will repeat it: in one audit, 10 leading chatbots repeated false claims from a pro-Kremlin network 33% of the time, using prompts partly designed to draw out those claims (NewsGuard 2025). Poisoning a tiny share of training data, 0.001% of tokens, produced medical models that spread errors yet still passed medical benchmarks (Alber et al. 2025; see also Carlini et al. 2024). A forged notice is a cheap form of the same attack, and it works both ways: a fake "reinstated" note can revive a retracted claim, and a fake "retracted" note can discredit valid research. Publication status is an unauthenticated signal: copies can lack the notice, notices can be out of date, and any web page can say that a paper was retracted or reinstated. Assistants read all of these. This raises a question for retrieval-tool developers and publishers: when a status claim can be checked against a registry, do assistants check it and use the returned evidence?
 
@@ -31,7 +31,7 @@ Earlier work tested models with search results that state a retraction or have t
 **Our main contributions are:**
 1. The first test we found of **forged publication status in both directions**, a fake reinstatement and a fake retraction, against a registry the model can check.
 2. A controlled test of recent retractions, with a separate status-question test to measure recognition without retrieved evidence.
-3. A comparison of nine API configurations **chosen to match the models behind the most-used AI products**, from US and Chinese developers and at several price levels, using the same questions and evidence.
+3. A comparison of nine API configurations **from the developers of the most-used AI products**, US and Chinese, four of them linked by a source to the model in the product, and at several price levels, using the same questions and evidence.
 
 ## 2. Related work
 
@@ -298,7 +298,7 @@ All web sources checked on 13 Nov 2026. "Official" = the provider's own page. "S
 | Free ChatGPT | GPT-6 Luna, in Chat from 8 Oct 2026 | https://notebookcheck.net/ChatGPT-Free-and-Go-users-start-getting-GPT-6-Luna-in-Chat.1419032.0.html | Secondary | OpenAI's help page reportedly still names GPT-5.6 Luna; check in the app on test day |
 | Free Gemini app | Automatic routing since 9 Oct 2026; "most prompts" go to Flash-Lite | https://9to5google.com/2026/10/09/gemini-auto-free-users/ | Secondary (quotes Google's help text) | Exact Flash-Lite version not stated |
 | Doubao | ByteDance Seed models | n/a | Not found | Which Seed model: unknown |
-| DeepSeek app | n/a | n/a | Not found | Version in the app: unknown |
+| DeepSeek web and app | DeepSeek-V4.1-Flash-1017, from 17 Oct 2026 | https://api-docs.deepseek.com/news/news261017/ | Official | DeepSeek states the model is live on its website, app and API |
 | Baidu Search | ERNIE | n/a | Not found | Version behind search answers: unknown |
 | ChatGPT, mainland China | Not offered by OpenAI | https://help.openai.com/en/articles/7947663-chatgpt-supported-countries | Official | Checked 14 Nov 2026; China not in the supported list |
 | Claude, mainland China | Not offered by Anthropic | https://www.anthropic.com/supported-countries | Official | Checked 14 Nov 2026; China not in the supported list |
@@ -400,17 +400,17 @@ Reason labels (Retraction Watch controlled vocabulary; a paper qualifies if any 
 
 **Table F2. Models tested** (sources for every cell: Appendix D)
 
-| Product motivating selection | API model | Access | Price per 1M tokens (in/out) | Training cutoff | Default reasoning effort | Reasoning returned | Provider (pinned) |
+| Developer's product (link to the tested model) | API model | Access | Price per 1M tokens (in/out) | Training cutoff | Default reasoning effort | Reasoning returned | Provider (pinned) |
 |---|---|---|---|---|---|---|---|
 | Google AI Mode | gemini-4-hydrogen | OpenRouter | $1.50 / $7.50 | Mar 2026 | medium (high on Google's own API) | not yet checked | Google AI Studio |
 | Free ChatGPT | gpt-6-luna | OpenRouter | $0.10 / $0.50 | 18 May 2026 | medium | not yet checked | OpenAI |
 | Free Gemini app | gemini-3.5-flash-lite | OpenRouter | $0.30 / $2.50 | Mar 2026 (some areas Jan 2025) | minimal | not yet checked | Google AI Studio |
-| Paid ChatGPT | gpt-6.1-sol | OpenRouter | $2 / $10 | 30 Apr 2026 | medium | not yet checked | OpenAI |
-| Paid Claude | claude-sonnet-5.5 | OpenRouter | $2 / $10 | Jun 2026 | high | not yet checked | Anthropic |
-| Doubao | seed-2.0-lite (model used in the app not established) | OpenRouter | $0.25 / $2.00 | not published | medium | not yet checked | Seed (fp8) |
-| Qwen app | qwen3.8-flash | OpenRouter | $0.15 / $0.47 | not published | thinking on | not yet checked | Alibaba |
+| ChatGPT, paid tiers (link not sourced) | gpt-6.1-sol | OpenRouter | $2 / $10 | 30 Apr 2026 | medium | not yet checked | OpenAI |
+| Claude, paid tiers (link not sourced) | claude-sonnet-5.5 | OpenRouter | $2 / $10 | Jun 2026 | high | not yet checked | Anthropic |
+| Doubao (model in the app not established; not claimed to be this one) | seed-2.0-lite | OpenRouter | $0.25 / $2.00 | not published | medium | not yet checked | Seed (fp8) |
+| Qwen app (model in the app not established; not claimed to be this one) | qwen3.8-flash | OpenRouter | $0.15 / $0.47 | not published | thinking on | not yet checked | Alibaba |
 | DeepSeek app | deepseek-v4.1-flash-1017 | OpenRouter | $0.15 / $0.60 | not published | high | not yet checked | DeepSeek |
-| Baidu Search | ernie-5.5-flash-preview (model used in search not established) | OpenRouter (free model) | free; 1,000 requests/day | not published | high (only level) | not yet checked | Baidu |
+| Baidu Search (model in search not established; not claimed to be this one) | ernie-5.5-flash-preview | OpenRouter (free model) | free; 1,000 requests/day | not published | high (only level) | not yet checked | Baidu |
 
 ## Appendix G. Usage data: sources and caveats
 
@@ -460,7 +460,7 @@ Six studies tested language models on retracted papers. Table 1 lists what each 
 | Zhang et al. 2025 | ChatGPT-5.0 used 61.5% (72/117) of retracted papers; 58.3% (42/72) of those unwarned | One product; unknown whether it searched; stem cells only | Controlled search; several models |
 | Yao et al. 2025 | ChatGPT-4o used 74/93 retracted papers and recognised the retraction for 46 of them; Grok 3 used 69 and recognised 46; DeepSeek found 1 and missed its status | Stem cells only; search not reported; questions generated by AI models; abstract names Grok 4 once for Grok 3 | Pre-set scoring rules |
 | Hoang Ha et al. 2026 | Status questions: 11% correct without search vs 94% with search results stating the retraction. Reference lists: among answers citing the paper, warnings fell from 72% to 6.3% when the retraction signal was removed from the results | Mostly retractions models could know (only 45 after 1 Jan 2025, in an appendix); mostly open-weight models, not the models behind today's free products; no registry tool; AI-only checks | Recent retractions; selected API configurations; R3; human check |
-| All six | Not applicable | No forged status claims; not the models behind Doubao, Baidu Search or the Qwen app | R4, K4; models from Chinese developers |
+| All six | Not applicable | No forged status claims; no models from the developers of Doubao, Baidu Search or the Qwen app | R4, K4; models from Chinese developers |
 
 Models tested in each study: Table G1.
 
@@ -635,7 +635,7 @@ Agreement between the two judges is reported per field. In figures and tables, "
 | R4 vs R4-I, K4 vs K4-I (secondary) | Does an instruction to check reduce the forgeries' effect? |
 | R3 vs R4 split by whether the model looked up the target in R3; R5 vs R6 split by lookup in R5; R2 vs R4 (exploratory) | Is the forgery's effect limited to models that check? How does a forged reinstatement compare with a true label? |
 | R1 vs R2, R3 vs R4, R5 vs R6, K3 vs K4: target cited (exploratory) | Does a status signal change whether the target is used at all, in either direction? |
-| GPT-6 Luna vs GPT-6.1 Sol (exploratory; primary outcomes, paired by topic) | Do the models behind free and paid ChatGPT handle publication status differently? |
+| GPT-6 Luna vs GPT-6.1 Sol (exploratory; primary outcomes, paired by topic) | Do a free-tier and a paid-tier OpenAI model handle publication status differently? |
 | Failure rate vs output price, all nine models (exploratory; descriptive, no test) | Do cheaper models handle publication status worse? |
 
 **Across models.** For each topic, the change between the two tests is +1 for a model that fails only in the second test, −1 for one that fails only in the first, and 0 otherwise, averaged over the nine models. We report the mean change across topics, a 95% percentile interval from 10,000 bootstrap resamples of topics, and a two-sided p-value from 10,000 random sign flips of the topic changes, both drawn with the fixed seed. We also report how many topics change; when few do, even a consistent change cannot reach significance (with eight changed topics the smallest possible p-value is about 0.008). Resampling whole topics keeps together the nine answers to the same topic, which are not independent. The interval describes how results vary across topics for these nine fixed configurations; the sign-flip test assumes that, with no effect, a topic's change is as likely to be positive as negative. Because question 2 asks whether a forged notice works in either direction, the two across-model p-values (R5–R6 and K3–K4) are adjusted together with the Holm method.
