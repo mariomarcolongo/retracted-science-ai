@@ -1,19 +1,18 @@
-# Paper draft v0.2 (working draft, Apart template structure)
+# Retracted, Reinstated or Smeared: Do AI Assistants Use Publication-Status Signals? A study design and a first result
 
 > **[…]** = placeholder or fact still to fill.
 
 ---
 
-## Title (pick one)
+## Title
 
-- Retracted, Reinstated or Smeared: Do AI Assistants Use Publication-Status Signals?
-- When Retracted Science Reaches the Chatbot
+Retracted, Reinstated or Smeared: Do AI Assistants Use Publication-Status Signals? A study design and a first result
 
 Mario Marcolongo, Metropolia University of Applied Sciences, Espoo, Finland · Mario.Marcolongo@metropolia.fi · ORCID 0000-0003-2846-7115. With Apart Research.
 
-## Abstract (150–250 words; write last)
+## Abstract
 
-Problem · gap · what we did · main numbers · what it means. [after results]
+Retracted papers keep circulating, and a paper's publication status is easy to fake: any web page can say a paper was retracted or reinstated. Earlier studies showed that language models rarely notice retractions, but none gave models a registry to check or showed them a forged status claim. We present a controlled design that does both, for nine API model configurations, on 25 health papers retracted after 1 July 2026 and 25 matched controls: each primary comparison adds one forged status line (a fake reinstatement of a labelled retracted paper, or a fake retraction of a valid paper) to search results while a registry lookup tool returns the true record. These tests have not yet been run; this submission reports the design, its scoring and analysis plan, and one completed module. In that module each model was asked, without search or tools, whether each of 56 papers (28 retracted, 28 controls) is retracted. In provisional results no model separated retracted papers from controls. Two models always said they could not know; four said "retracted" for most papers, including valid ones (up to 28 of 28 controls); two mostly said "not retracted", including for retracted papers. A direct answer about retraction status from these models therefore carries little information, and some models falsely discredit valid work. The figures await author adjudication of 20 answers and a human check. Code, prompts, decisions and logs are documented for reuse.
 
 ---
 
@@ -252,7 +251,7 @@ Agreement between the two judges is reported per field. In figures and tables, "
 
 ---
 
-## 4. Results [after runs]
+## 4. Results
 
 ### 4.1 Status-question test: provisional result (16 Nov 2026)
 
@@ -296,7 +295,7 @@ No model separates retracted papers from controls: each answers the two groups a
 
 ## 5. Discussion and Limitations
 
-[Discussion: after results]
+The one completed module concerns recognition, not the forged-status tests. Its provisional result is that, asked directly and without search, none of the nine configurations distinguishes recently retracted papers from matched valid papers. This is expected for retractions after the models' training cutoffs; the informative part is how models behave when they cannot know. Some say so. Others answer "retracted" or "not retracted" for almost every paper, so their answers look confident and are uninformative, and a model that calls most valid papers retracted would discredit sound research if a user relied on it. The result does not show what happens when a model is given search results, a retraction label, a forged note or a registry to check; those are the questions of the design in §3, which remain to be run. It also does not establish what any model saw in training. Whether stated uncertainty should count as the correct behaviour here, and how often models attach a knowledge-cutoff date to their answer, are questions we noticed after seeing the data and will report as post hoc.
 
 ### Limitations
 
@@ -336,17 +335,19 @@ No model separates retracted papers from controls: each answers the two groups a
 - **A second annotator.**
 - **More assistants.** Grok, Meta AI, Copilot, Perplexity and Mistral's Le Chat, the main European assistant, in the same setup.
 
-## 6. Conclusion [after results]
+## 6. Conclusion
+
+We designed a controlled test of whether AI model configurations check and follow an available registry when search results carry true or forged publication-status claims, and we fixed its scoring and analysis before running it. One module is complete: without search, nine configurations could not tell recently retracted health papers from matched controls, and several asserted a status for nearly every paper regardless of the truth. The forged-status experiment, the human check and the final figures for this module remain to be completed and will be reported with the same logs and rules.
 
 ---
 
 ## Code and data
 
-Repository and archived copy: [link; DOI]. Everything is released in full: every request and response of every model, including the topic drafter, the judges, the pilot and the stability runs, with all reasoning the APIs return; every adjudication with its reason; the author's labels and the labelling tool's action log; logs of every hand decision; console output of every script run; the input data as retrieved; and the code, seeds and configuration. The cost of the study is released too: the tokens, cost and time of every request, failed ones included; totals by phase and model; the estimate made before the run next to the actual cost; the credits used from each source and the money added to the account; and the author's working hours per phase, self-reported (Appendix I). The software environment of each run (Python and package versions, operating system, code commit) is recorded and released. Once the human labels, the author's decisions and the reference reviews are added, one command recomputes every table and figure from these files; any input still missing is listed. Abstracts are included as text where the article's licence allows; for the others we release the source, ID and hash, and a script restores the exact text. Each record of a test with a forged note (R4, R6, K4, R4-I, K4-I) starts with a line stating that it contains a status note forged for this study and giving the paper's true status. Every data file carries a canary string asking that it not be used to train models.
+Repository and archived copy: [not yet public; to be released with the completed study]. Everything is released in full: every request and response of every model, including the topic drafter, the judges, the pilot and the stability runs, with all reasoning the APIs return; every adjudication with its reason; the author's labels and the labelling tool's action log; logs of every hand decision; console output of every script run; the input data as retrieved; and the code, seeds and configuration. The cost of the study is released too: the tokens, cost and time of every request, failed ones included; totals by phase and model; the estimate made before the run next to the actual cost; the credits used from each source and the money added to the account; and the author's working hours per phase, self-reported (Appendix I). The software environment of each run (Python and package versions, operating system, code commit) is recorded and released. Once the human labels, the author's decisions and the reference reviews are added, one command recomputes every table and figure from these files; any input still missing is listed. Abstracts are included as text where the article's licence allows; for the others we release the source, ID and hash, and a script restores the exact text. Each record of a test with a forged note (R4, R6, K4, R4-I, K4-I) starts with a line stating that it contains a status note forged for this study and giving the paper's true status. Every data file carries a canary string asking that it not be used to train models.
 
 ## Author contributions
 
-[Solo author responsibilities and completed work to be finalized before submission.]
+Mario Marcolongo: research question, design decisions, hand screening of papers and controls, blind labelling, adjudication, and responsibility for the text. Code, statistical checks and drafting were done with AI assistance under the author's direction (see the LLM usage statement).
 
 **AI assistance.** The drafting prompt was developed with GPT-6 Astra (High reasoning effort, via Codex). MiMo-V2.5-Pro generated the questions in separate API calls using the fixed prompt, title and abstract. The original and revised prompts and their six-item pilot outputs are retained for comparison. Because these examples informed the revision, this comparison documents development rather than independent validation.
 
@@ -663,4 +664,4 @@ ChatGPT and Claude are not offered in mainland China by their developers, and th
 
 ## LLM usage statement
 
-[Written at the end, listing only the tools actually used.]
+AI coding assistants were used throughout under the author's direction: Claude (Anthropic; Claude Code) and GPT-6 Astra (OpenAI; Codex) for design review, code, tests, statistical checks and drafting of text, with each reviewing the other's work. Models called through the API as part of the method are named in §3 and Appendix D: the nine tested configurations, two judges (Grok 4.7, GLM-5.2), their backups (Nemotron 3 Ultra, Kimi K2.6) and the topic drafter (MiMo-V2.5-Pro). Every design decision and its reason is logged in DECISIONS.md. The author cannot independently audit all of the code or the biomedical content; this is a limitation.
