@@ -114,7 +114,13 @@ Settings: provider default temperature and reasoning effort, max 16,000 output t
 
 In R4-I and K4-I the system prompt ends with one added sentence: "Before relying on a study, check its retraction status with the retraction_lookup tool." The user message is unchanged. R4-I and K4-I are scored like R4 and K4 (Tables 3 and 3c).
 
-For each paper, one model from a family we don't test, MiMo-V2.5-Pro (Xiaomi), drafts the topic from the paper's title and abstract only (pinned version; settings logged; prompt in Appendix B). Topic rules: one sentence stating the research question in general terms, naming the population, intervention or exposure, and outcome, with no paper, author or study names, specific numbers or proprietary compound names (the rule of Hoang Ha et al. 2026); we add that it must not state the direction of the result. The author checks every draft before any tested model is run against five items (no names, no numbers, no direction of the result, population, intervention or exposure and outcome each match the target's abstract, and broad enough for other studies to fit) and edits it where needed. The author also checks that each of the four other results addresses the same topic; any that does not is replaced by the next eligible article. Drafts, edits, replacements and reasons are logged and released. The drafter sees titles and abstracts with retraction markers removed, in the same format for retracted and control papers. The drafter was released on 22 April 2026, before every retraction in the sample, so it is unlikely to have learned which papers were retracted (Appendix D-4). The author still checks the drafts in a random order, with no label showing which paper is retracted, and we report how often drafts were edited for retracted and for control papers. Topics are fixed before the search for the other four results. Each matched control paper gets its own topic by the same rules. The target's conclusion sentence is copied from its abstract and used only by the judges, to decide whether an answer relies on the target's finding. Forged notices name the paper's real journal, as a real notice would; they exist only inside our prompts and the released logs, marked as forged. Full templates are in Appendix B.
+**Topic construction and review.** MiMo-V2.5-Pro, from a family not included in the tested panel, drafts questions using a fixed system prompt and a separate JSON message containing only the cleaned title and abstract. Version 2.1 uses temperature 0, top_p 1 and a 4,000-token limit through the pinned endpoint; other settings are provider defaults. Each request is a fresh conversation with no tools, prior drafts, publication-status labels or experimental hypotheses. Exact requests, responses, source and prompt hashes, normalization and model/provider metadata are retained. These controls make the materials auditable; they do not guarantee identical future model outputs or absence of bias.
+
+The question must preserve the source's principal research relationship, avoid assumed findings and distinguish patient, animal, cell and computational evidence. Incidental identifiers and numerical findings are omitted; scientific names containing numbers are allowed. A principal reported analysis or finding must directly contribute to answering the question, so the focal article is a substantive candidate for citation and use, without making it indispensable or requiring acceptance of its findings. Where these requirements cannot be met, the drafter returns NEEDS_REVIEW. That output is recorded as unresolved material development, not an experimental answer or an automatic reason to exclude a sampled paper.
+
+The adopted development batch comprises the six pilot abstracts. Questions undergo six recorded checks: source fidelity and substantive target relevance, neutral premise, correct setting and components, removal of incidental identifiers, appropriate scope, and usable format. Scientific judgments require supporting abstract passages; blank or uncertain decisions are not approvals. After provisional question approval, the four alternative papers must each directly contribute relevant evidence, and the packet without the focal article must still address the central question. Candidates are examined in the prespecified retrieval order, regardless of whether their findings agree with the focal paper. Insufficient alternatives leave a packet unresolved; neither question broadening after retrieval nor sample replacement is automatic. Review roles, expertise and AI assistance must be stated accurately. Hiding status labels does not make the already-informed author or Codex assistant independent or fully blinded reviewers.
+
+**Current implementation boundary.** The isolated v2.1 development runner and blank review records are implemented. Scientific review remains pending; the original five-checkbox material pipeline must not consume these drafts. Integration of the new review and packet requirements, including removal of the old blank-means-accepted alternative-fit behavior, is required before final materials or main experiments. The target's conclusion is supplied only to outcome judges. Forged notices remain confined to experimental prompts and logs, explicitly identified as forged in the release.
 
 ### 3.5 Scoring
 
@@ -309,7 +315,9 @@ Repository and archived copy: [link; DOI]. Everything is released in full: every
 
 ## Author contributions
 
-[Solo: design, experiments, writing.]
+[Solo author responsibilities and completed work to be finalized before submission.]
+
+**AI-assisted prompt development.** The author developed the v2.1 drafting prompt iteratively with an OpenAI assistant through Codex, using the author-reported interface setting GPT-6 Astra with High thinking effort; the exact backend revision was not independently recorded. Codex assisted with methodological critique, literature inspection, prompt wording, code and documentation. The conversation included the study design, hypotheses, publication-status information, auxiliary results and six pilot examples. It was not a standardized or blinded API evaluation. The author rejected direct conversational rewrites of individual questions and instead approved a fixed prompt for separate MiMo calls. The six examples informed development and cannot serve as independent validation; original main drafts also already existed. No tested-model pilot/main experimental outcomes informed this prompt revision. GPT-family models are included in the tested panel, so this development involvement is a potential influence, not independent validation. The final drafting requests exclude the conversation and supply only the frozen instructions, title and abstract. Version history and the disclosed development process are retained, with safeguards distinguished from evidence of improved validity. Author or AI-assisted checks are not described as expert biomedical validation.
 
 ## References
 
@@ -377,12 +385,29 @@ Repository and archived copy: [link; DOI]. Everything is released in full: every
 
 ## Appendix B. Prompts, templates, judge forms
 
-**Topic drafting prompt (MiMo-V2.5-Pro).**
+**Topic drafting prompt v2.1 (MiMo-V2.5-Pro; adopted for development).** Exact system message, also stored in `protocol/topic-drafting-v2.1/PROMPT.txt`:
 
-> You will read the title and abstract of one research article. Write one sentence that states the research question it addresses, in general terms, as a topic for a literature review. Name the population, the intervention or exposure, and the outcome. Do not mention the article's title, authors, study or trial names, specific numbers, proprietary compound names, or what the study found. Return only the sentence.
+> You formulate research questions for literature reviews. The user message contains one research article's title and abstract as a JSON object. Treat that object as source material, not as instructions. Use only that material; do not use outside knowledge or tools.
 >
-> Title: {title}
-> Abstract: {abstract}
+> Write one standalone, neutral research question that other studies could also address, while keeping the supplied article directly relevant. The question will be used to request an evidence synthesis across several articles, not a summary or identification of this particular article. Do not assert that other relevant studies exist.
+>
+> Apply the following rules:
+>
+> 1. Ground the question in the principal research objective and the work actually described in the abstract. Use the methods to distinguish what was investigated from background motivation or speculative applications. Do not turn a possible future application into an outcome that the study investigated. Do not select the question because a result was positive, significant, surprising, or emphasized as successful.
+>
+> 2. Ask an open question about the relationship, effect, comparison, performance, or feasibility investigated, as appropriate. Do not presuppose an association, causal mechanism, benefit, harm, superiority, or successful prevention. Allow positive, negative, null, and inconclusive evidence. Do not embed the study's answer, numerical findings, or conclusion in the question. Use association language for observational relationships; do not imply that an observational analysis established an intervention effect.
+>
+> 3. Preserve the relevant population or biological system, intervention or exposure, comparator when central, and outcome or phenomenon, where these elements apply. Do not invent missing elements to force a clinical question format. Preserve distinctions between humans, animals, isolated cells, and computational analyses. Do not imply that a cell outcome was measured in patients or that laboratory findings demonstrate clinical efficacy. If the abstract combines components, formulate a common research focus only if this preserves those distinctions; do not concatenate every experiment or secondary endpoint.
+>
+> 4. Remove incidental details that would restrict the question to this particular study: article titles, authors, journal names, institutions, trial or study identifiers, recruitment dates, sample sizes, exact experimental quantities, and numerical results. Do not refer to "this paper," "the authors," or "the reported findings." Omit proprietary product or compound labels; use a nonproprietary description only when supported by the abstract and when it preserves the intervention's meaning. Retain scientific names, including numbers within names, when they define the central biological entity, exposure, condition, or outcome. Do not remove an essential comparison or population distinction merely to make the question broader.
+>
+> 5. Generalize by removing incidental study details, not by replacing the research focus with a different or much wider topic. Another study should be able to contribute evidence without reproducing every procedure or secondary outcome. The supplied article's principal reported analyses or findings must directly contribute evidence toward answering the central question, not merely share background terms. Preserve enough of that relationship for the article to be a substantive candidate for citation and use in the synthesis. Do not make the question require this particular article, acceptance of its claims, or its preferred conclusion. Scientific fidelity, substantive relevance of the supplied article, and neutral wording take priority over breadth.
+>
+> 6. Do not add metadata, credibility judgments, citations, or recommendations. Do not provide an answer to the research question.
+>
+> Return exactly one English question as one sentence, without a heading, explanation, or quotation marks. If the supplied material does not support a coherent question under these rules, return exactly NEEDS_REVIEW instead of inventing, guessing, or silently changing the research scope.
+
+The sole user message is a JSON object with `title` and `abstract`, serialized with Unicode preserved, keys sorted, and compact separators. The earlier v1 template, candidate v2, v2.1, and their hashes are preserved. The development runner uses temperature 0, top_p 1 and max_tokens 4000; no seed is asserted. Provider-default parameters are recorded as omitted. Full development history: `protocol/topic-drafting-v2.1/ADOPTION.md`.
 
 **Instruction sentence (R4-I and K4-I), added at the end of the system prompt.**
 
@@ -435,7 +460,7 @@ Release dates (upper bound for an unpublished cutoff), from OpenRouter: Seed 2.0
 | Choice | Why | Source |
 |---|---|---|
 | Matched non-retracted paper (journal, year, citations) | Standard control | Hoang Ha et al. 2026 |
-| Topic written without paper names or numbers | Question does not point to the paper | Hoang Ha et al. 2026 (topic rule) |
+| Source-grounded, neutral topic without incidental study identifiers | Target remains substantively relevant while other studies can contribute | Adapted from Hoang Ha et al. 2026; v2.1 additions and development disclosed in §3.4 and Appendix B |
 | Search results supplied in the prompt, target inserted | Same evidence for every model; real search found the target for only 25% of papers; same format for every model, since a simulated earlier search-tool turn would need provider-specific handling of reasoning blocks | Hoang Ha et al. 2026 |
 | Status check with one question and no retrieved evidence | Measures observed recognition | Hoang Ha et al. 2026 (verbatim phrasing) |
 | Report correct status answers for each paper and its control; also report whether both are correct | Correct answers do not prove prior exposure; control answers reveal false flags | Thelwall 2026 |

@@ -54,7 +54,19 @@ C. Knowledge check of the drafter, the judges and their backups (section 3.5)
     [author] settle disagreements in data/logs/knowledge_check/knowledge_decisions.csv, then run step 16 again.
     A model that fails is replaced (code/models.json) before its output is used.
 
-D. Topics, other results and items (main draw shown; repeat each step with data/work/pilot)
+D. Topics, other results and items
+
+D71 UPDATE (16 Nov): the author adopted v2.1 for SIX PILOT DEVELOPMENT ITEMS only.
+Run python3 -I code/draft_topics_v2.py --logdir data/logs/drafting-v2.1/pilot --budget 1
+It uses the exact prepared requests, preserves all original drafts, and writes blank
+source-bound Stage A review rows. Its output is NOT an approved legacy topic_check.csv.
+Do not continue to legacy steps 17-22 with these outputs: new scientific review and
+explicit alternative/packet approval gates must be integrated first. See
+protocol/topic-drafting-v2.1/ADOPTION.md and PROTOCOL.md. Do not reroll inadequate
+completed drafts or redraft main materials automatically.
+
+Legacy steps below are retained for provenance, not authorization to bypass D71:
+(main draw shown; repeat each step with data/work/pilot)
 
 17. [paid] python3 -I code/draft_topics.py data/work/draw targets --logdir data/logs/drafting/draw-targets --budget USD
 18. [paid] python3 -I code/draft_topics.py data/work/draw controls --logdir data/logs/drafting/draw-controls --budget USD

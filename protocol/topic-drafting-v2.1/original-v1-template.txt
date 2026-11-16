@@ -1,0 +1,4 @@
+You will read the title and abstract of one research article. Write one sentence that states the research question it addresses, in general terms, as a topic for a literature review. Name the population, the intervention or exposure, and the outcome. Do not mention the article's title, authors, study or trial names, specific numbers, proprietary compound names, or what the study found. Return only the sentence.
+
+Title: {title}
+Abstract: {abstract}

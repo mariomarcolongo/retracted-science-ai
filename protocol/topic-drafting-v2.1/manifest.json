@@ -1,0 +1,54 @@
+{
+  "version": "v2.1-candidate",
+  "status": "NOT_ACTIVE_NOT_VALIDATED",
+  "created_utc": "2026-11-16T04:23:44.759335+00:00",
+  "purpose": "reviewable method proposal; offline preparation only",
+  "paid_calls": 0,
+  "prompt_authoring": "AI-assisted methods discussion through Codex with the study author; assistant had study context; not independent or blinded validation",
+  "assistant_model_identity": "not independently verified in this artifact",
+  "development_items": 6,
+  "development_history": "six pilot drafts already inspected; original main drafts and auxiliary status answers already exist; no untouched-holdout claim",
+  "request_configuration": {
+    "model": "xiaomi/mimo-v2.5-pro",
+    "provider": {
+      "only": [
+        "atlas-cloud/fp8"
+      ],
+      "allow_fallbacks": false,
+      "require_parameters": true
+    },
+    "temperature": 0,
+    "top_p": 1,
+    "max_tokens": 4000
+  },
+  "endpoint_support_evidence": {
+    "path": "results/endpoints-current/xiaomi_mimo-v2.5-pro.json",
+    "sha256": "1496fe7b57ba482937f45751bde34a78ee9b5b0af9dd325e2cc4802aa7b68c46",
+    "checked_utc": "2026-11-16T02:36:37.598691+00:00",
+    "actual_acceptance": "NOT_TESTED"
+  },
+  "prior_source_sha256": {
+    "code/draft_topics.py": "28987b154617244d6be541680b119c70dc1e739b37fbd1dec671ca153b7175be",
+    "code/models.json": "dd240bdb1c4a3b4d9a23048f8bee7a8e2a295e2509bfb1e177dd2ce1e958cb69",
+    "code/other_results.py": "84dde748cf0d644edb11f65b36af9d7bce01101a24783258079810b1a8034bde",
+    "code/build_items.py": "f6081dad79e6907dc57030818c11036a0c273b47c21092956ca0a31a59141f5d",
+    "data/work/pilot/topic_check.csv": "e7afbd6b698938f8c0ff6341fc9bb6581453064caa8ebac43b2939bbd518f99b",
+    "data/work/pilot/topics_draft.json": "dc903a1cb6e8af0bf9dea27f8c7a65037f11658d7bdee61fd49e25131d7c4d2d",
+    "data/work/draw/topic_check.csv": "9691ef8f1a6c957a96f2a98f0aaf8a9d957fc51096d4dcfb242424a52964285a",
+    "data/work/draw/topics_draft.json": "50aef304a0416ffd90177cc7fb6434784b4ba22f12d41eb829c26fb790b54c60"
+  },
+  "candidate_artifact_sha256": {
+    "protocol/topic-drafting-v2.1/PROMPT.txt": "dd71d8ee6e625ed222f1d2e116d556db61eb4adf3e56b028a05362f4863562cf",
+    "protocol/topic-drafting-v2.1/PROTOCOL.md": "983bc017b06354e1d936254bf02222b81b05f16bd0d44f2244bd5684aaa18314",
+    "protocol/topic-drafting-v2.1/original-v1-template.txt": "cc908f9571d9751cf2be2c73feb7e10d5b4e0d771af0ed91987d034bdb7cf13b",
+    "results/topic-drafting-v2.1-candidate/pilot-requests.NOT-SENT.json": "ae94287a2bee1351f2f78f94ed164c8908d8a4f790d9d00cd10b9d8541729c0e",
+    "results/topic-drafting-v2.1-candidate/stage-a-review.BLANK.csv": "0caafdff16fd1ade27217213840853d3d7562e4321c55bf4b993721f071014fa"
+  },
+  "review_decisions_entered": 0,
+  "activation_requires": "integration and documented adoption described in PROTOCOL.md; current production runner unchanged",
+  "parent_manifest": {
+    "path": "protocol/topic-drafting-v2/manifest.json",
+    "sha256": "e0bea177c4991c06f6283b61966d1396996ff79ca961004cb455523fdac6249f"
+  },
+  "revision_reason": "Author clarification: focal article must remain a substantive candidate for citation/use; relevance must not be inferred from observed model citation."
+}

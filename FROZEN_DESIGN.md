@@ -89,6 +89,11 @@ them at freeze; any change must be recorded before the main run.
       scheduling reserve, not a guaranteed provider billing cap.
 - [ ] Main items, model settings, analysis and scoring rules frozen and published.
 
+Topic-method update D71: prompt v2.1 adopted for six pilot development drafts only;
+see protocol/topic-drafting-v2.1/ADOPTION.md. Scientific review and the new explicit
+alternative/packet approval gates remain pending. The old five-checkbox pipeline
+cannot establish v2.1 approval.
+
 Pilot report / decisions: PENDING. Main run authorization and start time: PENDING.
 If only a pilot is completed for the competition, label it as pilot evidence and
 leave these main-study fields pending. No power or population claim follows from

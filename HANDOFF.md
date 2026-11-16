@@ -272,3 +272,99 @@ old directory using the new guide; no rejudging is needed for these adjudication
 D70 documented in paper/decisions/changelog. Next user action: six pilot topics
 can now be reviewed in results/pilot-topic-review.html. Do not fill author checks
 for them. No new paid calls; recorded total still $4.1764.
+
+## Pilot topic review assistance
+
+User said the six topics are too specialized for them to edit. Reviewed all six
+against source abstracts and wrote results/pilot-topic-editorial-review.md plus
+pilot-topic-revision-proposals.json. The HTML review page now shows plain-language
+fields, specific source-matching concerns and proposed revisions in its editable
+final-topic boxes. Original drafts retained; topic_check.csv unchanged; no boxes
+checked. Proposals are AI-assisted editorial checks, not expert biomedical
+validation. Four alternative papers have NOT been verified for any proposal.
+Do not silently treat the new HTML values as approved or the prior original
+drafts as all leading: microsurgery device and nanoparticles drafts were already
+direction-neutral. User workload/domain-expertise limits need honest handling.
+
+## Author objection: AI topic rewriting NOT adopted
+
+User explicitly objected that Codex proposing/broadening all six topics changes
+the methodology and may add bias. Acknowledge this, do not treat author-edit
+permission as automatic authorization for a second AI drafter. Restored original
+MiMo drafts in results/pilot-topic-review.html; source topic_check.csv unchanged
+(zero final edits, zero criteria checked). Preserved proposals with NOT ADOPTED
+labels. No proposals used in evidence packets or tested-model calls. The original
+review workload/expertise problem remains unresolved: do not quietly rewrite
+topics, certify specialist fit, or start a pilot with unreviewed materials. Any
+change to topic-review roles/rules needs explicit prospective documentation and
+a consistent rule across papers, not an ad hoc rescue of individual topics.
+
+## Candidate standardized topic method v2 (not activated)
+
+The author prioritized methodological strength, reproducibility and auditability,
+and objected to conversation-context-dependent GPT rewrites. Prepared an exact
+candidate prompt and procedure in protocol/topic-drafting-v2/: PROMPT.txt,
+PROTOCOL.md, original-v1-template.txt and manifest.json. The method distinguishes
+source fidelity, neutral premises, biological setting, incidental identifiers,
+scope and format, then separately verifies alternative-paper relevance and the
+four-paper packet's contribution without the target. Its literature mapping cites
+Hoang Ha et al. Appendix C, Taslimi et al. Appendices F-G and WildBench, distinguishing
+precedents from unvalidated additions. Does not claim expert or independent review.
+
+Offline preparation only: results/topic-drafting-v2-candidate contains six exact
+PREPARED_NOT_SENT request bodies (title/abstract only, neutral code outside body,
+common system prompt, existing MiMo/provider, proposed temperature 0, top_p 1,
+max_tokens 4000) and 36 blank Stage A criterion rows. A saved endpoint snapshot lists
+these settings as supported; no new request acceptance has been tested. The prompt,
+protocol, inputs and artifacts have hashes. Original pilot/main drafts, checks and
+runner files were verified unchanged. No paid calls or new reviewer approvals.
+
+Integration requirements are listed explicitly, including a newly confirmed gap:
+other_results.py/build_items.py currently treat blank alternative-fit decisions as
+acceptance. The candidate requires explicit approval and content-bound reviews.
+Also separate provisional scope judgment before search from demonstrated alternative
+availability after search. Do not run the existing scripts as if these changes are
+implemented. Do not count development results as held-out validation: six pilot
+drafts informed this prompt, and main v1 drafts plus auxiliary SQ answers exist.
+No per-item conversational rescue, semantic rerolls, outcome-guided topic editing,
+or automatic exclusions/replacements are authorized by this candidate package.
+
+## Candidate v2.1: target must remain substantively usable
+
+Author clarified that broadening must retain a genuine opportunity for the target
+to be cited and used, consistent with the study's status-handling question.
+Prepared protocol/topic-drafting-v2.1 and results/topic-drafting-v2.1-candidate;
+v2 remains intact. Rule 5 and Stage A1 now require a principal reported target
+analysis/finding to contribute directly to answering the question, not only share
+background keywords. Added explicit prohibition on selecting or redrafting topics
+using observed experimental citation/reliance rates. Same criterion for targets
+and matched controls. Relevant articles may legitimately be rejected or omitted;
+noncitation alone is not status recognition or proof of internal consideration.
+Both version manifests verified; six updated requests unsent, 36 review decisions
+blank. Active runner, original topics, and paper unchanged. No paid calls.
+
+## D71 adopted and six v2.1 drafts completed
+
+User approved using v2.1 and requested disclosure. Added isolated runner
+code/draft_topics_v2.py, explicit optional sampling parameters in openrouter.chat
+(other phases retain omitted defaults), and offline regressions for frozen input,
+no semantic rerolls, resume recovery after an HTTP completion, and review preservation.
+Full suite: 122 passed. Drafting tests use synthetic fixtures, not private local data.
+Paper section 3.4, Appendix B (exact prompt), AI contribution disclosure, D71, run
+order and freeze record updated; HTML regenerated with Python 3.13 (the renderer
+uses syntax unsupported by the system Python 3.9). ADOPTION.md explains conversational
+Codex involvement, author-reported GPT-6 Astra/High setting with unverified backend
+revision, chronology and limits. Original prompts and all original drafts retained.
+
+Six paid MiMo calls completed in data/logs/drafting-v2.1/pilot, costing $0.0061206816;
+no unknown costs. Approximate cumulative preparation cost $4.182521. All six are
+pending_scientific_review; 36 review decisions blank. All raw requests/responses and
+source-bound review identities preserved. Read-only comparison:
+results/pilot-topic-v21-comparison.html. Report: results/topic-development-v21-report.json.
+The prevention premise is removed, but several topics remain narrow/multi-component;
+no claim of scientific validation. No semantic rerolls, no main redrafting, no
+verified alternatives or tested-model pilot/main execution. Next: assess draft
+fidelity/scope and establish the scientific review role without misrepresenting
+non-specialist or AI checks. New drafts MUST NOT enter the legacy five-checkbox
+pipeline. Its blank-means-accepted alternative-fit behavior and missing Stage B
+packet gate still need integration before final experimental materials.

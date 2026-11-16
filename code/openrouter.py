@@ -155,8 +155,13 @@ def _provider(provider):
     return {"only": [provider], "allow_fallbacks": False, "require_parameters": True}
 
 
-def chat(model, provider, messages, tools=None, max_tokens=16000, response_format=None, tool_choice=None, log=None):
+def chat(model, provider, messages, tools=None, max_tokens=16000, response_format=None, tool_choice=None, log=None,
+         temperature=None, top_p=None):
     body = {"model": model, "messages": messages, "max_tokens": max_tokens, "provider": _provider(provider)}
+    if temperature is not None:
+        body["temperature"] = temperature
+    if top_p is not None:
+        body["top_p"] = top_p
     if tools:
         body["tools"] = tools
     if tool_choice:
