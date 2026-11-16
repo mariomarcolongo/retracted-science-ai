@@ -167,7 +167,7 @@ def main():
         human_forms=len(humans), validated_by_pooled_human_check=validated, unresolved_ancillary_field_disagreements=dict(ancillary),
         scope='SQ only; no ancillary or forged-notice outcomes', rationale_collected=False,
         denominator='Non-refusal usable answers, with operational missing reported separately; main and pilot separated.',
-        input_sha256={str(p.relative_to(ROOT)):sha_file(p) for p in set(inputs)})
+        input_sha256={str(p.relative_to(ROOT)):sha_file(p) for p in sorted(set(inputs))})
     (out/'manifest.json').write_text(json.dumps(summary, indent=2)+'\n')
     def agr(comparison, field='asserted_status'):
         r = next(c for c in checks if c['comparison'] == comparison and c['field'] == field)

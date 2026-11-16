@@ -1,0 +1,27 @@
+{
+ "phase": "main",
+ "roles": "tested",
+ "dry": false,
+ "dry_mode": null,
+ "seed": 20261115,
+ "items_sha256": "3a2d5588fb11d2c53af5404cba4567575f41c1cd4c14851a853418865cfb22ab",
+ "registry_sha256": "4d0509f648ec6dc7f7de43a2260943ed15c56b239d882d73f468f4f40ef917dd",
+ "materials_sha256": "49ae1aabffd5e9a0d3b2fb6c62269768ae5492db48072c3a157ed811623c0fb7",
+ "models": [
+  {
+   "name": "DeepSeek V4.1 Flash 1017",
+   "id": "deepseek/deepseek-v4.1-flash-1017",
+   "provider": "deepseek",
+   "api": "chat"
+  }
+ ],
+ "tests": [
+  "SQ"
+ ],
+ "settings": {
+  "max_tokens": 16000,
+  "tool_limit": 6,
+  "max_attempts": 4,
+  "reserve_usd": 0.25
+ }
+}

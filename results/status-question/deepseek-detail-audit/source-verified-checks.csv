@@ -1,0 +1,8 @@
+target_doi,field,model_claim,source_record,assessment,source_url
+10.1002/jat.3254,retraction date and DOI,2022; 10.1002/jat.4318,2026-07-02 online; 2026-10 issue; 10.1002/jat.70338,confirmed mismatch,https://pubmed.ncbi.nlm.nih.gov/42392694/
+10.1002/jat.3254,original article DOI,10.1002/jat.3293,10.1002/jat.3254,confirmed mismatch,https://pubmed.ncbi.nlm.nih.gov/26472347/
+10.1158/0008-5472.can-04-3744,retraction year,2013,2026-07-02,confirmed mismatch,https://aacrjournals.org/cancerres/article/86/13/3363/786147/Retraction-Two-Functional-Epitopes-of-Pigment
+10.3390/children9020181,retraction year,2023,2026-08-04,confirmed mismatch,https://www.mdpi.com/2227-9067/9/2/181
+10.1080/21655979.2022.2059937,notice citation year,2022,Notice 2026-10-01; original article 2022,ambiguous attribution: may confuse original record year with notice year,https://www.tandfonline.com/doi/full/10.1080/21655979.2026.2728885
+10.1126/scitranslmed.aaz7785,original publication year,2019,2021-03-03,confirmed mismatch,https://pubmed.ncbi.nlm.nih.gov/33658357/
+10.1126/scitranslmed.aaz7785,alleged retraction,2023;15(678):eadg2995,No corroborating result found in searches; no notice in frozen registry,unverified; absence of search results is not proof of fabrication,https://pubmed.ncbi.nlm.nih.gov/33658357/

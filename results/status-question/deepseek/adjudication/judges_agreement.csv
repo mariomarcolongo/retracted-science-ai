@@ -1,0 +1,20 @@
+agreement,field,form,kappa,n
+,reliance,review,,0
+,status_warning,review,,0
+,retraction_mentioned,review,,0
+,asserted_status,review,,0
+,conflicting_assertions,review,,0
+,status_source,review,,0
+,notice_details,review,,0
+,claimed_checks,review,,0
+,refusal,review,,0
+,status_line_treatment,review,,0
+,excluded_due_to_retraction_claim,review,,0
+,lookup_account,review,,0
+,other_status_claims,review,,0
+1.0,asserted_status,status question,1.0,56
+1.0,conflicting_assertions,status question,,56
+0.7857142857142857,status_source,status question,0.13846153846153825,56
+0.6964285714285714,notice_details,status question,0.6925064599483204,56
+0.8214285714285714,claimed_checks,status question,0.6323046618516086,56
+1.0,refusal,status question,,56

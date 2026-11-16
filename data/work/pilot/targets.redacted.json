@@ -1,0 +1,164 @@
+{
+ "note": "Abstracts are withheld as text. Run: python3 -I code/restore_abstracts.py restore",
+ "file_sha256": "2acb67502a325b8a8b450f4c444398271c24ddbe4ef045ef67471e41c3465b41",
+ "records": [
+  {
+   "id": "72377",
+   "doi": "10.1016/j.ijbiomac.2024.135393",
+   "pmid": "39245097",
+   "journal": "International Journal of Biological Macromolecules",
+   "openalex_source": "https://openalex.org/S83853393",
+   "openalex_id": "https://openalex.org/W4402295047",
+   "publication_year": 2024,
+   "openalex_type": "article",
+   "cites": 2,
+   "retraction_date": "2026-08-12",
+   "original_date": "2024-09-10",
+   "reasons": "Compromised Peer Review;Investigation by Journal/Publisher;Unreliable Results and/or Conclusions;",
+   "subfield": "Nephrology",
+   "subfield_id": "https://openalex.org/subfields/2727",
+   "title": "CD2 glycoprotein and CD44 structure and prevention of diabetes nephropathy: Central characteristics of related genes based on WGCNA and PPI.",
+   "title_marker_removed": false,
+   "abstract": null,
+   "abstract_source": "pubmed",
+   "abstract_notes": [],
+   "retraction_words_in_abstract": false,
+   "pubmed_types": [
+    "Journal Article",
+    "Retracted Publication"
+   ],
+   "author_names": [
+    "jun pang",
+    "qiuhong zhong",
+    "rong wang",
+    "xin liu",
+    "xu lin",
+    "yi he",
+    "zhiming tang"
+   ],
+   "authors_display": [
+    "Yi He",
+    "Xin Liu",
+    "Rong Wang",
+    "Jun Pang",
+    "Zhiming Tang",
+    "Qiuhong Zhong",
+    "Xu Lin"
+   ],
+   "author_ids": [
+    "https://openalex.org/A5032028444",
+    "https://openalex.org/A5057432395",
+    "https://openalex.org/A5100324898",
+    "https://openalex.org/A5100352320",
+    "https://openalex.org/A5100585803"
+   ],
+   "rank": 1,
+   "blocked_by": "",
+   "abstract_sha256": "b953ad168ddf60aa9041afce11c5de8a962453a2ee13e903cb83260d195e9165"
+  },
+  {
+   "id": "73751",
+   "doi": "10.1080/21655979.2022.2070583",
+   "pmid": "35506305",
+   "journal": "Bioengineered",
+   "openalex_source": "https://openalex.org/S4210193419",
+   "openalex_id": "https://openalex.org/W4225411297",
+   "publication_year": 2022,
+   "openalex_type": "article",
+   "cites": 3,
+   "retraction_date": "2026-10-01",
+   "original_date": "2022-05-04",
+   "reasons": "Author Unresponsive;Concerns/Issues about Data;Concerns/Issues about Results and/or Conclusions;Investigation by Journal/Publisher;",
+   "subfield": "Cancer Research",
+   "subfield_id": "https://openalex.org/subfields/1306",
+   "title": "Effects of microRNA-101-3p on predicting pediatric acute respiratory distress syndrome and its role in human alveolar epithelial cell.",
+   "title_marker_removed": false,
+   "abstract": null,
+   "abstract_source": "pubmed",
+   "abstract_notes": [],
+   "retraction_words_in_abstract": false,
+   "pubmed_types": [
+    "Journal Article",
+    "Retracted Publication"
+   ],
+   "author_names": [
+    "fang yin",
+    "liu zhao",
+    "lumin gan",
+    "min cao",
+    "qi li",
+    "yaqin duan",
+    "zili cai"
+   ],
+   "authors_display": [
+    "Fang Yin",
+    "Qi Li",
+    "Min Cao",
+    "Yaqin Duan",
+    "Liu Zhao",
+    "Lumin Gan",
+    "Zili Cai"
+   ],
+   "author_ids": [
+    "https://openalex.org/A5015100409",
+    "https://openalex.org/A5047974044",
+    "https://openalex.org/A5100350253",
+    "https://openalex.org/A5103654468",
+    "https://openalex.org/A5113903614"
+   ],
+   "rank": 4,
+   "blocked_by": "",
+   "abstract_sha256": "c3f637a7243c067c0bb4b25b7cf975dd0cf3c2b9a70f0f2fe20c77ac61b3713b"
+  },
+  {
+   "id": "74021",
+   "doi": "10.1097/prs.0000000000010512",
+   "pmid": "37014957",
+   "journal": "Plastic and Reconstructive Surgery",
+   "openalex_source": "https://openalex.org/S100736837",
+   "openalex_id": "https://openalex.org/W4362546179",
+   "publication_year": 2023,
+   "openalex_type": "article",
+   "cites": 3,
+   "retraction_date": "2026-10-01",
+   "original_date": "2024-01-01",
+   "reasons": "Concerns/Issues about Results and/or Conclusions;Investigation by Journal/Publisher;Investigation by Third Party;Results Not Reproducible;Unreliable Results and/or Conclusions;",
+   "subfield": "Surgery",
+   "subfield_id": "https://openalex.org/subfields/2746",
+   "title": "Application of a Microsuction Background Device for Microanastomosis in a Rat Femoral Vessel Model.",
+   "title_marker_removed": false,
+   "abstract": null,
+   "abstract_source": "pubmed",
+   "abstract_notes": [],
+   "retraction_words_in_abstract": false,
+   "pubmed_types": [
+    "Journal Article",
+    "Retracted Publication"
+   ],
+   "author_names": [
+    "ankur khajuria",
+    "hyung hwa jeong",
+    "joon pio hong",
+    "stelios chatzimichail",
+    "theodora papavasiliou"
+   ],
+   "authors_display": [
+    "Ankur Khajuria",
+    "Hyung Hwa Jeong",
+    "Theodora Papavasiliou",
+    "Stelios Chatzimichail",
+    "Joon Pio Hong"
+   ],
+   "author_ids": [
+    "https://openalex.org/A5040064946",
+    "https://openalex.org/A5050534280",
+    "https://openalex.org/A5054248634",
+    "https://openalex.org/A5067823400",
+    "https://openalex.org/A5091552260"
+   ],
+   "rank": 6,
+   "blocked_by": "",
+   "abstract_sha256": "8814cd1ce160fe5a19e34bcd9a04cf7c442eb70c91bab9f9ddfb4153185e4a4f"
+  }
+ ]
+}

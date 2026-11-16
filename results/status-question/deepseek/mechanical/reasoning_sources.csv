@@ -1,0 +1,2 @@
+answers,api,dry,finding,model_id,paths,provider,text_returned
+56,chat,False,observed text at listed paths,deepseek/deepseek-v4.1-flash-1017,"[""choices[].message.reasoning"",""choices[].message.reasoning_details[].text""]",deepseek,56

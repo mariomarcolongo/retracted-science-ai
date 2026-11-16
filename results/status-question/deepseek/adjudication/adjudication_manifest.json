@@ -1,0 +1,121 @@
+{
+  "items_sha256": "3a2d5588fb11d2c53af5404cba4567575f41c1cd4c14851a853418865cfb22ab",
+  "run_manifest": {
+    "phase": "main",
+    "roles": "tested",
+    "dry": false,
+    "dry_mode": null,
+    "seed": 20261115,
+    "items_sha256": "3a2d5588fb11d2c53af5404cba4567575f41c1cd4c14851a853418865cfb22ab",
+    "registry_sha256": "4d0509f648ec6dc7f7de43a2260943ed15c56b239d882d73f468f4f40ef917dd",
+    "materials_sha256": "49ae1aabffd5e9a0d3b2fb6c62269768ae5492db48072c3a157ed811623c0fb7",
+    "models": [
+      {
+        "name": "DeepSeek V4.1 Flash 1017",
+        "id": "deepseek/deepseek-v4.1-flash-1017",
+        "provider": "deepseek",
+        "api": "chat"
+      }
+    ],
+    "tests": [
+      "SQ"
+    ],
+    "settings": {
+      "max_tokens": 16000,
+      "tool_limit": 6,
+      "max_attempts": 4,
+      "reserve_usd": 0.25
+    }
+  },
+  "judging_manifest": {
+    "dry": false,
+    "form_version": "5fed95035f53",
+    "items_sha256": "3a2d5588fb11d2c53af5404cba4567575f41c1cd4c14851a853418865cfb22ab",
+    "judges": [
+      {
+        "name": "Grok 4.7",
+        "id": "x-ai/grok-4.7",
+        "provider": "xai"
+      },
+      {
+        "name": "GLM-5.2",
+        "id": "z-ai/glm-5.2",
+        "provider": "together"
+      }
+    ],
+    "backups": [
+      {
+        "name": "Nemotron 3 Ultra",
+        "id": "nvidia/nemotron-3-ultra-550b-a55b",
+        "provider": "deepinfra/fp4",
+        "backup_for": "Grok 4.7"
+      },
+      {
+        "name": "Kimi K2.6",
+        "id": "moonshotai/kimi-k2.6",
+        "provider": "moonshotai",
+        "backup_for": "GLM-5.2"
+      }
+    ],
+    "max_tokens": 16000
+  },
+  "answers": [
+    "04111470ab0ada18",
+    "04d03a831267d1f3",
+    "04ffcab467eb6a01",
+    "06d0d2db2d6968a9",
+    "08090412a2a80605",
+    "13396722f2689328",
+    "15f2ca8ee740d13f",
+    "1c1cbb15048fa4b8",
+    "206a635163fe9c12",
+    "2402de955b7b4df9",
+    "26b55cb9fc7feea3",
+    "3126ce926f468cba",
+    "3e859667865a92ca",
+    "46ec0d6ee38c636a",
+    "4a689bc926abff8b",
+    "4e2822f3b896b921",
+    "4f3761eb159b80e2",
+    "515db74d950476c6",
+    "5c1a9a07241d018f",
+    "60fe423a7a888e6a",
+    "648b7640af6ff3a6",
+    "678eae0b3cab5489",
+    "6d474235ac28b600",
+    "73326645618cc323",
+    "78aea0277497bd8a",
+    "7e2328c641c9a602",
+    "7f7e6837828208fa",
+    "89b2b1b6d40bdc12",
+    "8b1c60b3d0bb1cb8",
+    "8b4200c1fd6db9b7",
+    "8bbe193708e85708",
+    "8d638cfd490dba52",
+    "9147abf4c89f938d",
+    "94cbc80f8dd1d55b",
+    "96abddb1684a7c6b",
+    "97e8f1c0b0601f8b",
+    "9a7d9562758b99d4",
+    "9db3bb8383c90929",
+    "9ef8799a52598e6f",
+    "a3e3cd627a88cba3",
+    "a88748eba04872e7",
+    "a929ae57f8d245c7",
+    "aa4c698950648d8e",
+    "b7bd268c855adb84",
+    "c099de01fbd16222",
+    "c27dd45c4347e05a",
+    "c5d3f3163c82b832",
+    "d86b78bf2f7ea83f",
+    "d8f0546c53025e7b",
+    "d8fbd4b9a5700b0d",
+    "e392e2899f0a60ed",
+    "e692f29f0ec4a2a3",
+    "eb2be8a8d2162d5f",
+    "f4349efc2bfaed06",
+    "f5b52b17db1a77bd",
+    "fb1e1fb09a5da6a5"
+  ],
+  "forms_sha256": "8d707e3bfd576aedbbca3538a077e27478a7de38e451871a16cabca8d7dea20e"
+}

@@ -1,0 +1,4 @@
+Fill decision with judge 1, judge 2, or a replacement field value, and give a reason.
+Keep quotations as evidence; judge the answer's meaning, not the paper's true status.
+Complete the separately sampled human labels before opening this sheet.
+The human-label gate is mandatory for live main runs; pilot, dry and auxiliary runs can proceed without it.

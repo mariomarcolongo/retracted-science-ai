@@ -1,0 +1,157 @@
+{
+  "recorded_utc": "2026-11-16T11:21:26.384722+00:00",
+  "source_file": "results/status-question/status-review/author-status-decisions.csv",
+  "source_sha256": "525cc84d90ad8c02164c5e5e345804a16afce5ba697eff383700de3f2fe853b3",
+  "decision_source": "author",
+  "rationale_collected": false,
+  "procedure_change": "Author opted to omit written reasons for the 21 asserted-status adjudications. Decisions are retained unchanged; no AI rationale substitutes for an author rationale. This does not settle ancillary fields or validate the complete analysis.",
+  "decisions": [
+    {
+      "code": "0FE985BA86FB",
+      "batch": "main",
+      "field": "asserted_status",
+      "decision": "not retracted",
+      "reason": null
+    },
+    {
+      "code": "16A4A107963F",
+      "batch": "main",
+      "field": "asserted_status",
+      "decision": "not retracted",
+      "reason": null
+    },
+    {
+      "code": "183742A0E27F",
+      "batch": "main",
+      "field": "asserted_status",
+      "decision": "not retracted",
+      "reason": null
+    },
+    {
+      "code": "24598248C813",
+      "batch": "main",
+      "field": "asserted_status",
+      "decision": "retracted",
+      "reason": null
+    },
+    {
+      "code": "2B837BEC53A7",
+      "batch": "main",
+      "field": "asserted_status",
+      "decision": "not retracted",
+      "reason": null
+    },
+    {
+      "code": "3C86848E0462",
+      "batch": "main",
+      "field": "asserted_status",
+      "decision": "not retracted",
+      "reason": null
+    },
+    {
+      "code": "471F3FB5D70C",
+      "batch": "main",
+      "field": "asserted_status",
+      "decision": "not retracted",
+      "reason": null
+    },
+    {
+      "code": "4C24E578C07E",
+      "batch": "main",
+      "field": "asserted_status",
+      "decision": "uncertain",
+      "reason": null
+    },
+    {
+      "code": "564FC87F423D",
+      "batch": "main",
+      "field": "asserted_status",
+      "decision": "not retracted",
+      "reason": null
+    },
+    {
+      "code": "5B0AEE95029D",
+      "batch": "main",
+      "field": "asserted_status",
+      "decision": "not retracted",
+      "reason": null
+    },
+    {
+      "code": "5F8506B606C6",
+      "batch": "main",
+      "field": "asserted_status",
+      "decision": "not retracted",
+      "reason": null
+    },
+    {
+      "code": "7B097FDA3F96",
+      "batch": "main",
+      "field": "asserted_status",
+      "decision": "not retracted",
+      "reason": null
+    },
+    {
+      "code": "8E21CF576DBD",
+      "batch": "main",
+      "field": "asserted_status",
+      "decision": "uncertain",
+      "reason": null
+    },
+    {
+      "code": "970E29C9B71C",
+      "batch": "main",
+      "field": "asserted_status",
+      "decision": "not retracted",
+      "reason": null
+    },
+    {
+      "code": "9A5038107861",
+      "batch": "main",
+      "field": "asserted_status",
+      "decision": "not retracted",
+      "reason": null
+    },
+    {
+      "code": "A64AD5B259E8",
+      "batch": "main",
+      "field": "asserted_status",
+      "decision": "not retracted",
+      "reason": null
+    },
+    {
+      "code": "A7F1EA8644BB",
+      "batch": "main",
+      "field": "asserted_status",
+      "decision": "retracted",
+      "reason": null
+    },
+    {
+      "code": "B3967213F343",
+      "batch": "main",
+      "field": "asserted_status",
+      "decision": "not retracted",
+      "reason": null
+    },
+    {
+      "code": "CA6CE4AA6371",
+      "batch": "main",
+      "field": "asserted_status",
+      "decision": "not retracted",
+      "reason": null
+    },
+    {
+      "code": "D77AAA860249",
+      "batch": "main",
+      "field": "asserted_status",
+      "decision": "not retracted",
+      "reason": null
+    },
+    {
+      "code": "F52B3A87505E",
+      "batch": "main",
+      "field": "asserted_status",
+      "decision": "not retracted",
+      "reason": null
+    }
+  ]
+}

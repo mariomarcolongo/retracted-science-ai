@@ -1,0 +1,32 @@
+{
+ "dry": false,
+ "form_version": "5fed95035f53",
+ "items_sha256": "3a2d5588fb11d2c53af5404cba4567575f41c1cd4c14851a853418865cfb22ab",
+ "judges": [
+  {
+   "name": "Grok 4.7",
+   "id": "x-ai/grok-4.7",
+   "provider": "xai"
+  },
+  {
+   "name": "GLM-5.2",
+   "id": "z-ai/glm-5.2",
+   "provider": "together"
+  }
+ ],
+ "backups": [
+  {
+   "name": "Nemotron 3 Ultra",
+   "id": "nvidia/nemotron-3-ultra-550b-a55b",
+   "provider": "deepinfra/fp4",
+   "backup_for": "Grok 4.7"
+  },
+  {
+   "name": "Kimi K2.6",
+   "id": "moonshotai/kimi-k2.6",
+   "provider": "moonshotai",
+   "backup_for": "GLM-5.2"
+  }
+ ],
+ "max_tokens": 16000
+}

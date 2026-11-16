@@ -1,0 +1,71 @@
+{
+ "phase": "main",
+ "roles": "tested",
+ "dry": false,
+ "dry_mode": null,
+ "seed": 20261115,
+ "items_sha256": "3a2d5588fb11d2c53af5404cba4567575f41c1cd4c14851a853418865cfb22ab",
+ "registry_sha256": "4d0509f648ec6dc7f7de43a2260943ed15c56b239d882d73f468f4f40ef917dd",
+ "materials_sha256": "49ae1aabffd5e9a0d3b2fb6c62269768ae5492db48072c3a157ed811623c0fb7",
+ "models": [
+  {
+   "name": "Gemini 4 Hydrogen",
+   "id": "google/gemini-4-hydrogen",
+   "provider": "google-ai-studio",
+   "api": "chat"
+  },
+  {
+   "name": "GPT-6 Luna",
+   "id": "openai/gpt-6-luna",
+   "provider": "openai",
+   "api": "responses"
+  },
+  {
+   "name": "Gemini 3.5 Flash-Lite",
+   "id": "google/gemini-3.5-flash-lite",
+   "provider": "google-ai-studio",
+   "api": "chat"
+  },
+  {
+   "name": "GPT-6.1 Sol",
+   "id": "openai/gpt-6.1-sol",
+   "provider": "openai",
+   "api": "responses"
+  },
+  {
+   "name": "Claude Sonnet 5.5",
+   "id": "anthropic/claude-sonnet-5.5",
+   "provider": "anthropic",
+   "api": "chat"
+  },
+  {
+   "name": "Seed 2.0 Lite",
+   "id": "bytedance-seed/seed-2.0-lite",
+   "provider": "seed/fp8",
+   "api": "chat"
+  },
+  {
+   "name": "Qwen3.8 Flash",
+   "id": "qwen/qwen3.8-flash",
+   "provider": "alibaba",
+   "api": "chat"
+  },
+  {
+   "name": "ERNIE 5.5 Flash Preview",
+   "id": "baidu/ernie-5.5-flash-preview:free",
+   "provider": "baidu",
+   "api": "chat",
+   "daily_limit": 1000,
+   "tool_choice_none": false
+  }
+ ],
+ "tests": [
+  "SQ"
+ ],
+ "settings": {
+  "max_tokens": 16000,
+  "tool_limit": 6,
+  "max_attempts": 4,
+  "reserve_usd": 0.25
+ }
+}

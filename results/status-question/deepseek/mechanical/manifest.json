@@ -1,0 +1,10 @@
+{
+  "stage": "mechanical",
+  "dry": false,
+  "phase": "main",
+  "items_sha256": "3a2d5588fb11d2c53af5404cba4567575f41c1cd4c14851a853418865cfb22ab",
+  "registry_sha256": "4d0509f648ec6dc7f7de43a2260943ed15c56b239d882d73f468f4f40ef917dd",
+  "runs_sha256": "3f123a5f3fdc01176e8d6c1bc2fd045c0357310fc75902a668f95c14be2a6add",
+  "online": false,
+  "reference_review_pending": 0
+}

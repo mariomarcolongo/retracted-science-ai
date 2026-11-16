@@ -22,7 +22,9 @@ Everyday questions, consumer-app checks, reasoning-effort comparisons and other 
 | `paper/` | Paper draft (Markdown source) |
 | `code/` | Study code, Python standard library only: candidate pool, draw and controls, knowledge check, topic drafting, items, test runner, judges, scoring, costs and analysis; full run order in `code/RUN_ORDER.txt` |
 | `tools/` | Paper tooling, not needed to reproduce the study: HTML view of the draft, reference checks |
-| `data/work/` | Candidate pool with OpenAlex and PubMed metadata; `candidates.csv`; the main draw (`draw/`) and the pilot draw (`pilot/`) with screening sheets, controls and API caches |
+| `data/work/` | Released: the status-question items and the registry snapshot of the retracted papers, with abstracts withheld (see its README). Not yet released: candidate pool, screening sheets, controls and API caches |
+| `data/logs/status-question*/` | Released: every request, response and judge form of the status-question module |
+| `results/status-question/` | Released: status-question scoring, labels, adjudication, costs and audits; start with `status-only/RESULTS.md` |
 | `data/snapshots/` | OpenRouter model catalogue snapshot, 13 Nov 2026, and endpoint snapshots (`endpoints/`) |
 | `tests/` | Offline tests of the pipeline (no network, no API key): `python3 -I tests/run_all.py` |
 | `data/costs/` | Cost and time of the study: per-request costs, totals, estimate vs actual, credits, author hours, software environment (filled during and after the runs; field guide in its README) |
@@ -45,4 +47,6 @@ Retraction Watch data via Crossref; OpenAlex; PubMed (NCBI E-utilities); OpenRou
 
 ## Responsible release
 
-Every log is released in full, including the forged status notes exactly as the models saw them. Each record that contains a forged note says so and gives the paper's true status, and every data file carries a canary string asking that it not be used to train models. Abstracts are included as text where the article's licence allows; for the others, the source, ID and hash are released with a script that restores the exact text.
+Released so far (16 Nov 2026): the code and the complete status-question module, meaning every request and response, the judge forms, the human labels, the author's decisions and the scoring outputs. To recompute the status-question results, run `python3 -I code/restore_abstracts.py restore` and then `python3 -I code/status_only.py`. The preparation material and the forged-notice tests, which have not been run, follow with the full study. The rest of `data/` and `results/` is git-ignored, so released files are added explicitly.
+
+Every log is released in full, including the forged status notes exactly as the models saw them. Each record that contains a forged note says so and gives the paper's true status. Each released data folder has a README with a canary string asking that the data not be used to train models; it is in the README so that the data files stay byte-identical to the run and their recorded hashes still verify. Abstracts of the papers are withheld as text. The source, ID and SHA-256 hash are released instead, with a script that restores the exact text and checks it (`code/restore_abstracts.py`).

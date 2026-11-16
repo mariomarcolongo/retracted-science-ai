@@ -1,0 +1,7 @@
+{
+  "checked_utc": "2026-11-16T11:04:10.867581+00:00",
+  "main_forms_valid": 32,
+  "deepseek_forms_valid": 4,
+  "deepseek_sha256": "f3f20bc72ef62e793e4b051f342b673a69b1cf13eba066785cd685d8b80a6afe",
+  "semantic_review": "All four asserted_status=retracted, conflicting_assertions=false and refusal=false match the answer text. Ancillary source/check labels require author review: registry selected without an explicit registry attribution; citing a notice does not by itself claim a website check. PubMed/PMC attribution in DE77B4674161 exposes an ambiguity in the source categories. No author labels altered."
+}

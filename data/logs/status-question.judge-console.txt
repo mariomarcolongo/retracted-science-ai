@@ -1,0 +1,2 @@
+answers: 401 | judge requests to make: 802 | spent so far $0.0000
+ended: 802/802 judgments final; without valid form 0; worker errors 0; spent $5.4195

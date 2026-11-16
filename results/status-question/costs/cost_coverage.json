@@ -1,0 +1,12 @@
+{
+  "credits_rows_read": 0,
+  "author_hours_rows_read": 0,
+  "deposits": [],
+  "author_hours_by_phase": {},
+  "credit_source_allocation": "not inferable from deposits and request logs",
+  "notes": "Free-text notes, account details and personal identifiers are not exported.",
+  "unattributed_requests": 0,
+  "estimates_supplied": false,
+  "snapshot_supplied": false,
+  "historical_environment_missing": 0
+}

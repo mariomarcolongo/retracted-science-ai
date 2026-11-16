@@ -1,0 +1,12 @@
+scenario,phase,source_phase,role,model_id,provider,test,estimate_usd,actual_cost_usd,actual_known_usd,difference_usd,actual_requests,missing_cost_requests,coverage
+not estimated,judging,main run,judge,x-ai/grok-4.7,xai,status question,,5.488332000000002,5.488332000000002,,503,0,not in supplied estimate
+not estimated,judging,main run,judge,z-ai/glm-5.2,together,status question,,1.4639653599999998,1.4639653599999998,,504,0,not in supplied estimate
+not estimated,main run,,tested model,anthropic/claude-sonnet-5.5,anthropic,status question,,0.37912199999999996,0.37912199999999996,,56,0,not in supplied estimate
+not estimated,main run,,tested model,baidu/ernie-5.5-flash-preview:free,baidu,status question,,0.0,0.0,,56,0,not in supplied estimate
+not estimated,main run,,tested model,bytedance-seed/seed-2.0-lite,seed/fp8,status question,,0.10955749999999999,0.10955749999999999,,56,0,not in supplied estimate
+not estimated,main run,,tested model,deepseek/deepseek-v4.1-flash-1017,deepseek,status question,,0.14358510000000002,0.14358510000000002,,56,0,not in supplied estimate
+not estimated,main run,,tested model,google/gemini-3.5-flash-lite,google-ai-studio,status question,,0.020990399999999992,0.020990399999999992,,56,0,not in supplied estimate
+not estimated,main run,,tested model,google/gemini-4-hydrogen,google-ai-studio,status question,,0.399672,0.399672,,56,0,not in supplied estimate
+not estimated,main run,,tested model,openai/gpt-6-luna,openai,status question,,0.04313140000000001,0.04313140000000001,,57,0,not in supplied estimate
+not estimated,main run,,tested model,openai/gpt-6.1-sol,openai,status question,,0.3185860000000001,0.3185860000000001,,56,0,not in supplied estimate
+not estimated,main run,,tested model,qwen/qwen3.8-flash,alibaba,status question,,0.18545562999999995,0.18545562999999995,,87,0,not in supplied estimate

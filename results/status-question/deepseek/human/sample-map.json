@@ -1,0 +1,58 @@
+{
+  "seed": 20261115,
+  "pilot": false,
+  "items_sha256": "3a2d5588fb11d2c53af5404cba4567575f41c1cd4c14851a853418865cfb22ab",
+  "run_manifest": {
+    "phase": "main",
+    "roles": "tested",
+    "dry": false,
+    "dry_mode": null,
+    "seed": 20261115,
+    "items_sha256": "3a2d5588fb11d2c53af5404cba4567575f41c1cd4c14851a853418865cfb22ab",
+    "registry_sha256": "4d0509f648ec6dc7f7de43a2260943ed15c56b239d882d73f468f4f40ef917dd",
+    "materials_sha256": "49ae1aabffd5e9a0d3b2fb6c62269768ae5492db48072c3a157ed811623c0fb7",
+    "models": [
+      {
+        "name": "DeepSeek V4.1 Flash 1017",
+        "id": "deepseek/deepseek-v4.1-flash-1017",
+        "provider": "deepseek",
+        "api": "chat"
+      }
+    ],
+    "tests": [
+      "SQ"
+    ],
+    "settings": {
+      "max_tokens": 16000,
+      "tool_limit": 6,
+      "max_attempts": 4,
+      "reserve_usd": 0.25
+    }
+  },
+  "mapping": {
+    "2EDBC3D6CCB7": {
+      "answer_id": "8b1c60b3d0bb1cb8",
+      "status_question": true,
+      "context_sha256": "b78ea4de5135e128fdb0d8d2b229b1327f37835374b27bb3bf6831db9c37b51a",
+      "target_id": ""
+    },
+    "E2D7AC28BED4": {
+      "answer_id": "6d474235ac28b600",
+      "status_question": true,
+      "context_sha256": "7515120c8fcf772689cebc120ae76fdf0f56483ca7fa8f5693d8416bc6e86a2c",
+      "target_id": ""
+    },
+    "DE77B4674161": {
+      "answer_id": "d8f0546c53025e7b",
+      "status_question": true,
+      "context_sha256": "aa3058095517fae3be48cbbd5a7d2bd279b1dde555846f9e371dbfff2b40e149",
+      "target_id": ""
+    },
+    "B1BC5BC313C8": {
+      "answer_id": "08090412a2a80605",
+      "status_question": true,
+      "context_sha256": "283717ce84176bd9296da616aad75c2025dca1f8562402da39e0275243223176",
+      "target_id": ""
+    }
+  }
+}

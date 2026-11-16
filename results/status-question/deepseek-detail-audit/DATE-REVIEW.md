@@ -1,0 +1,32 @@
+# Date-flag review and identifier checks
+
+AI-assisted, post hoc source checks, 16 November 2026. Primary status scores are unchanged. All 18 screening flags were examined: {'registry mismatch; primary-source date verification incomplete': 2, 'confirmed year mismatch': 15, 'ambiguous year attribution': 1}. This is not a full audit of all factual claims in all 56 answers.
+
+- **Effect of nanoparticle macroalgae in the treatment of fatty liver disease using logistic regression, and support vector machine.** Model year 2024; verified date pending/ambiguous. registry mismatch; primary-source date verification incomplete. 
+- **Children on the Autism Spectrum and the Use of Virtual Reality for Supporting Social Skills.** Model year 2023; verified date 2026-08-04. confirmed year mismatch. [Source](https://www.mdpi.com/2227-9067/9/2/181)
+- **Aggravation of TGFβ1-Smad Pathway and Autoimmune Myocarditis by Fungicide (Tebuconazole) Exposure.** Model year 2024; verified date 2026-07-29. confirmed year mismatch. [Source](https://www.mdpi.com/1422-0067/27/15/6778)
+- **Predictive performance of the Vitrigel-eye irritancy test method using 118 chemicals.** Model year 2022; verified date 2026-07-02. confirmed year mismatch. [Source](https://pubmed.ncbi.nlm.nih.gov/42392694/)
+- **Involvement of both intrinsic and extrinsic pathways in hepatoprotection of arjunolic acid against cadmium induced acute damage in vitro.** Model year 2021; verified date pending/ambiguous. registry mismatch; primary-source date verification incomplete. 
+- **Neuroinflammation is associated with infiltration of T cells in Lewy body disease and α-synuclein transgenic models.** Model year 2024; verified date 2026-08-22. confirmed year mismatch. [Source](https://link.springer.com/article/10.1186/s12974-026-04011-x)
+- **Antiviral Effects of Novel Herbal Medicine KIOM-C, on Diverse Viruses.** Model year 2020; verified date 2026-08-11. confirmed year mismatch. [Source](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0125357)
+- **Functional kinomics establishes a critical node of volume-sensitive cation-Cl- cotransporter regulation in the mammalian brain.** Model year 2020; verified date 2026-08-25. confirmed year mismatch. [Source](https://www.nature.com/articles/s41598-026-66445-w)
+- **Matrine alleviates neurobehavioral alterations via modulation of JNK-mediated caspase-3 and BDNF/VEGF signaling in a mouse model of burn injury.** Model year 2021; verified date 2026-08-08. confirmed year mismatch. [Source](https://link.springer.com/article/10.1007/s00213-026-07142-4)
+- **Atovaquone inhibits colorectal cancer metastasis by regulating PDGFRβ/NF-κB signaling pathway.** Model year 2023; verified date 2026-07-20. confirmed year mismatch. [Source](https://link.springer.com/article/10.1186/s12885-026-16535-9)
+- **Glycine protects the male reproductive system against lead toxicity via alleviating oxidative stress, preventing sperm mitochondrial impairment, improving kinematics of sperm, and blunting the downregulation of enzymes involved in the steroidogenesis.** Model year 2024; verified date 2026-07-12. confirmed year mismatch. [Source](https://pubmed.ncbi.nlm.nih.gov/42437492/)
+- **Attenuation of cartilage pathogenesis in post-traumatic osteoarthritis (PTOA) in mice by blocking the stromal derived factor 1 receptor (CXCR4) with the specific inhibitor, AMD3100.** Model year 2017; verified date 2026-07-13. confirmed year mismatch. [Source](https://pmc.ncbi.nlm.nih.gov/articles/PMC13359569/)
+- **The Effect of Multilayered Electrospun PLLA Nanofibers Coated with Human Amnion or Bladder ECM Proteins on Epithelialization and Smooth Muscle Regeneration in the Rabbit Bladder.** Model year 2021; verified date 2026-07. confirmed year mismatch. [Source](https://pubmed.ncbi.nlm.nih.gov/42509661/)
+- **Two functional epitopes of pigment epithelial-derived factor block angiogenesis and induce differentiation in prostate cancer.** Model year 2013; verified date 2026-07-02. confirmed year mismatch. [Source](https://aacrjournals.org/cancerres/article/86/13/3363/786147/Retraction-Two-Functional-Epitopes-of-Pigment)
+- **Effects of microRNA-101-3p on predicting pediatric acute respiratory distress syndrome and its role in human alveolar epithelial cell.** Model year 2023; verified date 2026-10-01. confirmed year mismatch. [Source](https://pubmed.ncbi.nlm.nih.gov/42821444/)
+- **MicroRNA-139-5p acts as a suppressor gene for depression by targeting nuclear receptor subfamily 3, group C, member 1.** Model year 2022; verified date pending/ambiguous. ambiguous year attribution. 
+- **SARS-CoV-2 S2-targeted vaccination elicits broadly neutralizing antibodies.** Model year 2024; verified date 2026-10-14. confirmed year mismatch. [Source](https://pubmed.ncbi.nlm.nih.gov/35895836/)
+- **The value of serum progesterone level on day of human chorionic gonadotrophin administration / metaphase II oocyte ratio in predicting IVF/ICSI outcome in patients with normal ovarian reserve.** Model year 2019; verified date 2026-10-16. confirmed year mismatch. [Source](https://link.springer.com/article/10.1186/s13048-026-02302-8)
+
+## Confirmed wrong-source identifiers
+
+- The purported myocarditis retraction DOI 10.3390/ijms25158543 leads to an unrelated curcumin cancer study, not a retraction notice. [Publisher](https://www.mdpi.com/1422-0067/25/15/8543).
+- The purported KIOM-C retraction DOI 10.1371/journal.pone.0243510 leads to an unrelated study of presepsin after pancreatic surgery. [Publisher](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0243510).
+- The atovaquone notice is in BMC Cancer, not the claimed Cancer Cell International. The bladder-regeneration notice is in Macromolecular Bioscience, not the claimed Journal of Biomedical Materials Research Part A. The progesterone notice is in Journal of Ovarian Research, not the claimed Middle East Fertility Society Journal. Sources are linked in the date rows above.
+
+## Boundaries
+
+The two Elsevier notices were located in PubMed search results, but full date metadata was not available through the attempted page fetches. Keep their date checks pending. The microRNA-139 answer may conflate the original record year with the notice year. The alleged MECP2 notice remains unverified. An unavailable page or empty search result is not evidence that a DOI or notice is fabricated. No cross-model error-rate comparison is justified by this targeted DeepSeek audit.

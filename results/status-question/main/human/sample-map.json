@@ -1,0 +1,270 @@
+{
+  "seed": 20261115,
+  "pilot": false,
+  "items_sha256": "3a2d5588fb11d2c53af5404cba4567575f41c1cd4c14851a853418865cfb22ab",
+  "run_manifest": {
+    "phase": "main",
+    "roles": "tested",
+    "dry": false,
+    "dry_mode": null,
+    "seed": 20261115,
+    "items_sha256": "3a2d5588fb11d2c53af5404cba4567575f41c1cd4c14851a853418865cfb22ab",
+    "registry_sha256": "4d0509f648ec6dc7f7de43a2260943ed15c56b239d882d73f468f4f40ef917dd",
+    "materials_sha256": "49ae1aabffd5e9a0d3b2fb6c62269768ae5492db48072c3a157ed811623c0fb7",
+    "models": [
+      {
+        "name": "Gemini 4 Hydrogen",
+        "id": "google/gemini-4-hydrogen",
+        "provider": "google-ai-studio",
+        "api": "chat"
+      },
+      {
+        "name": "GPT-6 Luna",
+        "id": "openai/gpt-6-luna",
+        "provider": "openai",
+        "api": "responses"
+      },
+      {
+        "name": "Gemini 3.5 Flash-Lite",
+        "id": "google/gemini-3.5-flash-lite",
+        "provider": "google-ai-studio",
+        "api": "chat"
+      },
+      {
+        "name": "GPT-6.1 Sol",
+        "id": "openai/gpt-6.1-sol",
+        "provider": "openai",
+        "api": "responses"
+      },
+      {
+        "name": "Claude Sonnet 5.5",
+        "id": "anthropic/claude-sonnet-5.5",
+        "provider": "anthropic",
+        "api": "chat"
+      },
+      {
+        "name": "Seed 2.0 Lite",
+        "id": "bytedance-seed/seed-2.0-lite",
+        "provider": "seed/fp8",
+        "api": "chat"
+      },
+      {
+        "name": "Qwen3.8 Flash",
+        "id": "qwen/qwen3.8-flash",
+        "provider": "alibaba",
+        "api": "chat"
+      },
+      {
+        "name": "ERNIE 5.5 Flash Preview",
+        "id": "baidu/ernie-5.5-flash-preview:free",
+        "provider": "baidu",
+        "api": "chat",
+        "daily_limit": 1000,
+        "tool_choice_none": false
+      }
+    ],
+    "tests": [
+      "SQ"
+    ],
+    "settings": {
+      "max_tokens": 16000,
+      "tool_limit": 6,
+      "max_attempts": 4,
+      "reserve_usd": 0.25
+    }
+  },
+  "mapping": {
+    "E611FF18875E": {
+      "answer_id": "8811c6d4a6f21b5f",
+      "status_question": true,
+      "context_sha256": "3e2e1c682415ef8d3e5cde47f223f212bb492cd4047a11850c78774f84a74ef3",
+      "target_id": ""
+    },
+    "EC7BDD478E0B": {
+      "answer_id": "d4bf20557d36746d",
+      "status_question": true,
+      "context_sha256": "f76984a6b4fd9eb853ded2ea1ed1f8bb5a260788ef0839be5e943dfabdcf8e2c",
+      "target_id": ""
+    },
+    "98D1DCAE1123": {
+      "answer_id": "d85aab11f4083545",
+      "status_question": true,
+      "context_sha256": "8bebe9789f8d2be6ed9c6a1b2ffeccaaba71097d697f62f9795c728ec7d352a0",
+      "target_id": ""
+    },
+    "341B5357A3DD": {
+      "answer_id": "4c33e3b646948009",
+      "status_question": true,
+      "context_sha256": "cfa49a5100ecd4ddd85041eab7ac5b85619df7071798b82b472cb33dbb71d5ad",
+      "target_id": ""
+    },
+    "36FF959A540B": {
+      "answer_id": "99ed64dc6b0c5513",
+      "status_question": true,
+      "context_sha256": "44c01841e1ca6da2b31e9e59fcb40d53cb3ca52d4219bd04f0f0e7caaeb84ddb",
+      "target_id": ""
+    },
+    "C7D2937F131C": {
+      "answer_id": "f467c8a4d0039076",
+      "status_question": true,
+      "context_sha256": "c533962d03b5a35f516cb4b8543930f2268f1fa4d7fcc2866243261c593c3fcb",
+      "target_id": ""
+    },
+    "5D0CFA921E24": {
+      "answer_id": "b3279d59eb32317f",
+      "status_question": true,
+      "context_sha256": "6f9bf6c4dfb630ddfae9e64e30ff118afdbf05712d2d439b113e839fb15bcf98",
+      "target_id": ""
+    },
+    "13D5969B7143": {
+      "answer_id": "a419222749e9bd25",
+      "status_question": true,
+      "context_sha256": "0cf963ba93521ba9a6decd2ca121aae832f18f523930206c4f3f800b36363401",
+      "target_id": ""
+    },
+    "1C84342791EB": {
+      "answer_id": "ffe40dd4a992dbf9",
+      "status_question": true,
+      "context_sha256": "8775b8f945aecebf08513991db6a13d344d904866a6c38de6d9d969d0ce73bca",
+      "target_id": ""
+    },
+    "07DCF9A8181F": {
+      "answer_id": "e19737fc8665990c",
+      "status_question": true,
+      "context_sha256": "fa36aa137d01d239500ed1d950145ae9ec461cddf98b3b05cd4bbd7beddf893c",
+      "target_id": ""
+    },
+    "B0B65BFF4106": {
+      "answer_id": "de74ed8673627704",
+      "status_question": true,
+      "context_sha256": "11f894aa7aff5e265485874b5b9c2120f8f4951c22e9423a46734def1b71f9ae",
+      "target_id": ""
+    },
+    "331F1E28506B": {
+      "answer_id": "8125a8b1f172e79d",
+      "status_question": true,
+      "context_sha256": "1a4ff4d13624750fa9aed0cd885f7b4988f13bf18cf373f058e7e2a337f04268",
+      "target_id": ""
+    },
+    "02F20C4B3C8D": {
+      "answer_id": "89df7b5469924abd",
+      "status_question": true,
+      "context_sha256": "181dce20793acf49852af35a3c057ed13d6cf1a3fc8846c21e90b2e4aa1ba1bf",
+      "target_id": ""
+    },
+    "A4A204C2D965": {
+      "answer_id": "2b84da9ee7545dd9",
+      "status_question": true,
+      "context_sha256": "315b6ae6d3a4e13567b07137fb523ce29ce73e4c42fe04f2094c2eb89f4aa116",
+      "target_id": ""
+    },
+    "6D5C611F6F01": {
+      "answer_id": "b1725b373c0c4c91",
+      "status_question": true,
+      "context_sha256": "9c40588dbfd1818e3e6021ee8021285152148f55607a9159c2a1805727548eec",
+      "target_id": ""
+    },
+    "9119F0C760E2": {
+      "answer_id": "4872392667b62898",
+      "status_question": true,
+      "context_sha256": "c77a577fe087ad34e3a89417fc397bc8d050b696556e977f7f5d7173d125fc4f",
+      "target_id": ""
+    },
+    "0C85D5AF08F1": {
+      "answer_id": "a01041a1db3811bb",
+      "status_question": true,
+      "context_sha256": "620663aa7d45118ad24a0f50fbff0cf24f7108567f3667ffb06946738cce3795",
+      "target_id": ""
+    },
+    "98E968DD7A87": {
+      "answer_id": "52788c6e6f86a2c9",
+      "status_question": true,
+      "context_sha256": "cb43500e4a68f6d2ca8cd906c9c2c4378857892fd552fe0957fb36072643b0ce",
+      "target_id": ""
+    },
+    "C9346DBAA8B7": {
+      "answer_id": "c316c6082b780940",
+      "status_question": true,
+      "context_sha256": "25330bc9cf3055b95279f7ec220c52a0f14430c7e9f1c34859a8300903ae66c2",
+      "target_id": ""
+    },
+    "9322F7E70961": {
+      "answer_id": "2ad2d45033cc49a4",
+      "status_question": true,
+      "context_sha256": "8ed20b318feef67109bc79d40b14dfddef3713f1df5be2deff30628286ce3f23",
+      "target_id": ""
+    },
+    "1293B57C5115": {
+      "answer_id": "05e9df44bae011e7",
+      "status_question": true,
+      "context_sha256": "852919cf242bf34b7af84abb0bb8a7c3075e8968b43c9f729c38fff68028b7f9",
+      "target_id": ""
+    },
+    "27F71CAB9D46": {
+      "answer_id": "2774f8aa64ddfa79",
+      "status_question": true,
+      "context_sha256": "50b501c787b82bce2490dccdc81a3272cea8f874908f00a29d2e71946d71cebc",
+      "target_id": ""
+    },
+    "5AC6A53478C9": {
+      "answer_id": "c76f663dd36722e5",
+      "status_question": true,
+      "context_sha256": "f1cc478849dcbf96821c3bdc67c0967e16b2194e0ec83c3db8c58b4791f75dfd",
+      "target_id": ""
+    },
+    "600B2458DBB0": {
+      "answer_id": "0460464c9103b07c",
+      "status_question": true,
+      "context_sha256": "76845ec1701d04dad9e166d3147d810270d56de01d0ef13b87d152f1ed64c3ef",
+      "target_id": ""
+    },
+    "89AA7E3B118D": {
+      "answer_id": "3548b08ac9d31133",
+      "status_question": true,
+      "context_sha256": "2dff23161f572acbbce5899bf03853202e8b0e5ad8f6c023d4f24d2f08c5e0d7",
+      "target_id": ""
+    },
+    "8078FC1A6BB5": {
+      "answer_id": "e14352d0464606c0",
+      "status_question": true,
+      "context_sha256": "318fe66adc1a29e19b9fc609558f3176d50abcea3a94036da7cdb06b44bee842",
+      "target_id": ""
+    },
+    "4E65C43CCD44": {
+      "answer_id": "19b365ced1369ae8",
+      "status_question": true,
+      "context_sha256": "91cb46e7cae1aa467c0e68441e5ea20cf499f9b389b18075e70ce4e5bbfdcec1",
+      "target_id": ""
+    },
+    "D5C6E8A51FB4": {
+      "answer_id": "cf249995e16485c7",
+      "status_question": true,
+      "context_sha256": "c22d5cbaba9da359ea3b236b99a375918b3c86a51e52c8a2d0af1e4477f955f8",
+      "target_id": ""
+    },
+    "51F9729C3D2B": {
+      "answer_id": "2d0592b751b113f3",
+      "status_question": true,
+      "context_sha256": "320908b68ca2fda3b45e4b6d2ac121ddcf9488f36898eff41fc7e32e4c9531d0",
+      "target_id": ""
+    },
+    "66C9F10B21AC": {
+      "answer_id": "967a2be577726e13",
+      "status_question": true,
+      "context_sha256": "3b79f9cd3fe05d677eeeccdeac09e095d48b5f3454c6f5a1d1088d1789099a6b",
+      "target_id": ""
+    },
+    "7981B0DC69CD": {
+      "answer_id": "5b0355a251bf5a45",
+      "status_question": true,
+      "context_sha256": "76ef4730d1af6aeefa49f1d47fa4b03341edea32eaf7198641cb8bf4eb67696f",
+      "target_id": ""
+    },
+    "34616236A04A": {
+      "answer_id": "4303ba3112d07fa6",
+      "status_question": true,
+      "context_sha256": "f663d6ec1bd1ddcbc966d17078379530b80c79d18ca30d602d4cf131083dc1b4",
+      "target_id": ""
+    }
+  }
+}

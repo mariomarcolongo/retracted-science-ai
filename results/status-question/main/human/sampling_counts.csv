@@ -1,0 +1,17 @@
+available,model,requested,selected,shortfall,side,test
+28,Claude Sonnet 5.5,2,2,0,K,SQ
+28,Claude Sonnet 5.5,2,2,0,R,SQ
+28,ERNIE 5.5 Flash Preview,2,2,0,K,SQ
+28,ERNIE 5.5 Flash Preview,2,2,0,R,SQ
+28,GPT-6 Luna,2,2,0,K,SQ
+28,GPT-6 Luna,2,2,0,R,SQ
+28,GPT-6.1 Sol,2,2,0,K,SQ
+28,GPT-6.1 Sol,2,2,0,R,SQ
+28,Gemini 3.5 Flash-Lite,2,2,0,K,SQ
+28,Gemini 3.5 Flash-Lite,2,2,0,R,SQ
+28,Gemini 4 Hydrogen,2,2,0,K,SQ
+28,Gemini 4 Hydrogen,2,2,0,R,SQ
+27,Qwen3.8 Flash,2,2,0,K,SQ
+28,Qwen3.8 Flash,2,2,0,R,SQ
+28,Seed 2.0 Lite,2,2,0,K,SQ
+28,Seed 2.0 Lite,2,2,0,R,SQ

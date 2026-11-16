@@ -1,0 +1,17 @@
+agreement,comparison,field,kappa,n
+1.0,human_vs_final,asserted_status,1.0,36
+1.0,human_vs_final,conflicting_assertions,,36
+1.0,human_vs_final,refusal,,36
+1.0,human_vs_final,status_question_outcome,1.0,36
+1.0,human_vs_judge_1,asserted_status,1.0,36
+1.0,human_vs_judge_1,conflicting_assertions,,36
+1.0,human_vs_judge_1,refusal,,36
+1.0,human_vs_judge_1,status_question_outcome,1.0,36
+0.9722222222222222,human_vs_judge_2,asserted_status,0.9557739557739557,36
+1.0,human_vs_judge_2,conflicting_assertions,,36
+1.0,human_vs_judge_2,refusal,,36
+0.9722222222222222,human_vs_judge_2,status_question_outcome,0.9558823529411764,36
+0.9582504970178927,judge_1_vs_judge_2,asserted_status,0.9359033483416062,503
+1.0,judge_1_vs_judge_2,conflicting_assertions,,503
+1.0,judge_1_vs_judge_2,refusal,,503
+0.9622266401590457,judge_1_vs_judge_2,status_question_outcome,0.9424034231302357,503

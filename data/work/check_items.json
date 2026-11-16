@@ -1,0 +1,1011 @@
+[
+ {
+  "pair_id": "73835",
+  "R": {
+   "target": {
+    "title": "MicroRNA-139-5p acts as a suppressor gene for depression by targeting nuclear receptor subfamily 3, group C, member 1.",
+    "authors": [
+     "Bing Su",
+     "Suohua Cheng",
+     "Lei Wang",
+     "Bing Wang"
+    ],
+    "doi": "10.1080/21655979.2022.2059937"
+   }
+  },
+  "K": {
+   "target": {
+    "title": "Glycolysis related gene expression signature in predicting prognosis of laryngeal squamous cell carcinoma.",
+    "authors": [
+     "Hui‐Ching Lau",
+     "Yujie Shen",
+     "Qiang Huang",
+     "Huiying Huang",
+     "Liang Fu Zhou"
+    ],
+    "doi": "10.1080/21655979.2021.1980177"
+   }
+  }
+ },
+ {
+  "pair_id": "72007",
+  "R": {
+   "target": {
+    "title": "Identification of a lactylation-related gene signature as the novel biomarkers for early diagnosis of acute myocardial infarction.",
+    "authors": [
+     "Dongfei Zhu",
+     "Xue Zhang",
+     "Yuan Fang",
+     "Ziyang Xu",
+     "Yin Yu",
+     "Lili Zhang",
+     "Yanping Yang",
+     "Shuai Li",
+     "Yanpeng Wang",
+     "Can Jiang",
+     "Dong Huang"
+    ],
+    "doi": "10.1016/j.ijbiomac.2024.137431"
+   }
+  },
+  "K": {
+   "target": {
+    "title": "Matrix hyaluronic acid and bilayer poly-hydroxyethyl methacrylate-hyaluronic acid films as potential ocular drug delivery platforms.",
+    "authors": [
+     "Mohammad Tighsazzadeh",
+     "Joshua Siaw Boateng"
+    ],
+    "doi": "10.1016/j.ijbiomac.2024.129496"
+   }
+  }
+ },
+ {
+  "pair_id": "72901",
+  "R": {
+   "target": {
+    "title": "Functional kinomics establishes a critical node of volume-sensitive cation-Cl- cotransporter regulation in the mammalian brain.",
+    "authors": [
+     "Jinwei Zhang",
+     "Geng Gao",
+     "Gulnaz Begum",
+     "Jinhua Wang",
+     "Arjun R Khanna",
+     "Boris E Shmukler",
+     "Gerrit M Daubner",
+     "Paola de los Heros",
+     "Paul Davies",
+     "Joby Varghese",
+     "Mohammad Iqbal H Bhuiyan",
+     "Jinjing Duan",
+     "Jin Zhang",
+     "Daniel Duran",
+     "Seth L Alper",
+     "Dandan Sun",
+     "Stephen J Elledge",
+     "Dario R Alessi",
+     "Kristopher T Kahle"
+    ],
+    "doi": "10.1038/srep35986"
+   }
+  },
+  "K": {
+   "target": {
+    "title": "Antiproliferative Activity of Crocin Involves Targeting of Microtubules in Breast Cancer Cells.",
+    "authors": [
+     "Rupali Hire",
+     "Shalini Srivastava",
+     "Melissa Boneta Davis",
+     "Ananda Kumar Konreddy",
+     "Dulal Panda"
+    ],
+    "doi": "10.1038/srep44984"
+   }
+  }
+ },
+ {
+  "pair_id": "73381",
+  "R": {
+   "target": {
+    "title": "The Effect of Multilayered Electrospun PLLA Nanofibers Coated with Human Amnion or Bladder ECM Proteins on Epithelialization and Smooth Muscle Regeneration in the Rabbit Bladder.",
+    "authors": [
+     "Keykavoos Gholami",
+     "Ehsan Seyedjafari",
+     "Fatemeh Sadat Mahdavi",
+     "Mehdi Naghdipoor",
+     "Gholamreza Mesbah",
+     "Parisa Zahmatkesh",
+     "Milad Akbarzadehmoallemkolaei",
+     "Leila Zareian Baghdadabad",
+     "Shiv Kumar Pandian",
+     "Kirolos N Meilika",
+     "Seyed Mohammad Kazem Aghamir"
+    ],
+    "doi": "10.1002/mabi.202300308"
+   }
+  },
+  "K": {
+   "target": {
+    "title": "A Degradable Sustained-Release Drug Delivery System for Bleb-Forming Glaucoma Surgery.",
+    "authors": [
+     "Ralph J. S. van Mechelen",
+     "Jarno E.J. Wolters",
+     "Sebastian Fredrich",
+     "Christian J.F. Bertens",
+     "Marion J. Gijbels",
+     "Albertus P. H. J. Schenning",
+     "Leonard Pinchuk",
+     "Theo G. M. F. Gorgels",
+     "Henny J. M. Beckers"
+    ],
+    "doi": "10.1002/mabi.202300075"
+   }
+  }
+ },
+ {
+  "pair_id": "73377",
+  "R": {
+   "target": {
+    "title": "Neuroprotective effect of licochalcone A against oxygen-glucose deprivation/reperfusion in rat primary cortical neurons by attenuating oxidative stress injury and inflammatory response via the SIRT1/Nrf2 pathway.",
+    "authors": [
+     "Xiaohong Liu",
+     "Ying Ma",
+     "Xiaodi Wei",
+     "Ting Fan"
+    ],
+    "doi": "10.1002/jcb.26477"
+   }
+  },
+  "K": {
+   "target": {
+    "title": "The AP2M1 gene expression is a promising biomarker for predicting survival of patients with hepatocellular carcinoma.",
+    "authors": [
+     "Sung Hwan Cho",
+     "Kyoungjune Pak",
+     "Dae Cheon Jeong",
+     "Myoung‐Eun Han",
+     "Sae‐Ock Oh",
+     "Yun Hak Kim"
+    ],
+    "doi": "10.1002/jcb.27699"
+   }
+  }
+ },
+ {
+  "pair_id": "73265",
+  "R": {
+   "target": {
+    "title": "Matrine alleviates neurobehavioral alterations via modulation of JNK-mediated caspase-3 and BDNF/VEGF signaling in a mouse model of burn injury.",
+    "authors": [
+     "Adnan Khan",
+     "Bushra Shal",
+     "Muhammad Naveed",
+     "Bakht Nasir",
+     "Nadeem Irshad",
+     "Hussain Ali",
+     "Salman Khan"
+    ],
+    "doi": "10.1007/s00213-020-05537-5"
+   }
+  },
+  "K": {
+   "target": {
+    "title": "Sign- and goal-tracking score does not correlate with addiction-like behavior following prolonged cocaine self-administration.",
+    "authors": [
+     "Veronika Pohořalá",
+     "Thomas Enkel",
+     "Dušan Bartsch",
+     "Rainer Spanagel",
+     "Rick Eugene Bernardi"
+    ],
+    "doi": "10.1007/s00213-021-05858-z"
+   }
+  }
+ },
+ {
+  "pair_id": "72869",
+  "R": {
+   "target": {
+    "title": "Antiviral Effects of Novel Herbal Medicine KIOM-C, on Diverse Viruses.",
+    "authors": [
+     "Melbourne R Talactac",
+     "Mohammed Y E Chowdhury",
+     "Min-Eun Park",
+     "Prasanna Weeratunga",
+     "Tae-Hwan Kim",
+     "Won-Kyung Cho",
+     "Chul-Joong Kim",
+     "Jin Yeul Ma",
+     "Jong-Soo Lee"
+    ],
+    "doi": "10.1371/journal.pone.0125357"
+   }
+  },
+  "K": {
+   "target": {
+    "title": "Cardiac-Specific SOCS3 Deletion Prevents In Vivo Myocardial Ischemia Reperfusion Injury through Sustained Activation of Cardioprotective Signaling Molecules.",
+    "authors": [
+     "Takanobu Nagata",
+     "Hideo Yasukawa",
+     "Sachiko Kyogoku",
+     "Toyoharu Oba",
+     "Jinya Takahashi",
+     "Shoichiro Nohara",
+     "Tomoko Minami",
+     "Kazutoshi Mawatari",
+     "Yusuke Sugi",
+     "Koutatsu Shimozono",
+     "Sylvain Pradervand",
+     "Masahiko Hoshijima",
+     "Hiroki Aoki",
+     "Yoshihiro Fukumoto",
+     "Tsutomu Imaizumi"
+    ],
+    "doi": "10.1371/journal.pone.0127942"
+   }
+  }
+ },
+ {
+  "pair_id": "73298",
+  "R": {
+   "target": {
+    "title": "A hybridized channel selection approach with deep convolutional neural network for effective ovarian cancer prediction in periodic acid‐Schiff‐stained images",
+    "authors": [
+     "Sathya Ramasamy",
+     "Vaidehi Kaliyaperumal"
+    ],
+    "doi": "10.1002/cpe.7568"
+   }
+  },
+  "K": {
+   "target": {
+    "title": "Self‐attention based progressive generative adversarial network optimized with arithmetic optimization algorithm for kidney stone detection",
+    "authors": [
+     "V. Brindha Devi",
+     "Johny Elma K",
+     "S. Rooban",
+     "Francis H. Shajin"
+    ],
+    "doi": "10.1002/cpe.7570"
+   }
+  }
+ },
+ {
+  "pair_id": "73827",
+  "R": {
+   "target": {
+    "title": "The wastewater microbiome: A novel insight for COVID-19 surveillance.",
+    "authors": [
+     "Cristian Gallardo-Escárate",
+     "Valentina Valenzuela-Muñoz",
+     "Gustavo Núñez-Acuña",
+     "Diego Valenzuela-Miranda",
+     "Bárbara P Benaventel",
+     "Constanza Sáez-Vera",
+     "Homero Urrutia",
+     "Beatriz Novoa",
+     "Antonio Figueras",
+     "Steven Roberts",
+     "Paulina Assmann",
+     "Marta Bravo"
+    ],
+    "doi": "10.1016/j.scitotenv.2020.142867"
+   }
+  },
+  "K": {
+   "target": {
+    "title": "ERASSTRI - European risk assessment study on synthetic turf rubber infill - Part 3: Exposure and risk characterisation.",
+    "authors": [
+     "Klaus Schneider",
+     "Anne Bierwisch",
+     "Eva Kaiser"
+    ],
+    "doi": "10.1016/j.scitotenv.2020.137721"
+   }
+  }
+ },
+ {
+  "pair_id": "71929",
+  "R": {
+   "target": {
+    "title": "Effect of nanoparticle macroalgae in the treatment of fatty liver disease using logistic regression, and support vector machine.",
+    "authors": [
+     "Shu Teng",
+     "Nan Zheng",
+     "Arwa A Al-Huqail",
+     "Yanjie Lu",
+     "Elimam Ali",
+     "H Elhosiny Ali",
+     "Huajun Zhao"
+    ],
+    "doi": "10.1016/j.envres.2023.115426"
+   }
+  },
+  "K": {
+   "target": {
+    "title": "Survival of clinical and environmental carbapenem-resistant Klebsiella pneumoniae ST147 in surface water.",
+    "authors": [
+     "Catarina Ferreira",
+     "Lara Luzietti",
+     "Sara Ribeirinho-Soares",
+     "Olga C. Nunes",
+     "Ivone Vaz‐Moreira",
+     "Célia M. Manaia"
+    ],
+    "doi": "10.1016/j.envres.2023.116928"
+   }
+  }
+ },
+ {
+  "pair_id": "74329",
+  "R": {
+   "target": {
+    "title": "The value of serum progesterone level on day of human chorionic gonadotrophin administration / metaphase II oocyte ratio in predicting IVF/ICSI outcome in patients with normal ovarian reserve.",
+    "authors": [
+     "Ahmad Mahran",
+     "Mohammed Khairy",
+     "Reham Elkhateeb",
+     "Abdel Rahman Hegazy",
+     "Ayman Abdelmeged",
+     "Gaber El-Saber Batiha",
+     "Khalaf F Alsharif",
+     "Helal F Hetta",
+     "Haitham A Bahaa"
+    ],
+    "doi": "10.1186/s13048-021-00800-5"
+   }
+  },
+  "K": {
+   "target": {
+    "title": "Circ_0061140 knockdown inhibits tumorigenesis and improves PTX sensitivity by regulating miR-136/CBX2 axis in ovarian cancer.",
+    "authors": [
+     "Jun Zhu",
+     "Jun-e Luo",
+     "Yurong Chen",
+     "Qiong Wu"
+    ],
+    "doi": "10.1186/s13048-021-00888-9"
+   }
+  }
+ },
+ {
+  "pair_id": "72110",
+  "R": {
+   "target": {
+    "title": "Children on the Autism Spectrum and the Use of Virtual Reality for Supporting Social Skills.",
+    "authors": [
+     "Alessandro Frolli",
+     "Giulia Savarese",
+     "Francesca Di Carmine",
+     "Antonia Bosco",
+     "Emilio Saviano",
+     "Angelo Rega",
+     "Marco Carotenuto",
+     "Maria Carla Ricci"
+    ],
+    "doi": "10.3390/children9020181"
+   }
+  },
+  "K": {
+   "target": {
+    "title": "Dietary Sugar Intake and Its Association with Obesity in Children and Adolescents.",
+    "authors": [
+     "Emmanuella Magriplis",
+     "George Michas",
+     "Evgenia Petridi",
+     "George Panagiotis Chrousos",
+     "Eleftheria S. Roma",
+     "Vassiliki Benetou",
+     "Nikos Cholopoulos",
+     "Renata Micha",
+     "Demosthenes B. Panagiotakos",
+     "Antonis Zampelas"
+    ],
+    "doi": "10.3390/children8080676"
+   }
+  }
+ },
+ {
+  "pair_id": "72182",
+  "R": {
+   "target": {
+    "title": "Involvement of both intrinsic and extrinsic pathways in hepatoprotection of arjunolic acid against cadmium induced acute damage in vitro.",
+    "authors": [
+     "Sankhadeep Pal",
+     "Pabitra Bikash Pal",
+     "Joydeep Das",
+     "Parames C Sil"
+    ],
+    "doi": "10.1016/j.tox.2011.03.006"
+   }
+  },
+  "K": {
+   "target": {
+    "title": "Application of multielectrode array (MEA) chips for the evaluation of mixtures neurotoxicity.",
+    "authors": [
+     "Bibiana Scelfo",
+     "Matteo Politi",
+     "Fabiano Reniero",
+     "Taina Palosaari",
+     "Maurice P. Whelan",
+     "J.M. Zaldívar"
+    ],
+    "doi": "10.1016/j.tox.2012.05.020"
+   }
+  }
+ },
+ {
+  "pair_id": "73363",
+  "R": {
+   "target": {
+    "title": "Glycine protects the male reproductive system against lead toxicity via alleviating oxidative stress, preventing sperm mitochondrial impairment, improving kinematics of sperm, and blunting the downregulation of enzymes involved in the steroidogenesis.",
+    "authors": [
+     "Mohammad Mehdi Ommati",
+     "Hassan Nategh Ahmadi",
+     "Samira Sabouri",
+     "Socorro Retana‐Marquez",
+     "Narges Abdoli",
+     "Sajjad Rashno",
+     "Hossein Niknahad",
+     "Akram Jamshidzadeh",
+     "Khadijeh Mousavi",
+     "Mohammad Rezaei",
+     "Alireza Akhlagh",
+     "Negar Azarpira",
+     "Forouzan Khodaei",
+     "Reza Heidari"
+    ],
+    "doi": "10.1002/tox.23654"
+   }
+  },
+  "K": {
+   "target": {
+    "title": "Scutellarin alleviates cerebral ischemia/reperfusion by suppressing oxidative stress and inflammatory responses via MAPK/NF-κB pathways in rats.",
+    "authors": [
+     "Yuming Zhang",
+     "Zhen Zhang",
+     "Jun Wang",
+     "Xiajing Zhang",
+     "Jing Zhao",
+     "Ning Bai",
+     "Annamalai Vijayalakshmi",
+     "Qifan Huo"
+    ],
+    "doi": "10.1002/tox.23645"
+   }
+  }
+ },
+ {
+  "pair_id": "73382",
+  "R": {
+   "target": {
+    "title": "Two functional epitopes of pigment epithelial-derived factor block angiogenesis and induce differentiation in prostate cancer.",
+    "authors": [
+     "Stephanie Filleur",
+     "Karl Volz",
+     "Thomas Nelius",
+     "Yelena Mirochnik",
+     "Hanhua Huang",
+     "Tetiana A Zaichuk",
+     "Maria S Aymerich",
+     "Sofia P Becerra",
+     "Ronald Yap",
+     "Dorina Veliceasa",
+     "Emelyn H Shroff",
+     "Olga V Volpert"
+    ],
+    "doi": "10.1158/0008-5472.can-04-3744"
+   }
+  },
+  "K": {
+   "target": {
+    "title": "Helicobacter infection is required for inflammation and colon cancer in SMAD3-deficient mice.",
+    "authors": [
+     "Lillian Maggio‐Price",
+     "Piper M. Treuting",
+     "Weiping Zeng",
+     "Mark Tsang",
+     "Helle Bielefeldt‐Ohmann",
+     "Brian M. Iritani"
+    ],
+    "doi": "10.1158/0008-5472.can-05-2448"
+   }
+  }
+ },
+ {
+  "pair_id": "72173",
+  "R": {
+   "target": {
+    "title": "Aggravation of TGFβ1-Smad Pathway and Autoimmune Myocarditis by Fungicide (Tebuconazole) Exposure.",
+    "authors": [
+     "Ylenia Marino",
+     "Alessia Arangia",
+     "Ramona D’Amico",
+     "Marika Cordaro",
+     "Rosalba Siracusa",
+     "Daniela Impellizzeri",
+     "Enrico Gugliandolo",
+     "Roberta Fusco",
+     "Salvatore Cuzzocrea",
+     "Rosanna Di Paola"
+    ],
+    "doi": "10.3390/ijms241411510"
+   }
+  },
+  "K": {
+   "target": {
+    "title": "miRNAs in Neurological Manifestation in Patients Co-Infected with SARS-CoV-2 and Herpesvírus 6 (HHV-6).",
+    "authors": [
+     "Vanessa Cristine de Souza Carneiro",
+     "Otacílio C. Moreira",
+     "Wagner Luís da Costa Nunes Pimentel Coelho",
+     "Beatriz Chan Rio",
+     "Dmitry José de Santana Sarmento",
+     "Andreza Lemos Salvio",
+     "Soniza Vieira Alves‐Leon",
+     "Vanessa Salete de Paula",
+     "Luciane Almeida Amado Leon"
+    ],
+    "doi": "10.3390/ijms241311201"
+   }
+  }
+ },
+ {
+  "pair_id": "74224",
+  "R": {
+   "target": {
+    "title": "Analysis of psychopathological comorbidity behind the common symptoms and signs of endometriosis.",
+    "authors": [
+     "Antonio Simone Laganà",
+     "Irene Condemi",
+     "Giovanni Retto",
+     "Maria Rosaria Anna Muscatello",
+     "Antonio Bruno",
+     "Rocco Antonio Zoccali",
+     "Onofrio Triolo",
+     "Clemente Cedro"
+    ],
+    "doi": "10.1016/j.ejogrb.2015.08.015"
+   }
+  },
+  "K": {
+   "target": {
+    "title": "Oligoasthenoteratozoospermia and infertility in mice deficient for miR-34b/c and miR-449 loci.",
+    "authors": [
+     "Stefano Comazzetto",
+     "Monica Di Giacomo",
+     "Kasper Dindler Rasmussen",
+     "Christian Much",
+     "Chiara Azzi",
+     "Emerald Perlas",
+     "Marcos Morgan",
+     "Dónal O’Carroll"
+    ],
+    "doi": "10.1371/journal.pgen.1004597"
+   }
+  }
+ },
+ {
+  "pair_id": "71856",
+  "R": {
+   "target": {
+    "title": "Measurement of the fetal occiput-spine angle during the first stage of labor as predictor of the progress and outcome of labor.",
+    "authors": [
+     "Ahmed M Maged",
+     "Ehab M Soliman",
+     "Ali A Abdellatif",
+     "Mohamed Nabil",
+     "Omar I Said",
+     "Mohamed N Mohesen",
+     "Ayman N Raslan",
+     "Sahar M Y Elbaradie"
+    ],
+    "doi": "10.1080/14767058.2018.1432589"
+   }
+  },
+  "K": {
+   "target": {
+    "title": "Nutrition, epigenetic markers and growth in preterm infants.",
+    "authors": [
+     "Maria Giulia Tozzi",
+     "Francesca Moscuzza",
+     "Angela Michelucci",
+     "Rosa Teresa Scaramuzzo",
+     "Cinzia Cosini",
+     "Francesca Chesi",
+     "Maria Adelaide Caligo",
+     "Massimiliano Ciantelli",
+     "Paolo Ghirri"
+    ],
+    "doi": "10.1080/14767058.2019.1702952"
+   }
+  }
+ },
+ {
+  "pair_id": "72645",
+  "R": {
+   "target": {
+    "title": "Neuroinflammation is associated with infiltration of T cells in Lewy body disease and α-synuclein transgenic models.",
+    "authors": [
+     "Michiyo Iba",
+     "Changyoun Kim",
+     "Michelle Sallin",
+     "Somin Kwon",
+     "Anjali Verma",
+     "Cassia Overk",
+     "Robert A Rissman",
+     "Ranjan Sen",
+     "Jyoti Misra Sen",
+     "Eliezer Masliah"
+    ],
+    "doi": "10.1186/s12974-020-01888-0"
+   }
+  },
+  "K": {
+   "target": {
+    "title": "Aucubin alleviates oxidative stress and inflammation via Nrf2-mediated signaling activity in experimental traumatic brain injury.",
+    "authors": [
+     "Han Wang",
+     "Xiaoming Zhou",
+     "Lingyun Wu",
+     "Guangjie Liu",
+     "Weidong Xu",
+     "Xiangsheng Zhang",
+     "Yongyue Gao",
+     "Tao Tao",
+     "Yan Zhou",
+     "Yue Lu",
+     "Juan Wang",
+     "Chu-Lei Deng",
+     "Zong Zhuang",
+     "Chun‐Hua Hang",
+     "Wei Li"
+    ],
+    "doi": "10.1186/s12974-020-01863-9"
+   }
+  }
+ },
+ {
+  "pair_id": "73361",
+  "R": {
+   "target": {
+    "title": "Metoprolol, N-Acetylcysteine, and Escitalopram Prevents Chronic Unpredictable Mild Stress-Induced Depression by Inhibition of Endoplasmic Reticulum Stress.",
+    "authors": [
+     "Lixia Yang",
+     "Lei Zheng",
+     "Yan Wan",
+     "Zhenghong Chen",
+     "Peifan Li",
+     "Yiming Wang"
+    ],
+    "doi": "10.3389/fpsyt.2018.00696"
+   }
+  },
+  "K": {
+   "target": {
+    "title": "Feasibility Randomised Trial Comparing Two Forms of Mental Health Supported Accommodation (Supported Housing and Floating Outreach); a Component of the QuEST (Quality and Effectiveness of Supported Tenancies) Study.",
+    "authors": [
+     "Helen T. Killaspy",
+     "Stefan Priebe",
+     "Peter McPherson",
+     "Zohra Zenasni",
+     "Paul McCrone",
+     "Sarah Dowling",
+     "Isobel Harrison",
+     "Joanna Krotofil",
+     "Christian Dalton‐Locke",
+     "Rose McGranahan",
+     "Maurice Arbuthnott",
+     "Sarah E. Curtis",
+     "Gerard Leavey",
+     "Rob Macpherson",
+     "Sandra M Eldridge",
+     "Michael King"
+    ],
+    "doi": "10.3389/fpsyt.2019.00258"
+   }
+  }
+ },
+ {
+  "pair_id": "73356",
+  "R": {
+   "target": {
+    "title": "Atovaquone inhibits colorectal cancer metastasis by regulating PDGFRβ/NF-κB signaling pathway.",
+    "authors": [
+     "Bin Liu",
+     "Xin Zheng",
+     "Jiajun Li",
+     "Peng Yao",
+     "Peng Guo",
+     "Wei Liu",
+     "Gaoping Zhao"
+    ],
+    "doi": "10.1186/s12885-023-11585-9"
+   }
+  },
+  "K": {
+   "target": {
+    "title": "Clinical impact of primary tumor sidedness and sex on unresectable post-recurrence survival in resected pathological stage II-III colorectal cancers: a nationwide multicenter retrospective study.",
+    "authors": [
+     "Shinya Abe",
+     "Kazushige Kawai",
+     "Hiroaki Nozawa",
+     "Kazuhito Sasaki",
+     "Koji Murono",
+     "Shigenobu Emoto",
+     "Tsuyoshi Ozawa",
+     "Yuichiro Yokoyama",
+     "Yuzo Nagai",
+     "Hiroyuki Anzai",
+     "Hirofumi Sonoda",
+     "Shinichi Yamauchi",
+     "Kenichi Sugihara",
+     "Soichiro Ishihara"
+    ],
+    "doi": "10.1186/s12885-022-09615-z"
+   }
+  }
+ },
+ {
+  "pair_id": "73869",
+  "R": {
+   "target": {
+    "title": "SARS-CoV-2 S2-targeted vaccination elicits broadly neutralizing antibodies.",
+    "authors": [
+     "Kevin W Ng",
+     "Nikhil Faulkner",
+     "Katja Finsterbusch",
+     "Mary Wu",
+     "Ruth Harvey",
+     "Saira Hussain",
+     "Maria Greco",
+     "Yafei Liu",
+     "Svend Kjaer",
+     "Charles Swanton",
+     "Sonia Gandhi",
+     "Rupert Beale",
+     "Steve J Gamblin",
+     "Peter Cherepanov",
+     "John McCauley",
+     "Rodney Daniels",
+     "Michael Howell",
+     "Hisashi Arase",
+     "Andreas Wack",
+     "David L V Bauer",
+     "George Kassiotis"
+    ],
+    "doi": "10.1126/scitranslmed.abn3715"
+   }
+  },
+  "K": {
+   "target": {
+    "title": "Antisense oligonucleotide therapy in a humanized mouse model of MECP2 duplication syndrome.",
+    "authors": [
+     "Yingyao Shao",
+     "Yehezkel Sztainberg",
+     "Qi Wang",
+     "Sameer S. Bajikar",
+     "Alexander J. Trostle",
+     "Ying‐Wooi Wan",
+     "Paymaan Jafar‐Nejad",
+     "Frank Rigo",
+     "Zhandong Liu",
+     "Jianrong Tang",
+     "Huda Yahya Zoghbi"
+    ],
+    "doi": "10.1126/scitranslmed.aaz7785"
+   }
+  }
+ },
+ {
+  "pair_id": "73294",
+  "R": {
+   "target": {
+    "title": "LncRNA AATBC regulates Pinin to promote metastasis in nasopharyngeal carcinoma.",
+    "authors": [
+     "Ting Tang",
+     "Liting Yang",
+     "Yujian Cao",
+     "Maonan Wang",
+     "Shanshan Zhang",
+     "Zhaojian Gong",
+     "Fang Xiong",
+     "Yi He",
+     "Yujuan Zhou",
+     "Qianjin Liao",
+     "Bo Xiang",
+     "Ming Zhou",
+     "Can Guo",
+     "Xiaoling Li",
+     "Yong Li",
+     "Wei Xiong",
+     "Guiyuan Li",
+     "Zhaoyang Zeng"
+    ],
+    "doi": "10.1002/1878-0261.12703"
+   }
+  },
+  "K": {
+   "target": {
+    "title": "Clinical significance of clonal hematopoiesis in the interpretation of blood liquid biopsy.",
+    "authors": [
+     "Hiu Ting Chan",
+     "Satoshi Nagayama",
+     "Yoon Ming Chin",
+     "Masumi Otaki",
+     "Rie Hayashi",
+     "Kazuma Kiyotani",
+     "Yosuke Fukunaga",
+     "Masashi Ueno",
+     "Yusuke Nakamura",
+     "Siew‐Kee Low"
+    ],
+    "doi": "10.1002/1878-0261.12727"
+   }
+  }
+ },
+ {
+  "pair_id": "72177",
+  "R": {
+   "target": {
+    "title": "Predictive performance of the Vitrigel-eye irritancy test method using 118 chemicals.",
+    "authors": [
+     "Hiroyuki Yamaguchi",
+     "Hajime Kojima",
+     "Toshiaki Takezawa"
+    ],
+    "doi": "10.1002/jat.3254"
+   }
+  },
+  "K": {
+   "target": {
+    "title": "Non-clinical safety and biodistribution of AS03-adjuvanted inactivated pandemic influenza vaccines.",
+    "authors": [
+     "Lawrence M. Segal",
+     "Sandrine Wouters",
+     "Danielle Morelle",
+     "Gaëlle Gautier",
+     "Julien Le Gal",
+     "Thomas Martin",
+     "C. Frieke Kuper",
+     "Éric Destexhe",
+     "Arnaud M. Didierlaurent",
+     "Nathalie Garçon"
+    ],
+    "doi": "10.1002/jat.3130"
+   }
+  }
+ },
+ {
+  "pair_id": "73374",
+  "R": {
+   "target": {
+    "title": "Attenuation of cartilage pathogenesis in post-traumatic osteoarthritis (PTOA) in mice by blocking the stromal derived factor 1 receptor (CXCR4) with the specific inhibitor, AMD3100.",
+    "authors": [
+     "Nathan P Thomas",
+     "Pengcui Li",
+     "Braden C Fleming",
+     "Qian Chen",
+     "Xiaochun Wei",
+     "Xiaohua Pan",
+     "Gang Li",
+     "Lei Wei"
+    ],
+    "doi": "10.1002/jor.22862"
+   }
+  },
+  "K": {
+   "target": {
+    "title": "Radiostereometric analysis using clinical radiographic views: Validation measuring total hip replacement wear.",
+    "authors": [
+     "Xunhua Yuan",
+     "Kimberley Lam-Tin-Cheung",
+     "James L. Howard",
+     "Brent A. Lanting",
+     "Matthew G. Teeter"
+    ],
+    "doi": "10.1002/jor.23170"
+   }
+  }
+ },
+ {
+  "pair_id": "72377",
+  "R": {
+   "target": {
+    "title": "CD2 glycoprotein and CD44 structure and prevention of diabetes nephropathy: Central characteristics of related genes based on WGCNA and PPI.",
+    "authors": [
+     "Yi He",
+     "Xin Liu",
+     "Rong Wang",
+     "Jun Pang",
+     "Zhiming Tang",
+     "Qiuhong Zhong",
+     "Xu Lin"
+    ],
+    "doi": "10.1016/j.ijbiomac.2024.135393"
+   }
+  },
+  "K": {
+   "target": {
+    "title": "Hybrid Se/melanin-like nanoparticles as ROS quenchers and inhibitors of amyloid aggregation.",
+    "authors": [
+     "Giulio Pota",
+     "Concetta Di Natale",
+     "Antonia Puzone",
+     "Antonella Cascone",
+     "Sara La Manna",
+     "Federica Licciardi",
+     "Giuseppe Vitiello",
+     "Valeria Panzetta",
+     "Paolo A. Netti",
+     "Giuseppina Luciani",
+     "Daniela Marasco"
+    ],
+    "doi": "10.1016/j.ijbiomac.2025.144175"
+   }
+  }
+ },
+ {
+  "pair_id": "73751",
+  "R": {
+   "target": {
+    "title": "Effects of microRNA-101-3p on predicting pediatric acute respiratory distress syndrome and its role in human alveolar epithelial cell.",
+    "authors": [
+     "Fang Yin",
+     "Qi Li",
+     "Min Cao",
+     "Yaqin Duan",
+     "Liu Zhao",
+     "Lumin Gan",
+     "Zili Cai"
+    ],
+    "doi": "10.1080/21655979.2022.2070583"
+   }
+  },
+  "K": {
+   "target": {
+    "title": "Value of glycogen synthase 2 in intrahepatic cholangiocarcinoma prognosis assessment and its influence on the activity of cancer cells.",
+    "authors": [
+     "Sigen A",
+     "Huijun Wu",
+     "Xiaodong Wang",
+     "Xidong Wang",
+     "Jiarui Yang",
+     "Long Xia",
+     "Yijun Xia"
+    ],
+    "doi": "10.1080/21655979.2021.2005224"
+   }
+  }
+ },
+ {
+  "pair_id": "74021",
+  "R": {
+   "target": {
+    "title": "Application of a Microsuction Background Device for Microanastomosis in a Rat Femoral Vessel Model.",
+    "authors": [
+     "Ankur Khajuria",
+     "Hyung Hwa Jeong",
+     "Theodora Papavasiliou",
+     "Stelios Chatzimichail",
+     "Joon Pio Hong"
+    ],
+    "doi": "10.1097/prs.0000000000010512"
+   }
+  },
+  "K": {
+   "target": {
+    "title": "Supermicrosurgical Anastomosis Training Using Chick Embryos within the Egg-in-Cube System.",
+    "authors": [
+     "Ryo Karakawa",
+     "Hidehiko Yoshimatsu",
+     "Kengo Nakatsuka",
+     "Yuma Fuse",
+     "Shohei Nishiyama",
+     "Tomohiro Kawahara",
+     "Tomoyuki Yano"
+    ],
+    "doi": "10.1097/prs.0000000000010772"
+   }
+  }
+ }
+]

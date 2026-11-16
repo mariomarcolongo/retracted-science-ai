@@ -1,0 +1,7 @@
+# Exploratory DeepSeek detail audit
+
+Screening of all 56 answers against the frozen registry. Both judges’ extracted notice details and original answers are preserved. Year checks require the extracted year to occur in the answer, but do not establish that extraction is semantically correct. No notice in the snapshot is not proof that none exists. Reasons, exact dates, notice identifiers and journal claims require source-level verification. This is a post hoc diagnostic, not adjudicated ancillary scoring. Original status outcomes are unchanged.
+
+**Corrections:** see REVIEW-2026-11-16.md. After review, all 18 notice years are confirmed wrong, and the MECP2 "retraction" is a false claim about a control paper.
+
+**How to read this audit.** Every retracted paper in the sample was retracted between 2 July and 7 November 2026. DeepSeek publishes no training cutoff; V4.1 Flash was released on 10 September 2026 and updated on 17 October, so exposure to some of these retractions cannot be ruled out. But DeepSeek also called 25/25 control papers retracted, so its "retracted" answers do not discriminate, and every retraction year it gives before 2026 is wrong. The wrong dates and DOIs found here are concrete examples of that fabrication. They are not a separate discovery, and they are not evidence that the status label was "correct with wrong details". Report this as an illustration, not as an error rate comparable with other models.

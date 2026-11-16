@@ -1,0 +1,36 @@
+{
+  "total_runs": 504,
+  "usable_answers": 503,
+  "author_decisions": 21,
+  "human_forms": 36,
+  "validated_by_pooled_human_check": true,
+  "unresolved_ancillary_field_disagreements": {
+    "status_source": 204,
+    "claimed_checks": 159,
+    "notice_details": 66
+  },
+  "scope": "SQ only; no ancillary or forged-notice outcomes",
+  "rationale_collected": false,
+  "denominator": "Non-refusal usable answers, with operational missing reported separately; main and pilot separated.",
+  "input_sha256": {
+    "code/status_only.py": "406e9efe9c2a2afe27b7b3cb0b6caffd0be0cb19e483fd9bb73e694101478b98",
+    "data/logs/status-question/judging/judging.jsonl": "3754738b464ad63323c9192b2f627368c43c905bab28166601db6e80fc7dc709",
+    "data/logs/status-question/judging/manifest.json": "d348453895d4997519226dc45296794d1f572bc4a0b7e194bdd996571fe140b9",
+    "data/logs/status-question/manifest.json": "5a851acf8d63951b3805862c285d3ceab55da07a2b0dd5a85a73d9d8a9397468",
+    "data/logs/status-question/runs.jsonl": "3325d3565438ba0e83e518d4c19915792f017ee21924d81e46ff94eeadaa4953",
+    "data/logs/status-question-deepseek/judging/judging.jsonl": "2711321e28b055ef483f81f0c707317b731fbe693f91ab117f4633546dd79d73",
+    "data/logs/status-question-deepseek/judging/manifest.json": "d348453895d4997519226dc45296794d1f572bc4a0b7e194bdd996571fe140b9",
+    "data/logs/status-question-deepseek/manifest.json": "210cae4bb579e44b114b4964d9cf87664d7e734bb15eac2e1a7fe1016f7a898d",
+    "data/logs/status-question-deepseek/runs.jsonl": "3f123a5f3fdc01176e8d6c1bc2fd045c0357310fc75902a668f95c14be2a6add",
+    "data/work/check_items.json": "3a2d5588fb11d2c53af5404cba4567575f41c1cd4c14851a853418865cfb22ab",
+    "data/work/draw/targets.json": "2f0573d666d28361df859ce91c85a0c5dd98bd176b52cd0c6c8778049a602b8c",
+    "data/work/pilot/targets.json": "2acb67502a325b8a8b450f4c444398271c24ddbe4ef045ef67471e41c3465b41",
+    "results/status-question/deepseek/human/labels.csv": "f3f20bc72ef62e793e4b051f342b673a69b1cf13eba066785cd685d8b80a6afe",
+    "results/status-question/deepseek/human/sample-map.json": "4d9b2d57a5a281d5dbf211871b0d2d6051df8b0084f634b9043068a148608991",
+    "results/status-question/deepseek/mechanical/mechanical.jsonl": "f7b9f52b54f9da2e8b27569a6e1d377a83ca1a5de05d20b74ee8a04fde6e7e14",
+    "results/status-question/main/human/labels.csv": "0abc29d7b4ddcb75d1f9f8313206c522df14344ac7dfe0d3eb783bcc221de4ff",
+    "results/status-question/main/human/sample-map.json": "a24dbd6835cc6e9f02ba1509ce93ccf4d9f8da10f7bbbc9da06afed752dbc34e",
+    "results/status-question/main/mechanical/mechanical.jsonl": "0a4e01113caa52caa620bad4780c358f995e856322d4d7ded023b0629b86a79d",
+    "results/status-question/status-review/author-status-decisions.csv": "525cc84d90ad8c02164c5e5e345804a16afce5ba697eff383700de3f2fe853b3"
+  }
+}

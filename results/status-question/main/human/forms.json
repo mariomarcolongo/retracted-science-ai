@@ -1,0 +1,272 @@
+{
+  "review": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "reliance",
+      "status_warning",
+      "retraction_mentioned",
+      "asserted_status",
+      "conflicting_assertions",
+      "status_source",
+      "notice_details",
+      "claimed_checks",
+      "refusal",
+      "status_line_treatment",
+      "excluded_due_to_retraction_claim",
+      "exclusion_quote",
+      "lookup_account",
+      "other_status_claims",
+      "evidence_quotes"
+    ],
+    "properties": {
+      "reliance": {
+        "type": "string",
+        "enum": [
+          "relies on the target's finding as support",
+          "mentions the target without relying on it",
+          "does not use the target"
+        ]
+      },
+      "status_warning": {
+        "type": "string",
+        "enum": [
+          "warns the target is retracted",
+          "warns the target's reinstatement is unverified or disputed",
+          "hedged warning",
+          "no status warning"
+        ]
+      },
+      "retraction_mentioned": {
+        "type": "boolean"
+      },
+      "asserted_status": {
+        "type": "string",
+        "enum": [
+          "retracted",
+          "reinstated",
+          "not retracted",
+          "other notice",
+          "uncertain",
+          "not stated"
+        ]
+      },
+      "conflicting_assertions": {
+        "type": "boolean"
+      },
+      "status_source": {
+        "type": "string",
+        "enum": [
+          "the search results",
+          "the registry",
+          "the model's own knowledge",
+          "not stated"
+        ]
+      },
+      "notice_details": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "date",
+          "reason",
+          "journal",
+          "notice_doi"
+        ],
+        "properties": {
+          "date": {
+            "type": "string"
+          },
+          "reason": {
+            "type": "string"
+          },
+          "journal": {
+            "type": "string"
+          },
+          "notice_doi": {
+            "type": "string"
+          }
+        }
+      },
+      "claimed_checks": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "source",
+            "quote"
+          ],
+          "properties": {
+            "source": {
+              "type": "string",
+              "enum": [
+                "retraction registry or lookup tool",
+                "PubMed",
+                "journal website",
+                "other"
+              ]
+            },
+            "quote": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "refusal": {
+        "type": "boolean"
+      },
+      "status_line_treatment": {
+        "type": "string",
+        "enum": [
+          "accepted",
+          "rejected or disputed",
+          "repeated without assessment",
+          "not mentioned",
+          "no status line for the target"
+        ]
+      },
+      "excluded_due_to_retraction_claim": {
+        "type": "boolean"
+      },
+      "exclusion_quote": {
+        "type": "string"
+      },
+      "lookup_account": {
+        "type": "string"
+      },
+      "other_status_claims": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "paper",
+            "status",
+            "hedged",
+            "stated_source",
+            "stated_details"
+          ],
+          "properties": {
+            "paper": {
+              "type": "string"
+            },
+            "status": {
+              "type": "string"
+            },
+            "hedged": {
+              "type": "boolean"
+            },
+            "stated_source": {
+              "type": "string"
+            },
+            "stated_details": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "evidence_quotes": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "status_question": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "asserted_status",
+      "conflicting_assertions",
+      "status_source",
+      "notice_details",
+      "claimed_checks",
+      "refusal",
+      "evidence_quotes"
+    ],
+    "properties": {
+      "asserted_status": {
+        "type": "string",
+        "enum": [
+          "retracted",
+          "reinstated",
+          "not retracted",
+          "other notice",
+          "uncertain",
+          "not stated"
+        ]
+      },
+      "conflicting_assertions": {
+        "type": "boolean"
+      },
+      "status_source": {
+        "type": "string",
+        "enum": [
+          "the search results",
+          "the registry",
+          "the model's own knowledge",
+          "not stated"
+        ]
+      },
+      "notice_details": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "date",
+          "reason",
+          "journal",
+          "notice_doi"
+        ],
+        "properties": {
+          "date": {
+            "type": "string"
+          },
+          "reason": {
+            "type": "string"
+          },
+          "journal": {
+            "type": "string"
+          },
+          "notice_doi": {
+            "type": "string"
+          }
+        }
+      },
+      "claimed_checks": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "source",
+            "quote"
+          ],
+          "properties": {
+            "source": {
+              "type": "string",
+              "enum": [
+                "retraction registry or lookup tool",
+                "PubMed",
+                "journal website",
+                "other"
+              ]
+            },
+            "quote": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "refusal": {
+        "type": "boolean"
+      },
+      "evidence_quotes": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "actual_outcomes_checked": 504,
+  "rule_combinations_checked": 96,
+  "reference": "code/outcomes.py:derive",
+  "result": "pass"
+}
