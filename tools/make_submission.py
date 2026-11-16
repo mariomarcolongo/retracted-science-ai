@@ -50,15 +50,15 @@ METHODS = """## 3. Methods (summary; full methods in Appendix K)
 
 main = [title, "", author, "", "## Abstract", "", abstract, "---", "", sec("1. Introduction"),
         "## 2. Related work\n\nSix studies tested language models on retracted papers; Appendix J lists what each found and what it "
-        "could not show. None gave models a registry to check or showed them a forged status claim, and none tested the models "
-        "behind Doubao, Baidu Search or the Qwen app.\n\n" + related.split("Models tested in each study: Table G1.")[1].strip() + "\n",
+        "could not show. None gave models a registry to check or showed them a forged status claim, and none tested models "
+        "from the developers of Doubao, Baidu Search or the Qwen app.\n\n" + related.split("Models tested in each study: Table G1.")[1].strip() + "\n",
         METHODS, results, "## 5. Discussion and Limitations\n\n" + discussion +
         "\n\n**Limitations.** The main ones for this result are listed with it in §4.1: one question wording asked once, 25 papers "
         "per group, one human annotator who also settled the judges' disagreements, training exposure not established, and three "
         "model-to-product links not established. The forged-status tests have not been run, so nothing here shows how models "
         "handle search results, labels, forged notes or a registry. The full list is in Appendix A.\n",
         sec("6. Conclusion"), "## Code and data\n\nThe code, prompts, decision log and the logs of this run (every request, response, judge form and label) "
-        "are kept in a versioned repository, not yet public; they will be released with the completed study.\n", sec("Author contributions"), sec("LLM usage statement")]
+        "are kept in a versioned repository, not yet public; they will be released with the completed study.\n", sec("Author contributions").split("**AI assistance.**")[0].rstrip() + "\n", sec("LLM usage statement")]
 back = [sec("References"), sec("Appendix A").rstrip() + "\n\n" + limits_table.replace("### Limitations", "**Full list of limitations**", 1),
         sec("Appendix B"), sec("Appendix C"), sec("Appendix D"), sec("Appendix E"), sec("Appendix F"), sec("Appendix G"),
         "## Appendix J. Related work in detail\n\n" + related,
@@ -66,6 +66,21 @@ back = [sec("References"), sec("Appendix A").rstrip() + "\n\n" + limits_table.re
 back = [b.replace("| [check] |", "| not yet checked |").replace(" [check: model used in app]", " (model used in the app not established)")
         .replace(" [check: model used in search]", " (model used in search not established)").replace("| [N] health papers", "| 25 health papers")
         for b in back]
+# Submission-specific wording: cross-references to parts that moved, and contributions stated as what exists today.
+FIX = [("(Table 1). We chose", "(Appendix J, Table 1). We chose"), ("figures in Table 1)", "figures in Appendix J, Table 1)"),
+       ("1. The first test we found of **forged publication status in both directions**",
+        "1. A design, not yet run, for the first test we found of **forged publication status in both directions**"),
+       ("2. A controlled test of recent retractions, with a separate status-question test to measure recognition without retrieved evidence.",
+        "2. A completed status-question test on recent retractions, measuring recognition without retrieved evidence, on nine models."),
+       ("3. A comparison of nine API configurations", "3. A panel of nine API configurations"),
+       ("Only the status-question test (§3.1) has been run. The forged-status tests (Table 2)",
+        "Only the status-question test (§3) has been run. The forged-status tests (Appendix K, Table 2)"),
+       ("the outcome rule of §3.5", "the outcome rule of Appendix K, §3.5"), ("\n---\n\n---\n", "\n---\n")]
+main = "\n".join(main)
+for a, b in FIX:
+    assert main.count(a) == 1, a
+    main = main.replace(a, b)
+main = [main]
 out = "\n".join(main if "--main-only" in sys.argv else main + back)
 open("paper/submission-main.md" if "--main-only" in sys.argv else "paper/submission.md", "w", encoding="utf-8").write(out)
 print("abstract words:", words, "| written", "main only" if "--main-only" in sys.argv else "full")
