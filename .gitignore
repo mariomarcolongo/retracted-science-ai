@@ -1,0 +1,23 @@
+# Secrets
+.env
+.env.*
+*.key
+secrets/
+
+# Large raw download (re-create with the URL and SHA-256 in code/RUN_ORDER.txt)
+data/raw/
+
+# Internal planning material, not part of the published study
+private/
+
+# Built files
+paper/*.html
+
+# System / editor
+.DS_Store
+__pycache__/
+*.pyc
+.venv/
+
+# Local tool settings
+.claude/

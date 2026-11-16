@@ -1,0 +1,145 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 546" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" role="img" aria-labelledby="t d">
+  <title id="t">Figure 1. Study design</title>
+  <desc id="d">Materials (retracted papers, matched controls, topics, five search results), then a pilot and a frozen design note, feed ten tests (R1 to R6 on retracted targets, K3 and K4 on control targets, and R4-I and K4-I, which repeat R4 and K4 with an instruction to check status) and a status question, run on nine models; answers are scored by rules, two judges and a human check, then compared in pairs.</desc>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#444"/></marker>
+  </defs>
+  <rect width="860" height="546" fill="#ffffff"/>
+  <g font-size="11" fill="#222">
+    <!-- Band A: materials -->
+    <text x="20" y="28" font-size="12.5" font-weight="600" fill="#555" letter-spacing=".04em">MATERIALS (built once, the same in every test)</text>
+    <g stroke="#555" stroke-width="1" fill="#f5f4ef">
+      <rect x="20" y="40" width="190" height="112" rx="6"/>
+      <rect x="230" y="40" width="190" height="112" rx="6"/>
+      <rect x="440" y="40" width="190" height="112" rx="6"/>
+      <rect x="650" y="40" width="190" height="112" rx="6"/>
+    </g>
+    <g stroke="#444" stroke-width="1.3" marker-end="url(#a)">
+      <line x1="211" y1="96" x2="228" y2="96"/>
+      <line x1="421" y1="96" x2="438" y2="96"/>
+      <line x1="631" y1="96" x2="648" y2="96"/>
+    </g>
+    <text x="32" y="61" font-size="12.5" font-weight="600">1. Retracted papers</text>
+    <text x="32" y="80">Retraction Watch data</text>
+    <text x="32" y="95">(13 Nov 2026): health papers</text>
+    <text x="32" y="110">retracted from 1 Jul 2026</text>
+    <text x="32" y="125">for data-invalidating reasons;</text>
+    <text x="32" y="140">up to 40, seeded draw</text>
+    <text x="242" y="61" font-size="12.5" font-weight="600">2. Matched controls</text>
+    <text x="242" y="80">one non-retracted paper</text>
+    <text x="242" y="95">per retracted paper,</text>
+    <text x="242" y="110">with no Retraction Watch</text>
+    <text x="242" y="125">record</text>
+    <text x="452" y="61" font-size="12.5" font-weight="600">3. Topics</text>
+    <text x="452" y="80">one sentence per paper,</text>
+    <text x="452" y="95">drafted by MiMo-V2.5-Pro</text>
+    <text x="452" y="110">from title and abstract;</text>
+    <text x="452" y="125">checked blind by the author</text>
+    <text x="662" y="61" font-size="12.5" font-weight="600">4. Five search results</text>
+    <text x="662" y="80">[S1]–[S5]: the target paper</text>
+    <text x="662" y="95">and four real non-retracted</text>
+    <text x="662" y="110">papers on the same topic;</text>
+    <text x="662" y="125">target position random (seed)</text>
+
+    <line x1="430" y1="156" x2="430" y2="168" stroke="#444" stroke-width="1.3" marker-end="url(#a)"/>
+    <rect x="255" y="171" width="350" height="24" rx="12" fill="#ffffff" stroke="#555" stroke-width="1"/>
+    <text x="430" y="187" text-anchor="middle">Pilot (3 pairs) → frozen design note, committed publicly</text>
+    <line x1="430" y1="198" x2="430" y2="212" stroke="#444" stroke-width="1.3" marker-end="url(#a)"/>
+    <g transform="translate(0,34)">
+
+    <!-- Band B: tests -->
+    <text x="20" y="200" font-size="12.5" font-weight="600" fill="#555" letter-spacing=".04em">5. TESTS (each on nine models; one fresh conversation per item)</text>
+    <text x="275" y="222" text-anchor="middle" font-weight="600" fill="#7a2e1f">Retracted target</text>
+    <text x="625" y="222" text-anchor="middle" font-weight="600" fill="#1f4e7a">Control target</text>
+    <text x="780" y="222" text-anchor="middle" font-weight="600" fill="#555">No search results</text>
+    <line x1="20" y1="228" x2="530" y2="228" stroke="#7a2e1f" stroke-width="1.5"/>
+    <line x1="542" y1="228" x2="708" y2="228" stroke="#1f4e7a" stroke-width="1.5"/>
+    <line x1="720" y1="228" x2="840" y2="228" stroke="#888" stroke-width="1.5"/>
+    <g stroke-width="1">
+      <rect x="20" y="236" width="80" height="78" rx="6" fill="#faf1ee" stroke="#7a2e1f"/>
+      <rect x="106" y="236" width="80" height="78" rx="6" fill="#faf1ee" stroke="#7a2e1f"/>
+      <rect x="192" y="236" width="80" height="78" rx="6" fill="#faf1ee" stroke="#7a2e1f"/>
+      <rect x="278" y="236" width="80" height="78" rx="6" fill="#faf1ee" stroke="#7a2e1f"/>
+      <rect x="364" y="236" width="80" height="78" rx="6" fill="#faf1ee" stroke="#7a2e1f" stroke-width="2"/>
+      <rect x="450" y="236" width="80" height="78" rx="6" fill="#faf1ee" stroke="#7a2e1f" stroke-width="2"/>
+      <rect x="542" y="236" width="80" height="78" rx="6" fill="#eef3f9" stroke="#1f4e7a" stroke-width="2"/>
+      <rect x="628" y="236" width="80" height="78" rx="6" fill="#eef3f9" stroke="#1f4e7a" stroke-width="2"/>
+      <rect x="720" y="236" width="120" height="78" rx="6" fill="#f5f4ef" stroke="#888"/>
+    </g>
+    <g text-anchor="middle" font-size="11">
+      <text x="60" y="256" font-size="13" font-weight="700">R1</text>
+      <text x="60" y="274">no label</text>
+      <text x="60" y="302" fill="#666">no tool</text>
+      <text x="146" y="256" font-size="13" font-weight="700">R2</text>
+      <text x="146" y="274">true label</text>
+      <text x="146" y="302" fill="#666">no tool</text>
+      <text x="232" y="256" font-size="13" font-weight="700">R3</text>
+      <text x="232" y="274">no label</text>
+      <text x="232" y="302" fill="#666">tool</text>
+      <text x="318" y="256" font-size="13" font-weight="700">R4</text>
+      <text x="318" y="274">forged</text>
+      <text x="318" y="288">reinstatement</text>
+      <text x="318" y="302" fill="#666">tool</text>
+      <text x="404" y="256" font-size="13" font-weight="700">R5</text>
+      <text x="404" y="274">true label</text>
+      <text x="404" y="302" fill="#666">tool</text>
+      <text x="490" y="256" font-size="13" font-weight="700">R6</text>
+      <text x="490" y="274">true label +</text>
+      <text x="490" y="288">forged reinst.</text>
+      <text x="490" y="302" fill="#666">tool</text>
+      <text x="582" y="256" font-size="13" font-weight="700">K3</text>
+      <text x="582" y="274">no label</text>
+      <text x="582" y="302" fill="#666">tool</text>
+      <text x="668" y="256" font-size="13" font-weight="700">K4</text>
+      <text x="668" y="274">forged</text>
+      <text x="668" y="288">retraction</text>
+      <text x="668" y="302" fill="#666">tool</text>
+      <text x="780" y="256" font-size="12.5" font-weight="700">Status question</text>
+      <text x="780" y="274">"Is '{title}' by</text>
+      <text x="780" y="288">{authors} retracted?"</text>
+      <text x="780" y="302" fill="#666">all papers, no tool</text>
+    </g>
+
+    <line x1="430" y1="318" x2="430" y2="342" stroke="#444" stroke-width="1.3" marker-end="url(#a)"/>
+    <text x="446" y="334" fill="#444">R4-I and K4-I: R4 and K4 again, plus an instruction to check status</text>
+    <text x="20" y="334" fill="#444">Thick border: the two primary pairs. Tool = registry lookup.</text>
+
+    <!-- Band C: scoring and analysis -->
+    <text x="20" y="362" font-size="12.5" font-weight="600" fill="#555" letter-spacing=".04em">6. SCORING AND ANALYSIS</text>
+    <g stroke="#555" stroke-width="1" fill="#f5f4ef">
+      <rect x="20" y="374" width="190" height="118" rx="6"/>
+      <rect x="230" y="374" width="190" height="118" rx="6"/>
+      <rect x="440" y="374" width="190" height="118" rx="6"/>
+      <rect x="650" y="374" width="190" height="118" rx="6"/>
+    </g>
+    <g stroke="#444" stroke-width="1.3" marker-end="url(#a)">
+      <line x1="211" y1="433" x2="228" y2="433"/>
+      <line x1="421" y1="433" x2="438" y2="433"/>
+      <line x1="631" y1="433" x2="648" y2="433"/>
+    </g>
+    <text x="32" y="395" font-size="12.5" font-weight="600">Rules (code)</text>
+    <text x="32" y="414">target cited? any result</text>
+    <text x="32" y="429">cited? tool called?</text>
+    <text x="32" y="444">retraction words flagged</text>
+    <text x="32" y="459">for the judges</text>
+    <text x="242" y="395" font-size="12.5" font-weight="600">Two judges</text>
+    <text x="242" y="414">Grok 4.7 (US) and</text>
+    <text x="242" y="429">GLM-5.2 (China), blind to</text>
+    <text x="242" y="444">the test and true status;</text>
+    <text x="242" y="459">disagreements settled by</text>
+    <text x="242" y="474">the author, also blind</text>
+    <text x="452" y="395" font-size="12.5" font-weight="600">Human check</text>
+    <text x="452" y="414">144 test answers and 36</text>
+    <text x="452" y="429">status answers, labelled</text>
+    <text x="452" y="444">blind by the author before</text>
+    <text x="452" y="459">seeing the judges' labels;</text>
+    <text x="452" y="474">kappa per field</text>
+    <text x="662" y="395" font-size="12.5" font-weight="600">Paired comparisons</text>
+    <text x="662" y="414">by topic; primary:</text>
+    <text x="662" y="429">R5 vs R6 and K3 vs K4</text>
+    <text x="662" y="444">(across the nine models,</text>
+    <text x="662" y="459">Holm for the two);</text>
+    <text x="662" y="474">the rest exploratory</text>
+    </g>
+  </g>
+</svg>

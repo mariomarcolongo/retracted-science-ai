@@ -1,0 +1,127 @@
+Run order (Python 3, standard library only). Run every command from the project folder.
+Steps marked [paid] send requests to OpenRouter (key in OPENROUTER_API_KEY); every other step is free.
+Steps marked [author] are filled in by hand before the next command.
+Outputs of the scoring and analysis steps must be outside data/ and paper/ (the scripts refuse otherwise);
+this run order uses results/.
+
+A. Candidate pool
+
+1. Data: data/raw/retraction_watch.csv
+   Retraction Watch data for 13 Nov 2026 (Crossref commit 560ad745cb621e240501422ad485bd81b4590860),
+   downloaded 14 Nov 2026. Pinned URL (gives exactly this file):
+   https://gitlab.com/crossref/retraction-watch-data/-/raw/560ad745cb621e240501422ad485bd81b4590860/retraction_watch.csv
+   SHA-256 4d0509f648ec6dc7f7de43a2260943ed15c56b239d882d73f468f4f40ef917dd (68,092,153 bytes)
+2. python3 -I code/pool.py data/raw/retraction_watch.csv 2026-01-01 data/work/pool_jan.json
+   Date, type, health (HSC), reason and DOI rules. Prints the funnel.
+   The pool starts wide (1 Jan 2026); the study's window (retracted from 1 Jul 2026) is applied in step 5.
+3. python3 -I code/openalex.py data/work/pool_jan.json data/work/pool_jan_oa.json
+   Citations, abstract presence, subfield from OpenAlex (queried 14 Nov 2026; counts change over time).
+4. python3 -I code/pubmed.py data/raw/retraction_watch.csv data/work/pool_jan_oa.json data/work/pool_jan_full.json
+   Missing abstracts from PubMed E-utilities.
+5. python3 -I code/count.py data/work/pool_jan_full.json data/work/candidates.csv
+   Count table per start date (the study uses the 1 Jul 2026 row) and the candidate CSV.
+
+Model catalogue snapshot: data/snapshots/openrouter_models_2026-11-13.json
+(OpenRouter https://openrouter.ai/api/v1/models, retrieved 13 Nov 2026).
+"Lab" vs "clinical/other" is a rough split by OpenAlex subfield, not a screening decision.
+
+Power check (Methods section 3.6), independent of the other steps:
+python3 -I code/power.py   (about a minute; fixed seeds, so the output is identical on every run)
+
+B. Draw, screening and controls (main draw: 25 pairs; pilot: 3 pairs)
+
+6.  python3 -I code/draw.py data/raw/retraction_watch.csv data/work/pool_jan_full.json data/work/draw
+7.  [author] fill data/work/draw/screening.csv
+8.  python3 -I code/draw_screen.py data/work/draw
+9.  python3 -I code/controls.py data/raw/retraction_watch.csv data/work/draw 10
+10. [author] fill data/work/draw/control_screening.csv
+11. python3 -I code/pairs.py data/work/draw
+12. Pilot, the same chain:
+    python3 -I code/draw.py data/raw/retraction_watch.csv data/work/pool_jan_full.json data/work/pilot --pilot
+    [author] fill data/work/pilot/screening.csv
+    python3 -I code/draw_screen.py data/work/pilot 3
+    python3 -I code/controls.py data/raw/retraction_watch.csv data/work/pilot
+    [author] fill data/work/pilot/control_screening.csv
+    python3 -I code/pairs.py data/work/pilot
+    The API answers are cached under <dir>/cache, so a re-run gives the same files.
+
+C. Knowledge check of the drafter, the judges and their backups (section 3.5)
+
+13. python3 -I code/check_items.py data/work/check_items.json data/work/draw data/work/pilot
+14. [paid] python3 -I code/run_tests.py data/work/check_items.json data/logs/knowledge_check --phase knowledge_check --roles aux --tests SQ --budget 5
+15. [paid] python3 -I code/judge.py data/work/check_items.json data/logs/knowledge_check --budget 10
+16. python3 -I code/knowledge_check.py data/logs/knowledge_check
+    [author] settle disagreements in data/logs/knowledge_check/knowledge_decisions.csv, then run step 16 again.
+    A model that fails is replaced (code/models.json) before its output is used.
+
+D. Topics, other results and items (main draw shown; repeat each step with data/work/pilot)
+
+17. [paid] python3 -I code/draft_topics.py data/work/draw targets --logdir data/logs/drafting/draw-targets --budget USD
+18. [paid] python3 -I code/draft_topics.py data/work/draw controls --logdir data/logs/drafting/draw-controls --budget USD
+    Run 17 and 18 one after the other, not at the same time. "NOT COMPLETE" means: run the same command again.
+19. [author] check every topic in data/work/draw/topic_check.csv
+20. python3 -I code/other_results.py data/raw/retraction_watch.csv data/work/draw
+21. [author] fit check in data/work/draw/fit_check.csv
+22. python3 -I code/build_items.py data/raw/retraction_watch.csv data/work/draw
+    Writes the frozen data/work/draw/items.json.
+
+E. Live check on the free model, then the pilot (section 3.1, "Order of work", step 7; section 3.6, "Run checks")
+
+22a. Live check, free model only (no cost; ERNIE has a daily limit of 1,000 requests):
+    python3 -I code/run_tests.py data/work/pilot/items.json data/logs/free-check --phase "dry run" --models ernie --budget 1
+    python3 -I code/check_run.py data/logs/free-check
+23. [paid] python3 -I code/run_tests.py data/work/pilot/items.json data/logs/pilot --phase pilot --budget USD
+    python3 -I code/check_run.py data/logs/pilot
+    check_run.py reads the logs only. It reports, per model: the service tier served, the provider and model
+    returned, the price charged against the pinned endpoint's price, and whether conversations with tool calls
+    ended in a usable answer (the Responses API path of GPT-6 Luna and GPT-6.1 Sol has never run live).
+    Do not start the main run while it reports a FAILED check. Review NOTE entries too: missing tier/price
+    evidence or an unexercised tool path is not a successful validation. Exit 0 means no detected failure,
+    not that every check is verified. A non-calling model needs a separate documented tool-path check.
+24. Score the pilot as in steps 28-36, with data/work/pilot/items.json, data/logs/pilot, results/pilot and
+    --pilot on human_check.py prepare and analysis.py.
+
+F. Main run and stability runs
+
+25. Complete FROZEN_DESIGN.md (hashes, dates, pilot outcome) and commit it publicly with the cost estimate, before the run:
+    python3 -I code/cost_estimate.py data/snapshots/openrouter_models_2026-11-13.json 25 --output results/estimate.csv
+    Draw and record stability pairs NOW, before examining main outputs:
+    python3 -I code/analysis.py data/work/draw/items.json results/stability --select-stability
+26. [paid] python3 -I code/run_tests.py data/work/draw/items.json data/logs/main --phase main --budget USD
+    python3 -I code/check_run.py data/logs/main
+27. Stability (five pairs drawn with the seed before any output is examined; R3, R4, R5, R6, K3, K4 twice more):
+    Use the selection recorded in step 25; do not redraw after inspecting main outputs.
+    [paid] python3 -I code/run_tests.py results/stability/items.json data/logs/stability-2 --phase stability --tests R3,R4,R5,R6,K3,K4 --budget USD
+    [paid] python3 -I code/run_tests.py results/stability/items.json data/logs/stability-3 --phase stability --tests R3,R4,R5,R6,K3,K4 --budget USD
+    Score each repeat with steps 28, 29 and 31-33 into results/stability-2 and results/stability-3, without the human
+    check (no --human-labels).
+
+G. Scoring (section 3.5; main run shown)
+
+28. python3 -I code/score_mechanical.py data/work/draw/items.json data/logs/main results/main/mechanical --registry data/raw/retraction_watch.csv --online
+    [author] review the references in results/main/mechanical/reference_review.csv, then run again with
+    --offline --references results/main/mechanical/reference_review.csv
+29. [paid] python3 -I code/judge.py data/work/draw/items.json data/logs/main --budget USD
+30. python3 -I code/human_check.py prepare data/work/draw/items.json data/logs/main results/main/human
+    [author] label the sample in results/main/human/label.html (saves labels.csv); timestamp the labels publicly
+31. python3 -I code/adjudicate.py data/work/draw/items.json data/logs/main results/main/adjudication --human-labels results/main/human/labels.csv
+32. [author] settle results/main/adjudication/decisions.csv, then:
+    python3 -I code/adjudicate.py data/work/draw/items.json data/logs/main results/main/adjudication --decisions results/main/adjudication/decisions.csv --human-labels results/main/human/labels.csv
+33. python3 -I code/outcomes.py results/main/mechanical/mechanical.jsonl results/main/adjudication/settled.jsonl results/main/outcomes --registry data/raw/retraction_watch.csv --require-complete
+    [author] if results/main/outcomes/comparison_review.csv lists items, settle them and run again with
+    --comparisons results/main/outcomes/comparison_review.csv
+34. Human check (agreement on fields, then on outcomes):
+    python3 -I code/human_check.py compare results/main/human/labels.csv results/main/adjudication/settled.jsonl results/main/human-agreement
+    python3 -I code/outcomes.py results/main/mechanical/mechanical.jsonl results/main/human-agreement/human_labels.jsonl results/main/human-outcomes --registry data/raw/retraction_watch.csv
+    python3 -I code/human_check.py compare results/main/human/labels.csv results/main/adjudication/settled.jsonl results/main/human-agreement --outcomes results/main/outcomes/outcomes.jsonl --human-outcomes results/main/human-outcomes/outcomes.jsonl
+
+H. Cost and analysis (section 3.6)
+
+35. python3 -I code/costs.py --logs data/logs/knowledge_check data/logs/drafting/draw-targets data/logs/drafting/draw-controls data/logs/pilot data/logs/main data/logs/stability-2 data/logs/stability-3 --output results/costs --snapshot data/snapshots/openrouter_models_2026-11-13.json --estimate results/estimate.csv --credits data/costs/credits.csv --author-hours data/costs/author_hours.csv
+    (add the pilot drafting log folders to --logs as well)
+36. python3 -I code/analysis.py results/main/outcomes/outcomes.jsonl results/main/analysis --stability results/stability-2/outcomes/outcomes.jsonl results/stability-3/outcomes/outcomes.jsonl --stability-pairs results/stability/selection.json --costs results/costs --human-agreement results/main/human-agreement/human_agreement.csv --human-outcomes results/main/human-outcomes/outcomes.jsonl --judge-agreement results/main/adjudication/judges_agreement.csv --prices data/snapshots/openrouter_models_2026-11-13.json --draft-edits data/work/draw/topic_check.csv --draft-codes data/work/draw/topic_codes.json
+
+Every paid step resumes where it stopped: run the same command again. A run refuses a log folder made with
+different items, models or settings, and only one process may use a log folder at a time.
+--budget is a scheduling guard (a reserve per request), not a billing cap; "USD" stands for the amount approved
+for that step.

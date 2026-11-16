@@ -1,0 +1,23 @@
+{
+  "_note": "Pinned OpenRouter endpoints (D50, D54). Endpoint lists saved in data/snapshots/endpoints/ (15 Nov 2026). Rule: the developer's own standard endpoint where OpenRouter offers one (no flex, priority or fast tier); otherwise the stated host. 'api' is chat (Chat Completions) or responses (Responses API, needed for tool calls with GPT-6 Luna and GPT-6.1 Sol, paper section 3.3).",
+  "tested": [
+    {"name": "Gemini 4 Hydrogen", "id": "google/gemini-4-hydrogen", "provider": "google-ai-studio", "api": "chat"},
+    {"name": "GPT-6 Luna", "id": "openai/gpt-6-luna", "provider": "openai", "api": "responses"},
+    {"name": "Gemini 3.5 Flash-Lite", "id": "google/gemini-3.5-flash-lite", "provider": "google-ai-studio", "api": "chat"},
+    {"name": "GPT-6.1 Sol", "id": "openai/gpt-6.1-sol", "provider": "openai", "api": "responses"},
+    {"name": "Claude Sonnet 5.5", "id": "anthropic/claude-sonnet-5.5", "provider": "anthropic", "api": "chat"},
+    {"name": "Seed 2.0 Lite", "id": "bytedance-seed/seed-2.0-lite", "provider": "seed/fp8", "api": "chat", "_why": "only endpoint"},
+    {"name": "Qwen3.8 Flash", "id": "qwen/qwen3.8-flash", "provider": "alibaba", "api": "chat"},
+    {"name": "DeepSeek V4.1 Flash 1017", "id": "deepseek/deepseek-v4.1-flash-1017", "provider": "deepseek", "api": "chat"},
+    {"name": "ERNIE 5.5 Flash Preview", "id": "baidu/ernie-5.5-flash-preview:free", "provider": "baidu", "api": "chat", "daily_limit": 1000, "tool_choice_none": false, "_why": "pinned endpoint does not accept tool_choice none (snapshot 15 Nov 2026): the final tools-off request is sent without tools"}
+  ],
+  "drafter": {"name": "MiMo-V2.5-Pro", "id": "xiaomi/mimo-v2.5-pro", "provider": "atlas-cloud/fp8", "api": "chat", "_why": "no first-party endpoint; cheaper of the two hosts; plain-text output"},
+  "backups": [
+    {"name": "Nemotron 3 Ultra", "id": "nvidia/nemotron-3-ultra-550b-a55b", "provider": "deepinfra/fp4", "api": "chat", "backup_for": "Grok 4.7", "_why": "no first-party endpoint; standard tier with structured output (snapshot 15 Nov 2026)"},
+    {"name": "Kimi K2.6", "id": "moonshotai/kimi-k2.6", "provider": "moonshotai", "api": "chat", "backup_for": "GLM-5.2", "_why": "developer's own endpoint, structured output"}
+  ],
+  "judges": [
+    {"name": "Grok 4.7", "id": "x-ai/grok-4.7", "provider": "xai", "api": "chat"},
+    {"name": "GLM-5.2", "id": "z-ai/glm-5.2", "provider": "together", "api": "chat", "_why": "Z.ai's own endpoint does not support structured output; Together: structured output, full listed precision, $1.40/$4.40"}
+  ]
+}
