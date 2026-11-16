@@ -55,9 +55,11 @@ packets, final items, auxiliary live check, live pilot, scored empirical results
 public freeze, or main run have been completed in this continuation. The paper is
 a working protocol with placeholders, not a completed empirical paper.
 
-`OPENROUTER_API_KEY` is absent in the execution shell. Do not print or request the
-key in chat or logs. Arrange secure local configuration before any paid command.
-No credential values were read in this continuation.
+`OPENROUTER_API_KEY` is absent in the execution shell, but the runner's fallback
+file `~/.config/retracted-science-ai/openrouter.key` exists and is nonempty. Only
+existence/size were checked; no credential values were printed or read. The runner
+can load this file. Do not ask the user to paste a key. A $20 preparation-stage
+budget request is pending in this chat (knowledge check, judging, drafting only).
 
 Scientific cautions to retain:
 - These are fixed API configurations and supplied evidence, not consumer apps.
@@ -101,6 +103,23 @@ Scientific cautions to retain:
 
 ## Checkpoint
 
-Initial local code/document/test commit: pending at the time this file was written;
-check `git log -1` for the completed checkpoint. No push or public release authorized
-or performed by this continuation. Data and estimates remain local and untracked.
+Initial local code/document/test checkpoint: `e7bcba3` (118 offline tests passed).
+No push or public release authorized or performed by this continuation. Data and
+estimates remain local and untracked. A public metadata-only endpoint check also
+found all 14 pinned endpoints (nine tested plus drafter, judges and backups).
+Record: `results/live_endpoint_preflight.json`. This is availability metadata, not
+a successful inference/tool roundtrip. No authenticated or paid call was made.
+
+## Live price discrepancy found before any spending
+
+Public endpoint metadata lists DeepSeek V4.1 Flash 1017 at $0.30 input / $1.20
+output per million tokens, versus $0.15 / $0.60 in the saved endpoint snapshot.
+Other selected endpoint prompt/completion prices matched their snapshots. Preserve
+the old snapshot; resolve/update the pricing basis before the main run and before
+using check_run price comparisons for DeepSeek. Do not diagnose this as a tier
+change solely from the price difference.
+
+Current endpoint metadata is saved separately in `results/endpoints-current/`.
+`results/estimate-current.csv` gives low $61.08 / middle $159.69 / high $368.71,
+with the same token assumptions. Auxiliary preparation remains $7.40 / $16.50.
+These are expected costs, not caps. No live inference calls have been made.
