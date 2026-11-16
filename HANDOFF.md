@@ -450,3 +450,108 @@ Next: screen retained candidate pools for direct relevance and decide transparen
 how to handle the failed chicken-embryo packet. Do not claim all five other topics
 have four verified alternatives, silently reroll queries, or auto-drop/replace
 the control. Original v1/v2.1 questions and both prior retrieval stages preserved.
+
+## C643C6 diagnostic follow-up after author noticed zero alternatives
+
+Author's concern is correct: this packet is unresolved and experiments are not
+ready. Expanded the previously fixed broader diagnostic query to all 16 records;
+saved exact response/URL/time in results/C643C6-broader-diagnostic-full-pool.json.
+Abstract screen did not establish four direct alternatives. Separate diagnostic
+web search found related Pion et al. 2022 CAM training paper, PMID35674658,
+DOI10.1097/PRS.0000000000009330, missed by inspected C643C6 searches. Related
+membrane model does not establish exact vitelline/artificial-eggshell fit; no
+formal eligibility/status approval or packet addition. See
+results/C643C6-diagnostic-assessment.md. Both overly specific question scope and
+query coverage warrant general development review. No paid calls, frozen prompt
+changes, question edits, author approvals, sample exclusions or experimental runs.
+
+## Scope/coverage work authorized; v3/v4 executed (16 Nov, continuation)
+
+Author said "ok let's do that" to resolving question scope/search coverage uniformly,
+and emphasized cheap-model cost must not reduce quality. D73/D74 document work.
+No experimental calls, sampled-paper changes or main-method freeze.
+
+New runner code/materials_development.py: isolated frozen requests, completion
+recovery, no semantic rerolls, separate development outputs, schema-constrained
+question review; v4 up to3 concurrent calls. v3 and intermediate runner/compiler
+sources archived inside protocol packages because code evolved between batches.
+New code/review_material_candidates.py uses two fixed judges on batches<=6, exact
+own-candidate evidence and all-criteria agreement. 134 offline tests passed in
+39.459s (/tmp/retracted-materials-development-final-tests.log). Tests prove code
+behavior, not scientific correctness.
+
+v3 MiMo draft/query/review all completed; original broader-but-too-specific topics
+plus synonym OR groups mixed facets. v3 title/abstract retrieval first24 candidates:
+24/16/1/3/24/24 (1160E2/3E1E72/F471E5/10D131/DDC269/C643C6), many tangential.
+Logs data/logs/materials-v3/, data/work/pilot-materials-v3/. Review: 3 whole-item
+paired passes; one neutrality issue plus three malformed/evidence-invalid GLM
+records. All raw outputs unchanged.
+
+v4 asks problem/purpose-level scope, a neutral sentence stem, <=30 words. Query v3
+has verbatim anchors and <=2 synonyms per group; title/abstract search, same first
+200/filter/citation order. Full-six MiMo v4 batch: two Grok A2 failures (improving
+performance; as inhibitors/quenchers). Then pre-documented complete Kimi comparison
+(same v4 prompt) using already eligible backup Kimi K2.6. First Kimi4k batch had
+2 empty length stops; full SIX-item Kimi16k batch regenerated under an explicit
+TOKEN-LIMIT-AMENDMENT, never mixed item-wise with earlier successes.
+
+Current complete candidate questions: data/logs/materials-v4-kimi16k/topics/drafts.jsonl.
+Kimi16k cost $0.11164457. Query generator remains MiMo and cost $0.0038711388.
+Questions: 1160E2 cell-adhesion/inflammatory molecules in DN pathogenesis; F471E5
+microRNAs as diagnostic biomarkers for pediatric ARDS; DDC269 suction-assisted
+background devices and operative time in animal microvascular anastomosis;
+3E1E72 selenium nanoparticles "for inhibiting" amyloid aggregation in experimental
+models; C643C6 feasibility of training models for supermicrosurgical anastomosis
+in lymphatic surgery; 10D131 glycogen-metabolism gene expression and ICC prognosis.
+
+Two-judge Kimi16k question review completed ($0.24094296): four paired passes;
+3E1E72 Grok A2 fail for "for inhibiting"; F471E5 GLM claims all pass but A1 evidence
+is a paraphrase, fails exact-substring validation. Do NOT describe this as a
+scientific disagreement or valid second approval. Other judge passed F471E5.
+
+Current retrieval data/work/pilot-materials-v4-kimi16k/: 24/8/9/0/0/15 prepared
+candidates (same code order above); C643C6 improved from0 to15. GYS2 and suction
+device topics remain zero. No automatic question/control/pair edits or filler.
+Candidate review now running in exec session70948: 22 calls for56 candidates,
+$4 scheduling guard, inside original $20 preparation target. As of06:03UTC,
+21/22 completed; C643C6 batch1 judge1 still pending. Others indicate >=4 joint
+fits for1160E2 and3E1E72, only2 forF471E5; final counts pending export. Monitor to
+completion. All prior completed v3/v4 batches cost ~$1.0312 in addition to earlier
+$4.18758214; candidate-review spending not yet included until final summary.
+
+Readable comparison viewer tools/render_materials_development.py ->
+results/pilot-materials-development-review.html. Regenerate after final outcomes;
+currently question versions/reviews only. Paper methods and Appendix B updated to
+v4 development, concise limitations, unfrozen final method. Need final results,
+HANDOFF, paper HTML regeneration and local checkpoint when work finishes.
+
+Potential next action considered but NOT yet adopted/implemented: ONE standardized
+critique-driven revision pass, same policy for all6; keep adequate questions byte
+identical, neutralize flagged direction, broaden overly narrow subclass only to a
+source-supported scientific-purpose class when <4 joint fits. Isolated API only,
+no chat/status/hypotheses or experimental outcomes. This could address remaining
+biomarker/device/glycogen specificity without arbitrary individual rewrites. Do not
+claim this exists or is approved as final methodology. No more blind prompt/model
+rerolls; any such pass needs a prospective documented amendment and preserved
+inputs/feedback/outputs. Main experiments still not scientifically ready.
+
+## v4 candidate screening complete; development assessment finished
+
+Session70948 completed all22 reviews, no running model/retrieval jobs. Candidate
+fit counts: 1160E2=13/24, 3E1E72=6/8, F471E5=2/9, 10D131=0/0, DDC269=0/0,
+C643C6=4/15. First-four lists and every raw/parsed judgment retained. C643C6 is
+now a plausible packet after generalizing from the exact eggshell/vessel to
+training-model feasibility in lymphatic supermicrosurgery. Contextual assistant
+inspection of its four abstracts supports central relevance; one later study
+builds on an earlier rat model, so do not claim four independent research programs.
+Final expert/author/packet approval remains absent. 3E1E72 still has A2 wording
+concern; F471E5 still has an invalid GLM evidence quote, separate from the two-fit
+scarcity. Only1160E2 andC643C6 currently satisfy provisional paired question checks
+plus>=4 paired candidate fits. Full six-item materials NOT ready for experiments.
+
+Additional v3/v4 model spend $1.7797964936; cumulative preparation approx
+$5.9673786336; zero unknown attempts in these completed batches. Candidate-review
+batch alone $0.74859412. No main/pilot experiments or sample changes. Results:
+results/materials-development-v4-results.md/.json and readable comparison HTML.
+Next-step bounded revision is only a documented recommendation, not implemented;
+no final drafter selection, material freeze or new experiment authorization.

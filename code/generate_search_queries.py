@@ -22,13 +22,27 @@ PACKAGE = ROOT / "protocol/search-query-v1"
 STOP = frozenset("a an the of for in on at to and or with by from as its their".split())
 
 
-def compile_query(groups, question):
+def compile_query(groups, question, version="search-query-v1"):
+    if version not in ("search-query-v1", "search-query-v2", "search-query-v3"):
+        raise ValueError("unknown search compiler version")
     if not isinstance(groups, dict) or set(groups) != {"context", "focus"}:
         raise ValueError("exactly context and focus groups are required")
+    if version == "search-query-v3":
+        converted = {}
+        for name, group in groups.items():
+            if not isinstance(group, dict) or set(group) != {"anchor", "alternatives"}:
+                raise ValueError("v3 requires an anchor and alternatives for each group")
+            anchor, alternatives = group["anchor"], group["alternatives"]
+            if not isinstance(anchor, str) or not anchor or not re.search(r"(?<!\w)" + re.escape(anchor) + r"(?!\w)", question):
+                raise ValueError("anchor is not a verbatim question span")
+            if not isinstance(alternatives, list) or len(alternatives) > 2:
+                raise ValueError("at most two alternative wordings are allowed")
+            converted[name] = [anchor] + alternatives
+        return compile_query(converted, question, "search-query-v2")
     compiled = []
     for name in ("context", "focus"):
         terms = groups[name]
-        if not isinstance(terms, list) or not 1 <= len(terms) <= 3:
+        if not isinstance(terms, list) or not 1 <= len(terms) <= (3 if version == "search-query-v1" else 4):
             raise ValueError("each group must have one to three spans")
         parts = []
         for term in terms:
@@ -36,8 +50,10 @@ def compile_query(groups, question):
                 raise ValueError("invalid or overlong span")
             if not re.fullmatch(r"[^\W_]+(?:[ -][^\W_]+)*", term, re.UNICODE):
                 raise ValueError("search syntax or unsupported characters in span")
-            if not re.search(r"(?<!\w)" + re.escape(term) + r"(?!\w)", question):
+            if version == "search-query-v1" and not re.search(r"(?<!\w)" + re.escape(term) + r"(?!\w)", question):
                 raise ValueError("span is not copied verbatim from the question")
+            if any(t in {"AND", "OR", "NOT"} for t in term.split()):
+                raise ValueError("Boolean operators are not allowed inside terms")
             tokens = [t for t in re.findall(r"[^\W_]+", term, re.UNICODE) if t.lower() not in STOP]
             if not tokens:
                 raise ValueError("span has no searchable tokens")

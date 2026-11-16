@@ -101,6 +101,7 @@ used = {t["doi"] for t in targets.values()} | {c["doi"] for c in controls.values
 
 topics = {}
 queries = {}
+search_field = "search"
 if args.development_drafts:
     papers = {"T" + tid: t for tid, t in targets.items()}
     papers.update({"C" + tid: c for tid, c in controls.items()})
@@ -124,8 +125,12 @@ if args.development_drafts:
     if args.query_plan:
         from generate_search_queries import compile_query
         plan = json.load(open(args.query_plan))
-        if plan.get("version") != "search-query-v1" or plan.get("status") != "FROZEN_DEVELOPMENT_QUERIES_UNAPPROVED":
+        if plan.get("version") not in ("search-query-v1", "search-query-v2", "search-query-v3") or plan.get("status") != "FROZEN_DEVELOPMENT_QUERIES_UNAPPROVED":
             raise SystemExit("unknown query-plan version or status")
+        if plan["version"] in ("search-query-v2", "search-query-v3"):
+            if plan.get("search_field") != "search.title_and_abstract":
+                raise SystemExit("v2 requires the frozen title-and-abstract search field")
+            search_field = plan["search_field"]
         for item in plan["items"]:
             code = item["item_code"]
             if code not in codes or codes[code] in queries:
@@ -133,7 +138,7 @@ if args.development_drafts:
             key = codes[code]
             if item["question"] != topics[key][0] or item["topic_content_sha256"] != topic_identities[code]:
                 raise SystemExit("query plan belongs to another question/source response")
-            query = compile_query(item["groups"], item["question"])
+            query = compile_query(item["groups"], item["question"], plan["version"])
             if query != item["query"] or hashlib.sha256(query.encode()).hexdigest() != item["query_sha256"]:
                 raise SystemExit("compiled query differs from frozen query plan")
             queries[key] = query
@@ -173,7 +178,7 @@ for tid, t in targets.items():
         excl_names = set(t["author_names"]) | set(c["author_names"])
         excl_ids = set(t["author_ids"]) | set(c["author_ids"])
         search_query = queries.get(key, topic)
-        q = urllib.parse.urlencode({"search": search_query, "per-page": "200", "filter": f"type:article,has_abstract:true,"
+        q = urllib.parse.urlencode({search_field: search_query, "per-page": "200", "filter": f"type:article,has_abstract:true,"
                                     f"language:en,publication_year:{y - 5}-{y + 5}",
                                     "select": "id,doi,title,publication_year,cited_by_count,abstract_inverted_index,"
                                               "authorships,primary_location"})

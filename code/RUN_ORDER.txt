@@ -146,3 +146,19 @@ Every paid step resumes where it stopped: run the same command again. A run refu
 different items, models or settings, and only one process may use a log folder at a time.
 --budget is a scheduling guard (a reserve per request), not a billing cap; "USD" stands for the amount approved
 for that step.
+
+D73 DEVELOPMENT ONLY (16 Nov): protocol/materials-development-v3/PROTOCOL.md
+Run code/materials_development.py with --phase topics, question-review, or queries.
+For each phase first use --prepare-only, then the identical arguments with --budget.
+Logs: data/logs/materials-v3/{topics,question-review,queries}/.
+Retrieval: data/work/pilot-materials-v3; --candidate-limit 24, revised drafts and
+search-query-v2 plan. All output files remain DEVELOPMENT/unapproved.
+Do not treat AI review as author decisions or pass these materials to the legacy builder.
+
+D74: materials_development.py supports --version v4 and --drafter-profile kimi;
+Kimi revised batch uses --draft-token-limit 16000 for topics. Preserve all earlier
+outputs and frozen request files. Logs: data/logs/materials-v4-kimi16k/.
+review_material_candidates.py prepares/runs isolated candidate-fit checks on the
+DEVELOPMENT file, with --prepare-only before --budget. AI agreement does not write
+author approval fields or establish final packet feasibility. No experimental run
+until the unresolved materials and final method adoption are explicitly resolved.

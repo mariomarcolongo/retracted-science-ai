@@ -103,3 +103,7 @@ Pilot report / decisions: PENDING. Main run authorization and start time: PENDIN
 If only a pilot is completed for the competition, label it as pilot evidence and
 leave these main-study fields pending. No power or population claim follows from
 three pilot pairs.
+
+D73 development update: materials-development-v3 revises question scope and query coverage uniformly for the six pilot items. Two isolated AI question assessments are development evidence only. First 24 eligible candidates per item are prepared in the existing rank order for feasibility; any additional screening must use the retained pool and documented rule. Scientific suitability and four-alternative packets remain unresolved. Original versions and failures are preserved. No main-material freeze or experiment is authorized by these calls.
+
+D74 update: v4 and a uniform auxiliary-drafter comparison are development work, not a final model selection. Kimi16k retrieval produced 24/8/9/0/0/15 prepared candidates (1160E2/3E1E72/F471E5/10D131/DDC269/C643C6). Counts are not relevance approvals. Candidate AI screening is separate; no six-item packet set is established. See versioned v4 protocols and retained failure logs.
