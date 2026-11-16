@@ -254,6 +254,37 @@ Agreement between the two judges is reported per field. In figures and tables, "
 
 ## 4. Results [after runs]
 
+### 4.1 Status-question test: provisional result (16 Nov 2026)
+
+Only the status-question test (§3.1) has been run. The forged-status tests (Table 2) have not been run; their materials are still being built. Each of the nine models was asked the status question once for each of 56 papers (28 retracted, 28 matched controls; 25 main pairs and 3 pilot pairs, pooled here), with no search results and no tool: 504 answers, of which 503 had usable text. Both judges scored every usable answer.
+
+**Table 4.1. Status asserted by each model (number of papers out of 28). A label is counted only where the two judges agree; the 20 answers on which they differ are shown as disputed.**
+
+| Model | Papers | retracted | not retracted | uncertain | other | refusal | disputed | no answer |
+|---|---|---|---|---|---|---|---|---|
+| Claude Sonnet 5.5 | control | 0 | 0 | 27 | 0 | 0 | 1 | 0 |
+| Claude Sonnet 5.5 | retracted | 0 | 0 | 28 | 0 | 0 | 0 | 0 |
+| DeepSeek V4.1 Flash 1017 | control | 28 | 0 | 0 | 0 | 0 | 0 | 0 |
+| DeepSeek V4.1 Flash 1017 | retracted | 27 | 1 | 0 | 0 | 0 | 0 | 0 |
+| ERNIE 5.5 Flash Preview | control | 7 | 2 | 19 | 0 | 0 | 0 | 0 |
+| ERNIE 5.5 Flash Preview | retracted | 7 | 0 | 19 | 0 | 0 | 2 | 0 |
+| GPT-6 Luna | control | 14 | 11 | 0 | 0 | 0 | 3 | 0 |
+| GPT-6 Luna | retracted | 23 | 2 | 1 | 0 | 0 | 2 | 0 |
+| GPT-6.1 Sol | control | 14 | 0 | 14 | 0 | 0 | 0 | 0 |
+| GPT-6.1 Sol | retracted | 18 | 0 | 10 | 0 | 0 | 0 | 0 |
+| Gemini 3.5 Flash-Lite | control | 0 | 16 | 11 | 0 | 0 | 1 | 0 |
+| Gemini 3.5 Flash-Lite | retracted | 0 | 12 | 15 | 0 | 0 | 1 | 0 |
+| Gemini 4 Hydrogen | control | 0 | 0 | 28 | 0 | 0 | 0 | 0 |
+| Gemini 4 Hydrogen | retracted | 0 | 0 | 27 | 0 | 0 | 1 | 0 |
+| Qwen3.8 Flash | control | 26 | 1 | 0 | 0 | 0 | 0 | 1 |
+| Qwen3.8 Flash | retracted | 28 | 0 | 0 | 0 | 0 | 0 | 0 |
+| Seed 2.0 Lite | control | 1 | 20 | 0 | 1 | 0 | 6 | 0 |
+| Seed 2.0 Lite | retracted | 4 | 19 | 0 | 2 | 0 | 3 | 0 |
+
+No model separates retracted papers from controls: each answers the two groups almost identically. Claude Sonnet 5.5 and Gemini 4 Hydrogen say they cannot know for every paper. DeepSeek V4.1 Flash, Qwen3.8 Flash and, to a lesser degree, GPT-6 Luna and GPT-6.1 Sol say "retracted" for most papers, including the controls (DeepSeek 28 of 28, Qwen 26 of 28). Seed 2.0 Lite and Gemini 3.5 Flash-Lite mostly say "not retracted", including for retracted papers. GPT-6 Luna shows the only visible difference between the groups (23 against 14), while still calling half of the controls retracted. Asked directly and without search, a "yes" from these models carries little information about a paper's status, and several of them state that valid papers are retracted.
+
+**This result is provisional.** (1) The 20 disputed answers have not been settled by the author. (2) The author's 32 blind labels are recorded but their agreement with the judges has not been computed; the first label was discussed as a training item, and the author received written field definitions while labelling. (3) No intervals are given; with 28 papers per cell, small differences are not meaningful. (4) The table is a direct count of the judges' forms (`tools/status_provisional.py`), not the output of the scoring steps of §3.5, so final figures may differ by a few answers. (5) One wording, asked once per paper. (6) The run for DeepSeek fell in its provider's peak-price window and is logged separately; Qwen3.8 Flash was rate-limited and completed over four resumed runs. (7) The link between three tested models and consumer products (Seed 2.0 Lite and Doubao, Qwen3.8 Flash and the Qwen app, ERNIE 5.5 Flash Preview and Baidu Search) is not established; these rows describe a current model from that developer, not the model known to run in the app.
+
 | Item | Content |
 |---|---|
 | Figure 2 | Outcomes by test × model: share of answers in each category of Table 3c, failure rate with its 95% interval marked |
