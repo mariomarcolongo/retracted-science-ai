@@ -237,3 +237,38 @@ confirmed charges. Do not include purchase fees/VAT in inference usage totals.
 Auxiliary run diagnostic: results/knowledge-run-check.txt (no FAIL; NOTE metadata
 checks remain unverified). No tested-model pilot or main run, no public freeze,
 no submission, no publication. The funded preparation target remains $20.
+
+## Author adjudication update
+
+User agreed to not-called-retracted for the original 28 under a definition that
+separates declining the task from uncertainty. User explicitly discussed #12
+(promise to check, no follow-up: status not stated) and corrected #28 (explicit
+not retracted). Entered all 28 with provenance and per-case reasons; preserved
+original CSV. Running knowledge_check.py gives provisional KEEP for all five.
+An audit also found SIX answers where BOTH judges marked refusal AND uncertain;
+these contain the same cannot-verify language. Raw judgments unchanged. Review:
+results/knowledge-consensus-review.md. Author decisions for these six are pending;
+do not label this a fully resolved classification check. Current parser only
+adjudicates disagreements; any consensus correction needs a transparent override
+mechanism or documented recalibration, not silent raw-judge editing. No further
+paid calls since the $4.1764 preparation total.
+
+## D70 resolved and remaining work
+
+User approved the six consensus cases as the same uncertainty-plus-verification
+pattern. All 34 decisions are saved in knowledge_decisions.csv; originals and
+author provenance preserved. knowledge_check.py now supports content-bound
+consensus corrections and rejects stale codes; regression coverage added.
+Knowledge check now has zero unanswered papers for each auxiliary model and KEEP
+for all five. This means eligibility under the threshold, not demonstrated lack
+of knowledge or general status accuracy. The author suggested uncertainty as a
+behavioral outcome; retained separately in raw descriptive export
+results/knowledge-raw-judge-statuses.csv (explicitly ORIGINAL judge assessments,
+not corrected final labels). Author-reviewed subset: 32 uncertain, 1 not stated,
+1 explicitly not retracted. No quantitative verification-advice coding added.
+Future judge refusal instructions clarified in both forms; old auxiliary judgments
+remain under their original saved form version. Do not resume judge.py into that
+old directory using the new guide; no rejudging is needed for these adjudications.
+D70 documented in paper/decisions/changelog. Next user action: six pilot topics
+can now be reviewed in results/pilot-topic-review.html. Do not fill author checks
+for them. No new paid calls; recorded total still $4.1764.

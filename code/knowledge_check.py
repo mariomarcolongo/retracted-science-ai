@@ -21,6 +21,11 @@ STATUSES = ["retracted", "reinstated", "not retracted", "other notice", "uncerta
 LABELS = ["called retracted", "not called retracted", "refusal"]
 
 
+def decision_code(aid, config, forms):
+    """Bind an author decision to the answer and the current judge configuration/labels."""
+    return hashlib.sha256(json.dumps([SEED, aid, sorted(config.items()), sorted(forms.items())]).encode()).hexdigest()[:12].upper()
+
+
 def label(form):
     """The knowledge-check label of one judge's form (status-question rules)."""
     if form.get("refusal"):
@@ -132,6 +137,7 @@ def main():
                 raise SystemExit("decision must be one of " + ", ".join(LABELS))
             old[row["code"]] = value
     statuses, decisions, pending = {}, [], 0
+    used_codes = set()
     for key, r in sorted(final.items()):
         if not r["usable"]:
             statuses[key] = "no answer"
@@ -141,16 +147,22 @@ def main():
         if set(f) != set(config):
             raise SystemExit("knowledge check needs two valid current judgments for every usable answer")
         values = set(f.values())
-        if len(values) == 1:
+        code = decision_code(aid, config, f)
+        if code in old:
+            used_codes.add(code)
+        # An explicit author review may correct a shared judge error too (D70).
+        # Raw model judgments remain untouched; the correction stays in the decision CSV.
+        if len(values) == 1 and code not in old:
             statuses[key] = next(iter(values))
             continue
-        code = hashlib.sha256(json.dumps([SEED, aid, sorted(config.items()), sorted(f.items())]).encode()).hexdigest()[:12].upper()
         choice = old.get(code, "")
         decisions.append([code, r["user"], r["answer"], " / ".join(f[n] for n in sorted(f)), choice])
         if choice:
             statuses[key] = choice
         else:
             pending += 1
+    if any(value and code not in used_codes for code, value in old.items()):
+        raise SystemExit("stale or unknown author decision; answer or judge labels changed")
     if decisions:
         with open(dec_path, "w", newline="", encoding="utf-8") as f:
             w = csv.writer(f); w.writerow(["code", "question", "answer", "judges",

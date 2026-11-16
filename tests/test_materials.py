@@ -97,6 +97,23 @@ class MaterialsTests(unittest.TestCase):
         with self.assertRaisesRegex(SystemExit, "two valid current judgments"):
             script("knowledge_check.py", [self.d])
         self.assertFalse((self.d / "knowledge_check.csv").exists())
+        # An author can correct even a shared judge label, without editing raw judgments.
+        forms[0]["answer_id"] = KC.answer_id(runs[0])
+        raw = "".join(json.dumps(f) + "\n" for f in forms)
+        (jd / "judging.jsonl").write_text(raw)
+        script("knowledge_check.py", [self.d])
+        self.assertEqual(list(csv.DictReader((self.d / "knowledge_check.csv").open()))[0]["decision"], "keep")
+        cfg = {f["judge"]: f["judge_cfg"] for f in forms}
+        code = KC.decision_code(KC.answer_id(runs[0]), cfg, {j["name"]: "not called retracted" for j in judges})
+        sheet(self.d / "knowledge_decisions.csv", [{"code": code, "question": "question", "answer": "answer",
+              "judges": "not called retracted / not called retracted", "decision": "called retracted"}])
+        script("knowledge_check.py", [self.d])
+        self.assertEqual(list(csv.DictReader((self.d / "knowledge_check.csv").open()))[0]["decision"], "replace")
+        self.assertEqual((jd / "judging.jsonl").read_text(), raw)
+        forms[0]["form"]["asserted_status"] = "retracted"
+        (jd / "judging.jsonl").write_text("".join(json.dumps(f) + "\n" for f in forms))
+        with self.assertRaisesRegex(SystemExit, "stale or unknown author decision"):
+            script("knowledge_check.py", [self.d])
 
     def test_frozen_build_requires_current_checks_and_source(self):
         (self.d / "registry.csv").write_text("Record ID\n")
