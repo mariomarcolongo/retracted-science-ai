@@ -32,3 +32,7 @@ Report per-criterion development failures, NEEDS_REVIEW outputs, unresolved revi
 ## Completed development batch
 
 Six calls completed between 2026-11-16T04:31:46.609+00:00 and 2026-11-16T04:33:05.531+00:00. Recorded cost: $0.00612068; no unpriced attempts. All six responses passed the mechanical format screen and remain pending scientific review. All 36 criterion decisions are blank. Request bodies and source text were checked against the frozen artifacts. No semantic rerolls, approvals, alternative-paper searches or tested-model experiments were performed. Logs: `data/logs/drafting-v2.1/pilot/`. Read-only comparison: `results/pilot-topic-v21-comparison.html`.
+
+## Reporting length
+
+The author requested a concise main-paper AI disclosure naming GPT-6 Astra, High reasoning effort and Codex, while retaining the detailed development record here. The two executed versions available for a paired descriptive comparison are v1 and v2.1, each with six pilot outputs; v2 is a prompt-only intermediate. These development examples do not establish independently validated improvement.

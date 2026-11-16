@@ -368,3 +368,85 @@ fidelity/scope and establish the scientific review role without misrepresenting
 non-specialist or AI checks. New drafts MUST NOT enter the legacy five-checkbox
 pipeline. Its blank-means-accepted alternative-fit behavior and missing Stage B
 packet gate still need integration before final experimental materials.
+
+## Author preference: concise disclosure, retained version history
+
+Shortened the main-paper AI disclosure to GPT-6 Astra/High/Codex role, isolated
+MiMo drafting, and availability of original/revised pilot outputs. Full provenance
+(including interface-reported identity and context) remains in ADOPTION.md. The two
+executed pilot draft sets are v1 and v2.1; intermediate v2 was never sent. Describe
+comparisons as development evidence, not independent validation. No new calls.
+
+## v2.1 documentary source screen completed
+
+After author agreement to check both sides, read all six v2.1 titles, abstracts and
+questions under the same criteria. Saved results/topic-v21-source-screen.md and
+.json with exact source excerpts verified as substrings and source-bound question
+hashes. All six focal papers (3 R, 3 K) directly contribute evidence to their own
+question. Main concerns: narrow/multi-component scopes; possible P53-presupposition
+in 10D131; possible cell-free vs cellular endpoint conflation in 3E1E72. F471E5's
+human alveolar epithelial-cell description IS supported by its TITLE, even though
+the abstract says A549. Do not flag that phrase as invented. Scope concerns do not
+prove alternatives absent. This is contextual AI assistance, NOT formal pass/fail
+or independent specialist review. No edits to drafts or the 36 blank decisions;
+no calls, searches for alternatives, sampling exclusions or experimental runs.
+
+## Retrieval bottleneck established; no alternative packets approved
+
+User asked what to do. Added an explicit development-only retrieval mode to
+other_results.py: input source/text hashes checked, separate DEVELOPMENT outputs,
+blank is unreviewed, no fabricated author approval. Added a regression within
+test_materials.py; 7 material and 22 D66 tests passed. Documented review-order
+amendment BEFORE queries in protocol/topic-drafting-v2.1/FEASIBILITY-AMENDMENT.md.
+Copied pilot metadata into data/work/pilot-v21-retrieval-feasibility. All six exact
+v2.1 question searches returned ZERO OpenAlex records, before exclusions.
+
+Official OpenAlex docs (https://help.openalex.org/api/searching/, checked today)
+say unconnected words are ANDed. Fixed 12 diagnostic shorter queries before
+execution, saved results/topic-retrieval-diagnostic-plan.json. Counts central/broad:
+1160E2 22/37630; 3E1E72 1306/9275; F471E5 113/4384; 10D131 22/841; DDC269 70/574;
+C643C6 4/16. These are RAW matches, not eligible/relevant alternatives; examples
+include focal papers, retracted papers and tangential works. Context-informed
+manual probes are NOT a final selection procedure. Raw responses and exact URLs
+are saved, with summary in results/topic-retrieval-feasibility.md. No paid model
+calls, topic edits, formal review approvals, pair exclusions or experiments.
+
+Recommended next action: keep MiMo and current questions provisionally; define a
+standardized, logged question-to-keyword/Boolean-query procedure before a new
+retrieval pass. Do not blindly use full sentences as OpenAlex AND queries or
+claim that zero results mean no alternatives exist. This is a real protocol
+amendment, with original search failure preserved; no silent post hoc query rescue.
+
+## D72 implemented and six standardized OpenAlex searches completed
+
+User clarified the intended design: simulate prior search returning the focal
+retracted/control paper alongside other evidence; evaluate subsequent behavior,
+not autonomous search by tested models. Then authorized creating OpenAlex searches.
+Added protocol/search-query-v1/PROMPT.txt and PROTOCOL.md, frozen before calls;
+code/generate_search_queries.py makes isolated MiMo calls with QUESTION ONLY,
+temp0/top_p1/max4000, same provider. Two context/focus concept groups must contain
+verbatim question spans; deterministic compiler ANDs groups, ORs alternatives,
+ANDs tokens within spans. No outside synonyms or per-item adaptive widening.
+All six first outputs compiled. Costs $0.0050614566; cumulative preparation approx
+$4.18758214. Logs and frozen plans: data/logs/search-query-v1/pilot/.
+
+other_results.py gained --query-plan bound to source question hashes, and retains
+development-only output names/blank unreviewed decisions. Isolated metadata and
+raw search/PubMed cache: data/work/pilot-search-query-v1/. Full pools retained,
+up to first200 by OpenAlex relevance, eligibility then citation ranking as before.
+Counts raw/initial candidates: 1160E2 892/8; DDC269 9/8; F471E5 110/8; C643C6 1/0;
+10D131 22/8; 3E1E72 1512/8. C643C6 sole match is its focal control itself.
+Many of the 40 initial candidate titles are tangential; metadata eligibility and
+citation rank are NOT relevance. None of the 40 candidates approved, no packets
+built or tested-model experiments run. Formal question review still unresolved.
+
+Read-only viewer: results/pilot-openalex-search-review.html. Report .md/.json at
+results/pilot-openalex-search-report.*. Actual completion note in
+protocol/search-query-v1/RESULTS.md (does not modify frozen protocol). All six
+query-generation completion timestamps precede first retrieval timestamp.
+125 offline tests passed (38.606sec). Paper methods/exact query prompt, D72,
+changelog, run order, and freeze record updated; keep main AI disclosure concise.
+Next: screen retained candidate pools for direct relevance and decide transparently
+how to handle the failed chicken-embryo packet. Do not claim all five other topics
+have four verified alternatives, silently reroll queries, or auto-drop/replace
+the control. Original v1/v2.1 questions and both prior retrieval stages preserved.

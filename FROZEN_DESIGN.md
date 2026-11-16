@@ -94,6 +94,11 @@ see protocol/topic-drafting-v2.1/ADOPTION.md. Scientific review and the new expl
 alternative/packet approval gates remain pending. The old five-checkbox pipeline
 cannot establish v2.1 approval.
 
+Search update D72: standardized question-to-concept extraction and deterministic
+Boolean compilation adopted for development; complete query plans are frozen
+before OpenAlex retrieval. These candidates still require explicit scientific
+relevance and packet review. See protocol/search-query-v1/PROTOCOL.md.
+
 Pilot report / decisions: PENDING. Main run authorization and start time: PENDING.
 If only a pilot is completed for the competition, label it as pilot evidence and
 leave these main-study fields pending. No power or population claim follows from

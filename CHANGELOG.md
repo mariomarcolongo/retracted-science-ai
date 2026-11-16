@@ -4,6 +4,8 @@ Corrections to the draft, data and code, with the source for each.
 
 ## 16 Nov 2026
 
+- **Question-to-query conversion (D72).** Added fixed, isolated concept extraction and deterministic Boolean compilation for OpenAlex; development-only retrieval binds queries to unchanged question hashes. Original full-sentence searches and later diagnostic probes remain preserved. Candidates remain unapproved pending source relevance and packet checks.
+
 - **Standardized topic-development prompt adopted (D71).** Added an isolated v2.1 development runner with frozen payload checks, explicit sampling settings, no semantic rerolls, HTTP-completion recovery, content-bound blank review sheets and preserved originals. Added the exact prompt and an AI-development disclosure to the paper. Main-material review integration remains pending; no new topic is automatically approved.
 
 - **Auxiliary scoring calibration (D70).** Recorded 34 author-approved decisions, including six shared judge errors, without changing raw judgments. Knowledge-check code now supports auditable consensus corrections bound to current answers/labels and rejects stale corrections. Clarified future refusal instructions. All five auxiliary models remain eligible; this does not establish absence of retraction knowledge. Uncertainty retained separately for descriptive reporting.

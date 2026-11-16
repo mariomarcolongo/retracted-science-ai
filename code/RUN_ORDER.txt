@@ -65,6 +65,15 @@ explicit alternative/packet approval gates must be integrated first. See
 protocol/topic-drafting-v2.1/ADOPTION.md and PROTOCOL.md. Do not reroll inadequate
 completed drafts or redraft main materials automatically.
 
+D72 DEVELOPMENT RETRIEVAL (does not approve questions or packets):
+1. python3 -I code/generate_search_queries.py --drafts data/logs/drafting-v2.1/pilot/drafts.jsonl --logdir data/logs/search-query-v1/pilot --budget 1
+2. Use the isolated metadata copy at data/work/pilot-search-query-v1:
+   python3 -I code/other_results.py data/raw/retraction_watch.csv data/work/pilot-search-query-v1 --development-drafts data/logs/drafting-v2.1/pilot/drafts.jsonl --query-plan data/logs/search-query-v1/pilot/query-plan.json
+The exact queries are frozen before retrieval. Results are DEVELOPMENT candidates,
+not official other_candidates.json; the experimental builder cannot ingest them.
+Blank review fields mean unreviewed. No semantic rerolls, query widening or default
+approval. See protocol/search-query-v1/PROTOCOL.md for the changed retrieval rule.
+
 Legacy steps below are retained for provenance, not authorization to bypass D71:
 (main draw shown; repeat each step with data/work/pilot)
 

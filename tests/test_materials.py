@@ -151,7 +151,8 @@ class MaterialsTests(unittest.TestCase):
     def test_ninth_other_candidate_can_be_requested(self):
         (self.d / "cache").mkdir()
         (self.d / "registry.csv").write_text("OriginalPaperDOI\n")
-        t = {"id": "p", "doi": "10.1234/target", "publication_year": 2020, "author_names": [], "author_ids": []}
+        t = {"id": "p", "doi": "10.1234/target", "publication_year": 2020, "author_names": [], "author_ids": [],
+             "title": "Exposure and outcome", "abstract": "An exposure was investigated."}
         c = dict(t, doi="10.1234/control")
         dump(self.d / "targets.json", [t]); dump(self.d / "controls.json", {"p": c})
         dump(self.d / "topic_codes.json", {"one": "Tp", "two": "Cp"})
@@ -168,6 +169,54 @@ class MaterialsTests(unittest.TestCase):
         got = json.loads((self.d / "other_candidates.json").read_text())
         self.assertEqual(len(got["Tp"]["candidates"]), 9)
         self.assertEqual(got["Tp"]["candidates"][-1]["doi"], "10.1234/other8")
+        # Feasibility retrieval never fabricates author approval or overwrites the
+        # official candidate file, and binds each draft to its source and text.
+        previous = (self.d / "other_candidates.json").read_bytes()
+        (self.d / "topic_check.csv").unlink()
+        drafts = []
+        for code in ("one", "two"):
+            raw = "What is the relationship between exposure and outcome?"
+            bound = {"request_sha256": "fixture", "raw_text": raw}
+            drafts.append({"item_code": code, "dry": False, "status": "pending_scientific_review",
+                           "source": {"title": t["title"], "abstract": t["abstract"]}, "draft": raw,
+                           **bound, "content_sha256": hashlib.sha256(json.dumps(bound, ensure_ascii=False,
+                           sort_keys=True, separators=(",", ":")).encode()).hexdigest()})
+        draftfile = self.d / "drafts.jsonl"
+        draftfile.write_text("".join(json.dumps(r) + "\n" for r in drafts))
+        with mock.patch("urllib.request.urlopen", side_effect=fetch), mock.patch("time.sleep"):
+            script("other_results.py", [self.d / "registry.csv", self.d, "--development-drafts", draftfile])
+        self.assertEqual((self.d / "other_candidates.json").read_bytes(), previous)
+        dev = json.loads((self.d / "other_candidates.DEVELOPMENT.json").read_text())
+        self.assertTrue(dev["Tp"]["development_unapproved"])
+        with (self.d / "fit_check.DEVELOPMENT.csv").open() as f:
+            self.assertTrue(all(not r["review decision (blank = unreviewed)"] for r in csv.DictReader(f)))
+        drafts[0]["draft"] = "An edited question?"
+        draftfile.write_text("".join(json.dumps(r) + "\n" for r in drafts))
+        with self.assertRaisesRegex(SystemExit, "content identity changed"):
+            script("other_results.py", [self.d / "registry.csv", self.d, "--development-drafts", draftfile])
+        # A compiled plan changes only retrieval text, not the scientific topic.
+        drafts[0]["draft"] = drafts[0]["raw_text"]
+        draftfile.write_text("".join(json.dumps(r) + "\n" for r in drafts))
+        query_dir = self.d / "query-mode"; query_dir.mkdir()
+        for name in ("targets.json", "controls.json", "topic_codes.json"):
+            (query_dir / name).write_bytes((self.d / name).read_bytes())
+        query = "((exposure)) AND ((outcome))"
+        plan = {"version": "search-query-v1", "status": "FROZEN_DEVELOPMENT_QUERIES_UNAPPROVED", "items": [
+            {"item_code": r["item_code"], "question": r["draft"], "topic_content_sha256": r["content_sha256"],
+             "groups": {"context": ["exposure"], "focus": ["outcome"]}, "query": query,
+             "query_sha256": hashlib.sha256(query.encode()).hexdigest()} for r in drafts]}
+        dump(self.d / "query-plan.json", plan)
+        with mock.patch("urllib.request.urlopen", side_effect=fetch), mock.patch("time.sleep"):
+            script("other_results.py", [self.d / "registry.csv", query_dir, "--development-drafts", draftfile,
+                                         "--query-plan", self.d / "query-plan.json"])
+        output = json.loads((query_dir / "other_candidates.DEVELOPMENT.json").read_text())
+        self.assertEqual(output["Tp"]["search_query"], query)
+        self.assertEqual(output["Tp"]["topic"], drafts[0]["draft"])
+        plan["items"][0]["question"] = "A changed question?"
+        dump(self.d / "query-plan.json", plan)
+        with self.assertRaisesRegex(SystemExit, "another question"):
+            script("other_results.py", [self.d / "registry.csv", query_dir, "--development-drafts", draftfile,
+                                         "--query-plan", self.d / "query-plan.json"])
 
 
 if __name__ == "__main__":
