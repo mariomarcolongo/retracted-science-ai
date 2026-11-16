@@ -159,3 +159,81 @@ No judge calls, topic drafting, live pilot or main run have started.
 
 Console: `/tmp/retracted-knowledge-run-console.log`.
 Persistent audit records: `data/logs/knowledge_check/` (local, untracked).
+
+## Funding resolved; auxiliary run resumed
+
+User reported purchasing the credits. Resumed the same auxiliary command with
+`--budget 5`; session 83943 in this chat. Live HTTP 200 responses and usable
+answers are now arriving. Earlier 402 logs and conservative reservations remain
+intact. Judge/drafting still pending. Check running processes and logs before
+resuming again. No pilot or main-run authorization.
+
+### Resume allowance adjustment
+First funded attempt stopped at 10/280 because retained $2.50 reservations plus
+concurrent request reserves triggered the $5 guard. Recorded real usage was
+$0.0415; no logs removed. Resumed with --budget 8, session 17040. Overall
+preparation target stays $20, including later judging/drafting. Pilot target
+drafting also started (configured MiMo, --budget 0.5); provisional until drafter
+eligibility is resolved, as permitted by D61. Never run target/control drafting
+concurrently in the same draw directory.
+
+## Current continuation after user said “bought” and “continue”
+
+- User wants to WAIT for the knowledge-check result before reviewing pilot topics.
+- All 56 topics have been drafted by configured MiMo (50 main + 6 pilot). No author
+  checkboxes filled. CSVs: data/work/{draw,pilot}/topic_check.csv.
+- Pilot review UI: results/pilot-topic-review.html. Export was smoke-tested using
+  synthetic values (six rows, CSV quoting/newlines, incomplete-review refusal);
+  actual author CSV unchanged. Do not import /tmp synthetic export as human review.
+- Auxiliary runner session 17040 uses --budget 8 (includes prior $2.50 conservative
+  reservations, not confirmed charges); nearly finished at 03:07 UTC.
+- First judging session 6994 uses --budget 10. It captured 246 answers at startup;
+  it must be resumed to judge the remaining answers. GLM finished that batch; Grok
+  is slower. Do not interrupt in-flight paid calls merely to speed it up.
+- **Coordinator session 9671 is already running**. It waits for BOTH runner and
+  first judging locks to release, verifies all 280 terminal answers, resumes the
+  SAME judge directory at --budget 10, then runs knowledge_check.py. It stops
+  there; it does not approve author decisions, run a pilot or launch the main run.
+  Script: /tmp/retracted-finish-preparation.py (copy in results/).
+  Logs: /tmp/retracted-preparation-coordinator.log,
+  /tmp/retracted-knowledge-judge-final.log, /tmp/retracted-knowledge-result.log.
+  Do not start duplicate judges/coordinators. Read existing state first.
+- All four drafting commands finished (each --budget 0.5, logdirs under
+  data/logs/drafting/). Latest saved cost snapshot: results/preparation-progress.json
+  at 03:03:57 UTC showed $2.3501 known costs total, not including unknown reserves.
+  Recompute before reporting final cost.
+- Next required author action may be knowledge_decisions.csv if judges disagree.
+  Then pilot topic review, alternative-result fit review, pilot build/live validation.
+  Do not silently perform author labels or checks in the user's name.
+
+## FINAL PREPARATION CHECKPOINT — author decisions required
+
+All running preparation processes finished (runner 17040, judge 6994, coordinator
+9671). No automatic pilot/main continuation exists. Auxiliary check has 280/280
+usable terminal answers; both judges returned valid forms for all answers (560).
+The knowledge-check script stopped as designed at **28 author disagreements**:
+27 refusal versus not-called-retracted, one called-retracted versus not-called.
+**No model keep/replace decision is final yet.** Do not call this a passed check.
+
+Author CSV: data/logs/knowledge_check/knowledge_decisions.csv (all decisions blank).
+Readable author UI: results/knowledge-decisions-review.html. It exports
+knowledge-decisions-reviewed.csv; source CSV is unchanged. Model names and true
+paper statuses hidden. No decisions prefilled. UI script syntax checked; previous
+pilot UI export was tested with synthetic values only.
+
+User explicitly chose to wait for knowledge-check result before reviewing pilot
+topics. Next: ask them to review these 28 answers, export the CSV and report its
+path. Validate that codes/questions/answers match, only valid decisions are filled,
+and archive the original before importing. Then rerun code/knowledge_check.py.
+If a drafter/judge is replaced, follow the actual rule and preserve old outputs;
+do not quietly approve current drafts or labels. If kept, pilot topic review can
+proceed using results/pilot-topic-review.html (six rows). Main review still has
+50 drafts. No author checks completed, no final evidence packets built.
+
+Final known inference charges across the auxiliary check, both judges and all
+56 topic drafts: **$4.1764** (see results/preparation-progress.json for exact sum).
+Separate old unknown-cost reservations from ten HTTP 402 responses: $2.50; not
+confirmed charges. Do not include purchase fees/VAT in inference usage totals.
+Auxiliary run diagnostic: results/knowledge-run-check.txt (no FAIL; NOTE metadata
+checks remain unverified). No tested-model pilot or main run, no public freeze,
+no submission, no publication. The funded preparation target remains $20.
