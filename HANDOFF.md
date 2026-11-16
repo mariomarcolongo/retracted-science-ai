@@ -16,8 +16,10 @@ Source: https://apartresearch.com/sprints/ai-x-epistemics-research-sprint-2026-1
 The prior Fable/Claude session was scheduled to resume at 06:51 local. User accepted
 Codex taking over, but did not separately confirm disabling that session. Avoid
 simultaneous writers; recheck file state if it resumes. No external messages or
-submissions have been sent by this Codex chat. No paid calls have been authorized
-as a specific budget in this chat or executed by this continuation.
+submissions have been sent by this Codex chat. User expressed willingness to spend if the trade-off is positive after the $20
+preparation proposal. Codex explained the expected benefit and proceeded with the
+first $5-guard auxiliary stage. The provider rejected it before any answers
+completed; see the current execution status at the end of this file.
 
 ## Completed in this continuation (D69)
 
@@ -58,8 +60,8 @@ a working protocol with placeholders, not a completed empirical paper.
 `OPENROUTER_API_KEY` is absent in the execution shell, but the runner's fallback
 file `~/.config/retracted-science-ai/openrouter.key` exists and is nonempty. Only
 existence/size were checked; no credential values were printed or read. The runner
-can load this file. Do not ask the user to paste a key. A $20 preparation-stage
-budget request is pending in this chat (knowledge check, judging, drafting only).
+can load this file. Do not ask the user to paste a key. The preparation-stage target is $20 (knowledge check, judging, drafting only).
+No pilot or main run has been authorized by this continuation.
 
 Scientific cautions to retain:
 - These are fixed API configurations and supplied evidence, not consumer apps.
@@ -123,3 +125,37 @@ Current endpoint metadata is saved separately in `results/endpoints-current/`.
 `results/estimate-current.csv` gives low $61.08 / middle $159.69 / high $368.71,
 with the same token assumptions. Auxiliary preparation remains $7.40 / $16.50.
 These are expected costs, not caps. No live inference calls have been made.
+
+## Current execution status: auxiliary check stopped by provider (HTTP 402)
+
+The first live attempt used:
+
+```sh
+python3 -I code/run_tests.py data/work/check_items.json data/logs/knowledge_check --phase knowledge_check --roles aux --tests SQ --budget 5
+```
+
+Run ended at approximately 02:38 UTC (03:38 Rome), 16 Nov. Ten already-in-flight
+requests received HTTP 402; the account-stop safeguard stopped further work.
+**0/280 terminal model answers. No recorded charge in returned usage.** Provider
+error classification mentions needing more credits / max_tokens. The key file
+exists; do not expose its contents or the full account error in chat.
+
+The console's `$2.50 spent` is ten $0.25 conservative reservations for requests
+whose cost is unknown, NOT confirmed billing. Do not report it as actual spend or
+claim definitively that billing was zero. Logs must be preserved. On resume the
+budget reconstructs these reservations; do not delete logs to reset the guard.
+Review scheduling allowance if it pauses because of those retained reservations,
+while keeping total preparation within the agreed $20 target.
+
+User was asked through the async question tool to resolve the OpenRouter funding
+or key-credit limit and report readiness, without sharing credentials/account
+information. **This is the current dependency. Do not keep retrying 402.** Do not
+lower MAX_TOKENS merely to bypass it: that changes the configured experiment.
+
+After the user resolves it, resume the SAME command and log directory. Inspect
+completion and actual costs before launching `judge.py --budget 10`; then apply
+`knowledge_check.py`, resolve author decisions, and prepare pilot topics first.
+No judge calls, topic drafting, live pilot or main run have started.
+
+Console: `/tmp/retracted-knowledge-run-console.log`.
+Persistent audit records: `data/logs/knowledge_check/` (local, untracked).
