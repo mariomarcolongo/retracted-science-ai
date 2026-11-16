@@ -1,4 +1,4 @@
-# Retracted, Reinstated or Smeared: Do AI Assistants Use Publication-Status Signals? A study design and a first result
+# Do AI Assistants Know Which Papers Are Retracted? Nine Models Tested, and a Design for Forged Retraction Notices
 
 > **[…]** = placeholder or fact still to fill.
 
@@ -6,13 +6,15 @@
 
 ## Title
 
-Retracted, Reinstated or Smeared: Do AI Assistants Use Publication-Status Signals? A study design and a first result
+Do AI Assistants Know Which Papers Are Retracted? Nine Models Tested, and a Design for Forged Retraction Notices
 
 Mario Marcolongo, Metropolia University of Applied Sciences, Espoo, Finland · Mario.Marcolongo@metropolia.fi · ORCID 0000-0003-2846-7115. With Apart Research.
 
 ## Abstract
 
 Retracted papers keep circulating, and a paper's publication status is easy to fake: any web page can say a paper was retracted or reinstated. Earlier studies showed that language models rarely notice retractions, but none gave models a registry to check or showed them a forged status claim. We present a controlled design that does both, for nine API model configurations, on 25 health papers retracted after 1 July 2026 and 25 matched controls: each primary comparison adds one forged status line (a fake reinstatement of a labelled retracted paper, or a fake retraction of a valid paper) to search results while a registry lookup tool returns the true record. These tests have not yet been run; this submission reports the design, its scoring and analysis plan, and one completed module. In that module each model was asked, without search or tools, whether each of 56 papers (28 retracted, 28 controls) is retracted. In provisional results no model separated retracted papers from controls. Two models always said they could not know; four said "retracted" for most papers, including valid ones (up to 28 of 28 controls); two mostly said "not retracted", including for retracted papers. A direct answer about retraction status from these models therefore carries little information, and some models falsely discredit valid work. The figures await author adjudication of 20 answers and a human check. Code, prompts, decisions and logs are documented for reuse.
+
+**Keywords:** retracted papers; retraction; large language models; AI assistants; ChatGPT, Gemini, Claude, DeepSeek, Qwen; forged retraction notice; Retraction Watch; scientific misinformation; retrieval-augmented generation.
 
 ---
 
