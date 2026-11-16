@@ -4,6 +4,7 @@ Corrections to the draft, data and code, with the source for each.
 
 ## 16 Nov 2026
 
+- **Status-question test run first, as its own module (D75).** The nine tested models answer the status question for all 56 papers before the forged-status tests; rules and analysis unchanged; the main run will omit it.
 - **Materials development v3 (D73).** Revised synthesis-level question scope, added isolated two-model scientific-fit checks with exact evidence validation, and versioned synonym/title-abstract retrieval. All six items follow the same procedure; prior failures remain archived. No experimental packets approved.
 
 - **Question-to-query conversion (D72).** Added fixed, isolated concept extraction and deterministic Boolean compilation for OpenAlex; development-only retrieval binds queries to unchanged question hashes. Original full-sentence searches and later diagnostic probes remain preserved. Candidates remain unapproved pending source relevance and packet checks.
