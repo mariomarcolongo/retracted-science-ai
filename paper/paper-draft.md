@@ -12,7 +12,7 @@ Mario Marcolongo, Metropolia University of Applied Sciences, Espoo, Finland · M
 
 ## Abstract
 
-Retracted papers keep circulating, and a paper's publication status is easy to fake: any web page can say a paper was retracted or reinstated. Earlier studies showed that language models rarely notice retractions, but none gave models a registry to check or showed them a forged status claim. We present a controlled design that does both, for nine API model configurations, on 25 health papers retracted after 1 July 2026 and 25 matched controls: each primary comparison adds one forged status line (a fake reinstatement of a labelled retracted paper, or a fake retraction of a valid paper) to search results while a registry lookup tool returns the true record. These tests have not yet been run; this submission reports the design, its scoring and analysis plan, and one completed module. In that module each model was asked, without search or tools, whether each of 56 papers (28 retracted, 28 controls) is retracted. In provisional results no model separated retracted papers from controls. Two models always said they could not know; four said "retracted" for most papers, including valid ones (up to 28 of 28 controls); two mostly said "not retracted", including for retracted papers. A direct answer about retraction status from these models therefore carries little information, and some models falsely discredit valid work. The figures await author adjudication of 20 answers and a human check. Code, prompts, decisions and logs are documented for reuse.
+Retracted papers keep circulating, and a paper's publication status is easy to fake: any web page can say a paper was retracted or reinstated. Earlier studies showed that language models rarely notice retractions, but none gave models a registry to check or showed them a forged status claim. We present a controlled design that does both, for nine API model configurations, on 25 health papers retracted after 1 July 2026 and 25 matched controls: each primary comparison adds one forged status line (a fake reinstatement of a labelled retracted paper, or a fake retraction of a valid paper) to search results while a registry lookup tool returns the true record. These tests have not yet been run; this submission reports the design, its scoring and analysis plan, and one completed module. In that module each model was asked, without search or tools, whether each of 56 papers (28 retracted, 28 controls) is retracted. No model separated retracted papers from controls (main sample: 25 pairs). Two models said they could not know for almost every paper; four often said "retracted", for valid papers as readily as for retracted ones (up to 25 of 25 controls); two never or rarely said "retracted" and often said "not retracted", including for retracted papers. A direct answer about retraction status from these models therefore carries little information, and some models falsely discredit valid work. Two judge models scored the answers, the author settled their 21 disagreements, and a 36-answer blind human check agreed with the final labels. Code, prompts, decisions and logs are documented for reuse.
 
 **Keywords:** retracted papers; retraction; large language models; AI assistants; ChatGPT, Gemini, Claude, DeepSeek, Qwen; forged retraction notice; Retraction Watch; scientific misinformation; retrieval-augmented generation.
 
@@ -255,36 +255,29 @@ Agreement between the two judges is reported per field. In figures and tables, "
 
 ## 4. Results
 
-### 4.1 Status-question test: provisional result (16 Nov 2026)
+### 4.1 Status-question test (run 16 Nov 2026)
 
-Only the status-question test (§3.1) has been run. The forged-status tests (Table 2) have not been run; their materials are still being built. Each of the nine models was asked the status question once for each of 56 papers (28 retracted, 28 matched controls; 25 main pairs and 3 pilot pairs, pooled here), with no search results and no tool: 504 answers, of which 503 had usable text. Both judges scored every usable answer.
+Only the status-question test (§3.1) has been run. The forged-status tests (Table 2) have not been run; their materials are still being built. Each of the nine models was asked the status question once for each paper, with no search results and no tool: 504 answers for 28 pairs, of which 503 had usable text (one Qwen3.8 Flash answer on a control paper was cut off before any text). Both judges scored every usable answer; the author settled the 21 answers on which they disagreed about the asserted status. The 25 main pairs are reported here; the 3 pilot pairs are reported separately in the released results and show the same pattern.
 
-**Table 4.1. Status asserted by each model (number of papers out of 28). A label is counted only where the two judges agree; the 20 answers on which they differ are shown as disputed.**
+**Table 4.1. Status-question answers, main sample (25 retracted papers and 25 matched controls). C = correct (says retracted for a retracted paper, not retracted for a control); I = another definite status; U = uncertain or no status stated.**
 
-| Model | Papers | retracted | not retracted | uncertain | other | refusal | disputed | no answer |
-|---|---|---|---|---|---|---|---|---|
-| Claude Sonnet 5.5 | control | 0 | 0 | 27 | 0 | 0 | 1 | 0 |
-| Claude Sonnet 5.5 | retracted | 0 | 0 | 28 | 0 | 0 | 0 | 0 |
-| DeepSeek V4.1 Flash 1017 | control | 28 | 0 | 0 | 0 | 0 | 0 | 0 |
-| DeepSeek V4.1 Flash 1017 | retracted | 27 | 1 | 0 | 0 | 0 | 0 | 0 |
-| ERNIE 5.5 Flash Preview | control | 7 | 2 | 19 | 0 | 0 | 0 | 0 |
-| ERNIE 5.5 Flash Preview | retracted | 7 | 0 | 19 | 0 | 0 | 2 | 0 |
-| GPT-6 Luna | control | 14 | 11 | 0 | 0 | 0 | 3 | 0 |
-| GPT-6 Luna | retracted | 23 | 2 | 1 | 0 | 0 | 2 | 0 |
-| GPT-6.1 Sol | control | 14 | 0 | 14 | 0 | 0 | 0 | 0 |
-| GPT-6.1 Sol | retracted | 18 | 0 | 10 | 0 | 0 | 0 | 0 |
-| Gemini 3.5 Flash-Lite | control | 0 | 16 | 11 | 0 | 0 | 1 | 0 |
-| Gemini 3.5 Flash-Lite | retracted | 0 | 12 | 15 | 0 | 0 | 1 | 0 |
-| Gemini 4 Hydrogen | control | 0 | 0 | 28 | 0 | 0 | 0 | 0 |
-| Gemini 4 Hydrogen | retracted | 0 | 0 | 27 | 0 | 0 | 1 | 0 |
-| Qwen3.8 Flash | control | 26 | 1 | 0 | 0 | 0 | 0 | 1 |
-| Qwen3.8 Flash | retracted | 28 | 0 | 0 | 0 | 0 | 0 | 0 |
-| Seed 2.0 Lite | control | 1 | 20 | 0 | 1 | 0 | 6 | 0 |
-| Seed 2.0 Lite | retracted | 4 | 19 | 0 | 2 | 0 | 3 | 0 |
+| Model | Retracted papers: C / I / U | Control papers: C / I / U | Says "retracted": retracted papers | Says "retracted": controls | Both papers of a pair correct |
+|---|---|---|---|---|---|
+| Claude Sonnet 5.5 | 0 / 0 / 25 | 0 / 0 / 25 | 0/25 | 0/25 | 0/25 |
+| Gemini 4 Hydrogen | 0 / 1 / 24 | 0 / 0 / 25 | 0/25 | 0/25 | 0/25 |
+| Gemini 3.5 Flash-Lite | 0 / 13 / 12 | 14 / 0 / 11 | 0/25 | 0/25 | 0/25 |
+| Seed 2.0 Lite | 4 / 21 / 0 | 23 / 2 / 0 | 4/25 | 1/25 | 4/25 |
+| ERNIE 5.5 Flash Preview | 8 / 0 / 17 | 2 / 6 / 17 | 8/25 | 6/25 | 1/25 |
+| GPT-6.1 Sol | 15 / 0 / 10 | 0 / 13 / 12 | 15/25 | 13/25 | 0/25 |
+| GPT-6 Luna | 21 / 4 / 0 | 12 / 13 / 0 | 21/25 | 13/25 | 9/25 |
+| DeepSeek V4.1 Flash 1017 | 24 / 1 / 0 | 0 / 25 / 0 | 24/25 | 25/25 | 0/25 |
+| Qwen3.8 Flash | 25 / 0 / 0 | 1 / 23 / 0 (n = 24) | 25/25 | 23/24 | 1/24 |
 
-No model separates retracted papers from controls: each answers the two groups almost identically. Claude Sonnet 5.5 and Gemini 4 Hydrogen say they cannot know for every paper. DeepSeek V4.1 Flash, Qwen3.8 Flash and, to a lesser degree, GPT-6 Luna and GPT-6.1 Sol say "retracted" for most papers, including the controls (DeepSeek 28 of 28, Qwen 26 of 28). Seed 2.0 Lite and Gemini 3.5 Flash-Lite mostly say "not retracted", including for retracted papers. GPT-6 Luna shows the only visible difference between the groups (23 against 14), while still calling half of the controls retracted. Asked directly and without search, a "yes" from these models carries little information about a paper's status, and several of them state that valid papers are retracted.
+Wilson 95% intervals for every cell are in the released `rates.csv`; with 25 papers, 0/25 has an upper limit of 13% and 25/25 a lower limit of 87%.
 
-**This result is provisional.** (1) The 20 disputed answers have not been settled by the author. (2) The author's 32 blind labels are recorded but their agreement with the judges has not been computed; the first label was discussed as a training item, and the author received written field definitions while labelling. (3) No intervals are given; with 28 papers per cell, small differences are not meaningful. (4) The table is a direct count of the judges' forms (`tools/status_provisional.py`), not the output of the scoring steps of §3.5, so final figures may differ by a few answers. (5) One wording, asked once per paper. (6) The run for DeepSeek fell in its provider's peak-price window and is logged separately; Qwen3.8 Flash was rate-limited and completed over four resumed runs. (7) The link between three tested models and consumer products (Seed 2.0 Lite and Doubao, Qwen3.8 Flash and the Qwen app, ERNIE 5.5 Flash Preview and Baidu Search) is not established; these rows describe a current model from that developer, not the model known to run in the app.
+No model separates retracted papers from controls. A model that knew which papers were retracted would say "retracted" for the retracted papers and not for the controls; instead each model gives the two groups almost the same answers, and the number of pairs in which both papers are answered correctly is at most 9 of 25 (GPT-6 Luna) and at most 4 of 25 for every other model. The models fall into three groups. Claude Sonnet 5.5 and Gemini 4 Hydrogen say they cannot know, for almost every paper. DeepSeek V4.1 Flash, Qwen3.8 Flash and, less often, GPT-6 Luna and GPT-6.1 Sol say "retracted", for valid papers as readily as for retracted ones (DeepSeek 25 of 25 controls, Qwen 23 of 24). Seed 2.0 Lite and Gemini 3.5 Flash-Lite never or rarely say "retracted" and often say "not retracted", including for retracted papers (21 and 13 of 25). A high score on the retracted papers alone therefore shows nothing: DeepSeek is "correct" on 24 of 25 retracted papers only because it says "retracted" to everything.
+
+**Scoring and limits of this result.** (1) Agreement: the two judges agreed on the asserted status for 482 of 503 answers (kappa 0.94). The author labelled 36 answers blind to the judges; the author's label equals the final label for 36 of 36 and the judges' own labels for 36 and 35 of 36. The author also settled the 21 disagreements, without written reasons, so this is not an independent check; the first labelled answer was discussed with an AI assistant after it was labelled, and the author received written field definitions while labelling. (2) Scoring used a script for this test alone (`code/status_only.py`), which applies the outcome rule of §3.5 and checks its output against the study's outcome code; the other form fields (source of the claim, claimed checks, notice details) were not adjudicated and are not reported. This and the other departures from the plan for this run are recorded in DECISIONS.md. (3) One wording, asked once per paper, on 25 papers per group: small differences between models are not meaningful. (4) Training exposure is not established either way. The retractions date from 2 July to 7 November 2026. Five models have published training cutoffs before July 2026; Seed 2.0 Lite, Qwen3.8 Flash, DeepSeek V4.1 Flash and ERNIE 5.5 Flash Preview publish none, and three of these were released between August and November 2026. (5) The DeepSeek run was made as a separate batch within minutes of the others, after an account setting was changed; Qwen3.8 Flash was rate-limited by its provider and completed over four resumed runs. (6) The link between three tested models and consumer products (Seed 2.0 Lite and Doubao, Qwen3.8 Flash and the Qwen app, ERNIE 5.5 Flash Preview and Baidu Search) is not established; these rows describe a current model from that developer, not the model known to run in the app. (7) "Not retracted" for a control means no notice in the registry snapshot of 13 Nov 2026.
 
 | Item | Content |
 |---|---|
@@ -297,7 +290,7 @@ No model separates retracted papers from controls: each answers the two groups a
 
 ## 5. Discussion and Limitations
 
-The one completed module concerns recognition, not the forged-status tests. Its provisional result is that, asked directly and without search, none of the nine configurations distinguishes recently retracted papers from matched valid papers. This is expected for retractions after the models' training cutoffs; the informative part is how models behave when they cannot know. Some say so. Others answer "retracted" or "not retracted" for almost every paper, so their answers look confident and are uninformative, and a model that calls most valid papers retracted would discredit sound research if a user relied on it. The result does not show what happens when a model is given search results, a retraction label, a forged note or a registry to check; those are the questions of the design in §3, which remain to be run. It also does not establish what any model saw in training. Whether stated uncertainty should count as the correct behaviour here, and how often models attach a knowledge-cutoff date to their answer, are questions we noticed after seeing the data and will report as post hoc.
+The one completed module concerns recognition, not the forged-status tests. Its result is that, asked directly and without search, none of the nine configurations distinguishes recently retracted papers from matched valid papers. This is expected for retractions after the models' training cutoffs; the informative part is how models behave when they cannot know. Some say so. Others answer "retracted" or "not retracted" for almost every paper, so their answers look confident and are uninformative, and a model that calls most valid papers retracted would discredit sound research if a user relied on it. The result does not show what happens when a model is given search results, a retraction label, a forged note or a registry to check; those are the questions of the design in §3, which remain to be run. It also does not establish what any model saw in training. Whether stated uncertainty should count as the correct behaviour here, and how often models attach a knowledge-cutoff date to their answer, are questions we noticed after seeing the data and will report as post hoc.
 
 ### Limitations
 
@@ -339,7 +332,7 @@ The one completed module concerns recognition, not the forged-status tests. Its 
 
 ## 6. Conclusion
 
-We designed a controlled test of whether AI model configurations check and follow an available registry when search results carry true or forged publication-status claims, and we fixed its scoring and analysis before running it. One module is complete: without search, nine configurations could not tell recently retracted health papers from matched controls, and several asserted a status for nearly every paper regardless of the truth. The forged-status experiment, the human check and the final figures for this module remain to be completed and will be reported with the same logs and rules.
+We designed a controlled test of whether AI model configurations check and follow an available registry when search results carry true or forged publication-status claims, and we fixed its scoring and analysis before running it. One module is complete: without search, nine configurations could not tell recently retracted health papers from matched controls, and several asserted a status for nearly every paper regardless of the truth. The forged-status experiment remains to be run and will be reported with the same logs and rules.
 
 ---
 
