@@ -37,15 +37,15 @@ METHODS = """## 3. Methods (summary; full methods in Appendix K)
 
 **Papers.** From the Retraction Watch data (snapshot of 13 Nov 2026) we took full retractions of health research articles, retracted from 1 July 2026 for data-invalidating reasons, published at least a year earlier, with an English abstract and at least 5 citations, at most one per journal and author group: 148 eligible, 33 after the journal and author rule, 25 after hand screening, drawn in a seeded random order. Each is paired with a matched non-retracted article (same journal, year within one, similar citations, no Retraction Watch record). A pilot set of 3 further pairs follows the same rules with 1 to 4 citations.
 
-**Models.** Nine API configurations, each through one pinned provider at its default settings: Gemini 4 Hydrogen, GPT-6 Luna, Gemini 3.5 Flash-Lite, GPT-6.1 Sol, Claude Sonnet 5.5, Seed 2.0 Lite, Qwen3.8 Flash, DeepSeek V4.1 Flash 1017 and ERNIE 5.5 Flash Preview. Product adoption informed the choice; the API does not reproduce the apps (Appendix F, G).
+**Models.** Nine models, each called through one pinned API provider at its default settings: Gemini 4 Hydrogen, GPT-6 Luna, Gemini 3.5 Flash-Lite, GPT-6.1 Sol, Claude Sonnet 5.5, Seed 2.0 Lite, Qwen3.8 Flash, DeepSeek V4.1 Flash 1017 and ERNIE 5.5 Flash Preview. Product adoption informed the choice; the API does not reproduce the apps (Appendix F, G).
 
 **Status-question test (run).** Each model is asked once per paper, in a fresh conversation with no search results and no tool: "Is '{title}' by {authors} retracted?" (wording of Hoang Ha et al. 2026). An answer is correct if it says retracted for a retracted paper and not retracted for a control; another definite status is incorrect; uncertain answers and answers that state no status are reported as uncertain.
 
-**Forged-status tests (designed, not yet run).** The model receives five search results, one of them the target paper, and a question on the paper's topic. Ten tests change only the target's status line and whether a registry lookup tool is offered (Appendix K, Table 2). The two primary comparisons each add one forged line that the registry contradicts: a fake reinstatement added to a correctly labelled retracted paper (R5 versus R6; outcome: relying on the paper without a status warning), and a fake retraction added to a valid paper (K3 versus K4; outcome: calling the paper retracted or excluding it for that reason). Each is estimated across the nine models with topics resampled, a sign-flip test and Holm adjustment for the two; per-model results are exploratory.
+**Forged-status tests (designed, not yet run).** The model receives five search results, one of them the target paper, and a question on the paper's topic. Ten tests change only the target's status line and whether a registry lookup tool is offered (Appendix K, Table 2). The two main comparisons each add one forged line that the registry contradicts. In the first, a correctly labelled retracted paper also carries a fake "reinstated" note; the outcome is whether the model relies on the paper without warning about its status. In the second, a valid paper carries a fake "retracted" note; the outcome is whether the model calls it retracted or leaves it out for that reason. Each comparison is estimated across the nine models, with a sign-flip test and a correction for testing two comparisons; results for single models are exploratory.
 
 **Scoring.** Code records mechanical fields; two judge models from untested families (Grok 4.7, GLM-5.2) fill a fixed form for every answer without seeing the test, the model or the paper's true status; the author settles their disagreements; code combines the fields into outcomes; a blind human check of a seeded sample measures agreement (target: Cohen's kappa of 0.7 or more).
 
-**Record.** Every design decision, with date and reason, is in DECISIONS.md, including changes made after pre-run reviews and before any tested model was run. All requests, responses, judge forms and labels are logged.
+**Record.** Every design decision, with date and reason, is in the decision log (DECISIONS.md in the repository), including changes made after pre-run reviews and before any tested model was run. All requests, responses, judge forms and labels are logged.
 """
 
 main = [title, "", author, "", "## Abstract", "", abstract, "---", "", sec("1. Introduction"),
@@ -57,22 +57,20 @@ main = [title, "", author, "", "## Abstract", "", abstract, "---", "", sec("1. I
         "per group, one human annotator who also settled the judges' disagreements, training exposure not established, and three "
         "model-to-product links not established. The forged-status tests have not been run, so nothing here shows how models "
         "handle search results, labels, forged notes or a registry. The full list is in Appendix A.\n",
-        sec("6. Conclusion"), "## Code and data\n\nThe code, prompts, decision log and the logs of this run (every request, response, judge form and label) "
-        "are kept in a versioned repository, not yet public; they will be released with the completed study.\n", sec("Author contributions").split("**AI assistance.**")[0].rstrip() + "\n", sec("LLM usage statement")]
+        sec("6. Conclusion"), "## Code and data\n\nPublic repository: https://github.com/mariomarcolongo/retracted-science-ai. It holds the code, prompts, protocol "
+        "and decision log, and for the status-question test every request and response (with the reasoning the APIs return), "
+        "both judges' forms, the author's labels and decisions, and the results files, including `rates.csv`. Abstracts of the "
+        "papers are not redistributed as text; a script restores them from PubMed and OpenAlex and checks each against its "
+        "hash. Materials of the forged-status tests will be released with the full study.\n", sec("Author contributions").split("**AI assistance.**")[0].rstrip() + "\n", sec("LLM usage statement")]
 back = [sec("References"), sec("Appendix A").rstrip() + "\n\n" + limits_table.replace("### Limitations", "**Full list of limitations**", 1),
         sec("Appendix B"), sec("Appendix C"), sec("Appendix D"), sec("Appendix E"), sec("Appendix F"), sec("Appendix G"),
         "## Appendix J. Related work in detail\n\n" + related,
         "## Appendix K. Full methods\n\n" + body("3. Methods")]
 back = [b.replace("| [check] |", "| not yet checked |").replace(" [check: model used in app]", " (model used in the app not established)")
-        .replace(" [check: model used in search]", " (model used in search not established)").replace("| [N] health papers", "| 25 health papers")
+        .replace(" (Table 5).", " (to be reported with the full study).").replace(" [check: model used in search]", " (model used in search not established)").replace("| [N] health papers", "| 25 health papers")
         for b in back]
 # Submission-specific wording: cross-references to parts that moved, and contributions stated as what exists today.
 FIX = [("(Table 1). We chose", "(Appendix J, Table 1). We chose"), ("figures in Table 1)", "figures in Appendix J, Table 1)"),
-       ("1. The first test we found of **forged publication status in both directions**",
-        "1. A design, not yet run, for the first test we found of **forged publication status in both directions**"),
-       ("2. A controlled test of recent retractions, with a separate status-question test to measure recognition without retrieved evidence.",
-        "2. A completed status-question test on recent retractions, measuring recognition without retrieved evidence, on nine models."),
-       ("3. A comparison of nine API configurations", "3. A panel of nine API configurations"),
        ("Only the status-question test (§3.1) has been run. The forged-status tests (Table 2)",
         "Only the status-question test (§3) has been run. The forged-status tests (Appendix K, Table 2)"),
        ("the outcome rule of §3.5", "the outcome rule of Appendix K, §3.5"), ("\n---\n\n---\n", "\n---\n")]

@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 360" width="680" height="360" font-family="Helvetica, Arial, sans-serif" font-size="12">
+<rect width="680" height="360" fill="#fff"/>
+<line x1="190.0" y1="36" x2="190.0" y2="314" stroke="#ddd"/>
+<text x="190.0" y="330" text-anchor="middle" fill="#444">0%</text>
+<line x1="305.0" y1="36" x2="305.0" y2="314" stroke="#ddd"/>
+<text x="305.0" y="330" text-anchor="middle" fill="#444">25%</text>
+<line x1="420.0" y1="36" x2="420.0" y2="314" stroke="#ddd"/>
+<text x="420.0" y="330" text-anchor="middle" fill="#444">50%</text>
+<line x1="535.0" y1="36" x2="535.0" y2="314" stroke="#ddd"/>
+<text x="535.0" y="330" text-anchor="middle" fill="#444">75%</text>
+<line x1="650.0" y1="36" x2="650.0" y2="314" stroke="#ddd"/>
+<text x="650.0" y="330" text-anchor="middle" fill="#444">100%</text>
+<text x="420" y="352" text-anchor="middle" fill="#222">Share of papers the model called "retracted"</text>
+<circle cx="190" cy="18" r="5" fill="#b42318"/><text x="200" y="22" fill="#222">retracted papers</text>
+<circle cx="330" cy="18" r="5" fill="#fff" stroke="#1f4e9c" stroke-width="2"/><text x="340" y="22" fill="#222">valid controls</text>
+<text x="180" y="63.0" text-anchor="end" fill="#222">Claude Sonnet 5.5</text>
+<line x1="190.0" y1="54.0" x2="251.3" y2="54.0" stroke="#b42318" stroke-width="1.5"/>
+<circle cx="190.0" cy="54.0" r="4.5" fill="#b42318" stroke="#b42318" stroke-width="2"><title>Claude Sonnet 5.5, retracted papers: 0/25</title></circle>
+<line x1="190.0" y1="64.0" x2="251.3" y2="64.0" stroke="#1f4e9c" stroke-width="1.5"/>
+<circle cx="190.0" cy="64.0" r="4.5" fill="#fff" stroke="#1f4e9c" stroke-width="2"><title>Claude Sonnet 5.5, controls: 0/25</title></circle>
+<text x="180" y="93.0" text-anchor="end" fill="#222">Gemini 4 Hydrogen</text>
+<line x1="190.0" y1="84.0" x2="251.3" y2="84.0" stroke="#b42318" stroke-width="1.5"/>
+<circle cx="190.0" cy="84.0" r="4.5" fill="#b42318" stroke="#b42318" stroke-width="2"><title>Gemini 4 Hydrogen, retracted papers: 0/25</title></circle>
+<line x1="190.0" y1="94.0" x2="251.3" y2="94.0" stroke="#1f4e9c" stroke-width="1.5"/>
+<circle cx="190.0" cy="94.0" r="4.5" fill="#fff" stroke="#1f4e9c" stroke-width="2"><title>Gemini 4 Hydrogen, controls: 0/25</title></circle>
+<text x="180" y="123.0" text-anchor="end" fill="#222">Gemini 3.5 Flash-Lite</text>
+<line x1="190.0" y1="114.0" x2="251.3" y2="114.0" stroke="#b42318" stroke-width="1.5"/>
+<circle cx="190.0" cy="114.0" r="4.5" fill="#b42318" stroke="#b42318" stroke-width="2"><title>Gemini 3.5 Flash-Lite, retracted papers: 0/25</title></circle>
+<line x1="190.0" y1="124.0" x2="251.3" y2="124.0" stroke="#1f4e9c" stroke-width="1.5"/>
+<circle cx="190.0" cy="124.0" r="4.5" fill="#fff" stroke="#1f4e9c" stroke-width="2"><title>Gemini 3.5 Flash-Lite, controls: 0/25</title></circle>
+<text x="180" y="153.0" text-anchor="end" fill="#222">Seed 2.0 Lite</text>
+<line x1="219.5" y1="144.0" x2="349.4" y2="144.0" stroke="#b42318" stroke-width="1.5"/>
+<circle cx="263.6" cy="144.0" r="4.5" fill="#b42318" stroke="#b42318" stroke-width="2"><title>Seed 2.0 Lite, retracted papers: 4/25</title></circle>
+<line x1="193.3" y1="154.0" x2="279.9" y2="154.0" stroke="#1f4e9c" stroke-width="1.5"/>
+<circle cx="208.4" cy="154.0" r="4.5" fill="#fff" stroke="#1f4e9c" stroke-width="2"><title>Seed 2.0 Lite, controls: 1/25</title></circle>
+<text x="180" y="183.0" text-anchor="end" fill="#222">ERNIE 5.5 Flash Preview</text>
+<line x1="269.1" y1="174.0" x2="427.3" y2="174.0" stroke="#b42318" stroke-width="1.5"/>
+<circle cx="337.2" cy="174.0" r="4.5" fill="#b42318" stroke="#b42318" stroke-width="2"><title>ERNIE 5.5 Flash Preview, retracted papers: 8/25</title></circle>
+<line x1="242.9" y1="184.0" x2="389.8" y2="184.0" stroke="#1f4e9c" stroke-width="1.5"/>
+<circle cx="300.4" cy="184.0" r="4.5" fill="#fff" stroke="#1f4e9c" stroke-width="2"><title>ERNIE 5.5 Flash Preview, controls: 6/25</title></circle>
+<text x="180" y="213.0" text-anchor="end" fill="#222">GPT-6.1 Sol</text>
+<line x1="377.4" y1="204.0" x2="542.3" y2="204.0" stroke="#b42318" stroke-width="1.5"/>
+<circle cx="466.0" cy="204.0" r="4.5" fill="#b42318" stroke="#b42318" stroke-width="2"><title>GPT-6.1 Sol, retracted papers: 15/25</title></circle>
+<line x1="344.1" y1="214.0" x2="511.9" y2="214.0" stroke="#1f4e9c" stroke-width="1.5"/>
+<circle cx="429.2" cy="214.0" r="4.5" fill="#fff" stroke="#1f4e9c" stroke-width="2"><title>GPT-6.1 Sol, controls: 13/25</title></circle>
+<text x="180" y="243.0" text-anchor="end" fill="#222">GPT-6 Luna</text>
+<line x1="490.6" y1="234.0" x2="620.5" y2="234.0" stroke="#b42318" stroke-width="1.5"/>
+<circle cx="576.4" cy="234.0" r="4.5" fill="#b42318" stroke="#b42318" stroke-width="2"><title>GPT-6 Luna, retracted papers: 21/25</title></circle>
+<line x1="344.1" y1="244.0" x2="511.9" y2="244.0" stroke="#1f4e9c" stroke-width="1.5"/>
+<circle cx="429.2" cy="244.0" r="4.5" fill="#fff" stroke="#1f4e9c" stroke-width="2"><title>GPT-6 Luna, controls: 13/25</title></circle>
+<text x="180" y="273.0" text-anchor="end" fill="#222">DeepSeek V4.1 Flash 1017</text>
+<line x1="560.1" y1="264.0" x2="646.7" y2="264.0" stroke="#b42318" stroke-width="1.5"/>
+<circle cx="631.6" cy="264.0" r="4.5" fill="#b42318" stroke="#b42318" stroke-width="2"><title>DeepSeek V4.1 Flash 1017, retracted papers: 24/25</title></circle>
+<line x1="588.7" y1="274.0" x2="650.0" y2="274.0" stroke="#1f4e9c" stroke-width="1.5"/>
+<circle cx="650.0" cy="274.0" r="4.5" fill="#fff" stroke="#1f4e9c" stroke-width="2"><title>DeepSeek V4.1 Flash 1017, controls: 25/25</title></circle>
+<text x="180" y="303.0" text-anchor="end" fill="#222">Qwen3.8 Flash</text>
+<line x1="588.7" y1="294.0" x2="650.0" y2="294.0" stroke="#b42318" stroke-width="1.5"/>
+<circle cx="650.0" cy="294.0" r="4.5" fill="#b42318" stroke="#b42318" stroke-width="2"><title>Qwen3.8 Flash, retracted papers: 25/25</title></circle>
+<line x1="556.9" y1="304.0" x2="646.6" y2="304.0" stroke="#1f4e9c" stroke-width="1.5"/>
+<circle cx="630.8" cy="304.0" r="4.5" fill="#fff" stroke="#1f4e9c" stroke-width="2"><title>Qwen3.8 Flash, controls: 23/24</title></circle>
+</svg>

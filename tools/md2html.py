@@ -4,17 +4,33 @@ src, dst = sys.argv[1], sys.argv[2]
 lines = open(src, encoding="utf-8").read().split("\n")
 
 def inline(s):
+    codes = []
+    def keep(m):
+        codes.append("<code>" + html.escape(m.group(1), quote=False) + "</code>")
+        return f"\x00{len(codes) - 1}\x00"
+    s = re.sub(r"`([^`]+)`", keep, s)  # inline code: no other formatting inside
     s = html.escape(s, quote=False)
+    s = re.sub(r"!\[([^\]]*)\]\(([^)\s]+)\)", lambda m: f"<img src='{m.group(2)}' alt='{m.group(1)}'>", s)
+    s = re.sub(r"(?<!!)\[([^\]]+)\]\((https?://[^)\s]+)\)", lambda m: f"<a href='{m.group(2)}'>{m.group(1)}</a>", s)
     s = re.sub(r"\*\*(.+?)\*\*", r"<b>\1</b>", s)
     s = re.sub(r"(?<![\w*])\*(?!\s)(.+?)(?<!\s)\*(?![\w*])", r"<i>\1</i>", s)
-    s = re.sub(r"(https?://[^\s<|)\]]+?)([.,;]?)(?=\s|$|<|\||\))", r"<a href='\1' target='_blank' rel='noopener'>\1</a>\2", s)
-    return s
+    s = re.sub(r"(?<!['>])(https?://[^\s<|)\]']+?)([.,;]?)(?=\s|$|<|\||\))", r"<a href='\1' target='_blank' rel='noopener'>\1</a>\2", s)
+    return re.sub(r"\x00(\d+)\x00", lambda m: codes[int(m.group(1))], s)
 
 out, i, title = [], 0, "Paper draft"
 while i < len(lines):
     l = lines[i]
     if not l.strip():
         i += 1; continue
+    if l.startswith("```"):  # fenced code block, kept verbatim
+        i += 1; buf = []
+        while i < len(lines) and not lines[i].startswith("```"):
+            buf.append(lines[i]); i += 1
+        i += 1
+        out.append("<pre>" + html.escape("\n".join(buf), quote=False) + "</pre>"); continue
+    m = re.fullmatch(r"!\[([^\]]*)\]\(([^)\s]+)\)", l.strip())
+    if m:  # figure on its own line
+        out.append(f"<figure><img src='{m.group(2)}' alt='{html.escape(m.group(1))}'></figure>"); i += 1; continue
     if l.strip() == "---":
         out.append("<hr>"); i += 1; continue
     m = re.match(r"(#{1,4}) (.*)", l)
@@ -32,7 +48,8 @@ while i < len(lines):
         while i < len(lines) and lines[i].startswith("|"):
             rows.append([c.strip() for c in lines[i].strip().strip("|").split("|")]); i += 1
         head, body = rows[0], [r for r in rows[1:] if not all(re.fullmatch(r":?-+:?", c) for c in r)]
-        t = ["<table><thead><tr>" + "".join(f"<th>{inline(c)}</th>" for c in head) + "</tr></thead><tbody>"]
+        keep = " class='keep'" if len(body) <= 12 else ""  # short tables stay on one page
+        t = [f"<table{keep}><thead><tr>" + "".join(f"<th>{inline(c)}</th>" for c in head) + "</tr></thead><tbody>"]
         for r in body:
             t.append("<tr>" + "".join(f"<td>{inline(c)}</td>" for c in r) + "</tr>")
         out.append("".join(t) + "</tbody></table>"); continue
@@ -47,9 +64,11 @@ while i < len(lines):
             buf.append(f"<li>{inline(re.sub(r'^\d+\. ', '', lines[i]))}</li>"); i += 1
         out.append("<ol>" + "".join(buf) + "</ol>"); continue
     buf = []
-    while i < len(lines) and lines[i].strip() and not re.match(r"(#|>|\||- |\d+\. |---)", lines[i]):
+    while i < len(lines) and lines[i].strip() and not re.match(r"(#|>|\||- |\d+\. |---|```)", lines[i]):
         buf.append(lines[i]); i += 1
-    out.append(f"<p>{inline(' '.join(buf))}</p>")
+    txt = inline(' '.join(buf))
+    cap = " class='cap'" if re.match(r"<b>(Table|Figure|[A-Z]-\d)", txt) else ""  # captions stay with what follows
+    out.append(f"<p{cap}>{txt}</p>")
 
 css = """
 :root{--bg:#fff;--fg:#1d1d1f;--muted:#6b6b70;--line:#d9d9de;--head:#f3f3f6;--note:#fff8e1;--noteb:#e8c766}
@@ -62,6 +81,12 @@ th,td{border:1px solid var(--line);padding:6px 8px;text-align:left;vertical-alig
 th{background:var(--head);font-weight:600}
 .note{background:var(--note);border-left:4px solid var(--noteb);padding:8px 12px;margin:8px 0 16px;font-size:14px}
 ul,ol{padding-left:22px}li{margin:3px 0}
+td,th{overflow-wrap:anywhere}
+code{font:12.5px/1.4 ui-monospace,SFMono-Regular,Menlo,monospace;background:var(--head);padding:0 3px;border-radius:3px}
+pre{font:12px/1.45 ui-monospace,SFMono-Regular,Menlo,monospace;white-space:pre-wrap;background:var(--head);border:1px solid var(--line);padding:10px 12px;margin:8px 0 16px}
+figure{margin:12px 0}figure img{max-width:100%;height:auto}
+@media print{body{padding:0;max-width:none}table{display:table;table-layout:auto;font-size:11px}th,td{padding:4px 5px}
+ tr,figure,table.keep{break-inside:avoid}h2,h3,h4,p.cap{break-after:avoid}}
 """
 doc = f"<!doctype html><html lang='en'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><title>{html.escape(title)}</title><style>{css}</style></head><body>{''.join(out)}</body></html>"
 open(dst, "w", encoding="utf-8").write(doc)
