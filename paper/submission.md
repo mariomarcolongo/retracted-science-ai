@@ -95,7 +95,7 @@ We designed a controlled test of whether AI model configurations check and follo
 
 ## Code and data
 
-Repository and archived copy: [not yet public; to be released with the completed study]. Everything is released in full: every request and response of every model, including the topic drafter, the judges, the pilot and the stability runs, with all reasoning the APIs return; every adjudication with its reason; the author's labels and the labelling tool's action log; logs of every hand decision; console output of every script run; the input data as retrieved; and the code, seeds and configuration. The cost of the study is released too: the tokens, cost and time of every request, failed ones included; totals by phase and model; the estimate made before the run next to the actual cost; the credits used from each source and the money added to the account; and the author's working hours per phase, self-reported (Appendix I). The software environment of each run (Python and package versions, operating system, code commit) is recorded and released. Once the human labels, the author's decisions and the reference reviews are added, one command recomputes every table and figure from these files; any input still missing is listed. Abstracts are included as text where the article's licence allows; for the others we release the source, ID and hash, and a script restores the exact text. Each record of a test with a forged note (R4, R6, K4, R4-I, K4-I) starts with a line stating that it contains a status note forged for this study and giving the paper's true status. Every data file carries a canary string asking that it not be used to train models.
+The code, prompts, decision log and the logs of this run (every request, response, judge form and label) are kept in a versioned repository, not yet public; they will be released with the completed study.
 
 ## Author contributions
 
@@ -373,7 +373,7 @@ Other eligible models, not chosen: MiniMax M3 (non-hallucination 9%); Mistral La
 | Zhang et al. 2025 | 117 stem-cell (PubMed) | Split by time since retraction | 30 matched on year and impact factor |
 | Yao et al. 2025 | 93 stem-cell (PubMed) | Not considered | 20, same journal and year |
 | Hoang Ha et al. 2026 | 566, all fields, before 2025 | Mostly before | 624 matched on journal, field, year, citations |
-| **This work** | [N] health papers, random draw, data-invalidating reasons | **After all published cutoffs**, plus status-question test | Matched non-retracted paper per topic (after Ha) |
+| **This work** | 25 health papers, random draw, data-invalidating reasons | **After all published cutoffs**, plus status-question test | Matched non-retracted paper per topic (after Ha) |
 
 ## Appendix F. Paper selection rules and model details
 
@@ -402,15 +402,15 @@ Reason labels (Retraction Watch controlled vocabulary; a paper qualifies if any 
 
 | Product motivating selection | API model | Access | Price per 1M tokens (in/out) | Training cutoff | Default reasoning effort | Reasoning returned | Provider (pinned) |
 |---|---|---|---|---|---|---|---|
-| Google AI Mode | gemini-4-hydrogen | OpenRouter | $1.50 / $7.50 | Mar 2026 | medium (high on Google's own API) | [check] | Google AI Studio |
-| Free ChatGPT | gpt-6-luna | OpenRouter | $0.10 / $0.50 | 18 May 2026 | medium | [check] | OpenAI |
-| Free Gemini app | gemini-3.5-flash-lite | OpenRouter | $0.30 / $2.50 | Mar 2026 (some areas Jan 2025) | minimal | [check] | Google AI Studio |
-| Paid ChatGPT | gpt-6.1-sol | OpenRouter | $2 / $10 | 30 Apr 2026 | medium | [check] | OpenAI |
-| Paid Claude | claude-sonnet-5.5 | OpenRouter | $2 / $10 | Jun 2026 | high | [check] | Anthropic |
-| Doubao | seed-2.0-lite [check: model used in app] | OpenRouter | $0.25 / $2.00 | not published | medium | [check] | Seed (fp8) |
-| Qwen app | qwen3.8-flash | OpenRouter | $0.15 / $0.47 | not published | thinking on | [check] | Alibaba |
-| DeepSeek app | deepseek-v4.1-flash-1017 | OpenRouter | $0.15 / $0.60 | not published | high | [check] | DeepSeek |
-| Baidu Search | ernie-5.5-flash-preview [check: model used in search] | OpenRouter (free model) | free; 1,000 requests/day | not published | high (only level) | [check] | Baidu |
+| Google AI Mode | gemini-4-hydrogen | OpenRouter | $1.50 / $7.50 | Mar 2026 | medium (high on Google's own API) | not yet checked | Google AI Studio |
+| Free ChatGPT | gpt-6-luna | OpenRouter | $0.10 / $0.50 | 18 May 2026 | medium | not yet checked | OpenAI |
+| Free Gemini app | gemini-3.5-flash-lite | OpenRouter | $0.30 / $2.50 | Mar 2026 (some areas Jan 2025) | minimal | not yet checked | Google AI Studio |
+| Paid ChatGPT | gpt-6.1-sol | OpenRouter | $2 / $10 | 30 Apr 2026 | medium | not yet checked | OpenAI |
+| Paid Claude | claude-sonnet-5.5 | OpenRouter | $2 / $10 | Jun 2026 | high | not yet checked | Anthropic |
+| Doubao | seed-2.0-lite (model used in the app not established) | OpenRouter | $0.25 / $2.00 | not published | medium | not yet checked | Seed (fp8) |
+| Qwen app | qwen3.8-flash | OpenRouter | $0.15 / $0.47 | not published | thinking on | not yet checked | Alibaba |
+| DeepSeek app | deepseek-v4.1-flash-1017 | OpenRouter | $0.15 / $0.60 | not published | high | not yet checked | DeepSeek |
+| Baidu Search | ernie-5.5-flash-preview (model used in search not established) | OpenRouter (free model) | free; 1,000 requests/day | not published | high (only level) | not yet checked | Baidu |
 
 ## Appendix G. Usage data: sources and caveats
 
@@ -445,14 +445,6 @@ Sources: ᵃ Springer Nature with Fudan University and Shanghai Academy of AI fo
 All figures come from self-selected samples and are descriptive. The columns use different populations and measures (share of mentions, % using, monthly app users), so they should not be compared with each other.
 
 ChatGPT and Claude are not offered in mainland China by their developers, and the Gemini web app only through Google Workspace (OpenAI, Anthropic and Google availability pages, checked 14 Nov 2026). The most-used AI apps there are domestic: Doubao, the Qwen app and DeepSeek, and Baidu builds ERNIE into its search engine (ᶜ). Researchers in China who publish internationally still report using ChatGPT (72.3%, ᵃ), so availability limits the general public more than this group.
-
-## Appendix H. Annotated answers
-
-[After results: four to six real answers with the target's passages and the judges' labels marked.]
-
-## Appendix I. Cost and time
-
-[After the run: cost by phase × role × model (requests, failed requests, tokens, cost charged, cost at list price), estimated and actual; credits used by source (paid, sponsor credits, free tier) and money added, with dates; run time per phase; labelling time per answer in the human check; the author's working hours per phase, self-reported. Files: `data/costs/`.]
 
 ## Appendix J. Related work in detail
 

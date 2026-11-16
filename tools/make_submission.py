@@ -57,12 +57,15 @@ main = [title, "", author, "", "## Abstract", "", abstract, "---", "", sec("1. I
         "per group, one human annotator who also settled the judges' disagreements, training exposure not established, and three "
         "model-to-product links not established. The forged-status tests have not been run, so nothing here shows how models "
         "handle search results, labels, forged notes or a registry. The full list is in Appendix A.\n",
-        sec("6. Conclusion"), sec("Code and data"), sec("Author contributions"), sec("LLM usage statement")]
+        sec("6. Conclusion"), "## Code and data\n\nThe code, prompts, decision log and the logs of this run (every request, response, judge form and label) "
+        "are kept in a versioned repository, not yet public; they will be released with the completed study.\n", sec("Author contributions"), sec("LLM usage statement")]
 back = [sec("References"), sec("Appendix A").rstrip() + "\n\n" + limits_table.replace("### Limitations", "**Full list of limitations**", 1),
         sec("Appendix B"), sec("Appendix C"), sec("Appendix D"), sec("Appendix E"), sec("Appendix F"), sec("Appendix G"),
-        sec("Appendix H"), sec("Appendix I"),
         "## Appendix J. Related work in detail\n\n" + related,
         "## Appendix K. Full methods\n\n" + body("3. Methods")]
+back = [b.replace("| [check] |", "| not yet checked |").replace(" [check: model used in app]", " (model used in the app not established)")
+        .replace(" [check: model used in search]", " (model used in search not established)").replace("| [N] health papers", "| 25 health papers")
+        for b in back]
 out = "\n".join(main if "--main-only" in sys.argv else main + back)
 open("paper/submission-main.md" if "--main-only" in sys.argv else "paper/submission.md", "w", encoding="utf-8").write(out)
 print("abstract words:", words, "| written", "main only" if "--main-only" in sys.argv else "full")
